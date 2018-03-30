@@ -1,8 +1,19 @@
-.menu-list{
-    border:2px solid purple;
-    display:block;
-    margin:5px;
+ul {
+    padding: 0;
 }
-.main-col-1>div{
-    border:2px solid green;
+li {
+    list-style-type: none;
+}
+.menu-list {
+    border: 2px solid purple;
+    display: block;
+    margin: 5px;
+}
+
+.main-container {
+    display: flex;
+}
+
+.main-col-1 > div {
+    border: 2px solid green;
 }
