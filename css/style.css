@@ -1,0 +1,8 @@
+.menu-list{
+    border:2px solid purple;
+    display:block;
+    margin:5px;
+}
+.main-col-1>div{
+    border:2px solid green;
+}
