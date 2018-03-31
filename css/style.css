@@ -10,10 +10,110 @@ li {
     margin: 5px;
 }
 
-.main-container {
-    display: flex;
-}
 
 .main-col-1 > div {
     border: 2px solid green;
+}
+.main-container {
+    width: 100%;
+    height: 100%;
+    border: pink 2px solid;
+    display: inline-block;
+    margin: 0 auto;
+    display: flex;
+}
+
+
+/* ------------- header -----------------*/
+.header {
+    border: 1px red solid;
+    width: 100%;
+    height: 50px;
+    display: inline-block;
+}
+
+.header-logo {
+    width: 60%;
+    height: 100%;
+    border: 1px black dashed;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+
+.header-sort-function {
+    width: 15%;
+    height: 100%;
+    border: 1px black dashed;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+
+
+}
+
+.header-progress-tracker {
+    width: 15%;
+    height: 100%;
+    border: 1px black dashed;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* ----------- body app ------------------*/
+.main-body {
+    border: 1px red solid;
+    width: 100%;
+    height: auto;
+}
+
+/* --------------tasks to do -------------*/
+
+.main-body .tasks-to-do {
+    border: 1px red solid;
+    height: auto;
+    width: auto;
+}
+
+.tasks-to-do li {
+    border: 1px black solid;
+    list-style-type: none;
+    width: 100%;
+    word-wrap:break-word;
+
+}
+
+/* ------ button tasks finished ---------*/
+.btn-tasks-finished {
+    background-color: darkcyan;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 5px;
+    float: left;
+    margin-left: 35%;
+}
+
+.btn-tasks-finished:hover {
+    background-color: mediumturquoise;
+    color: white;
+}
+
+
+/* ---------tasks finished ---------------*/
+
+.tasks-finished li {
+    border: 1px black solid;
+    list-style-type: none;
+    width: 100%;
+    word-wrap:break-word;
+    display: inline-block;
 }
