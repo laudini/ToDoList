@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Button "ALL" functionality
     allBtn.addEventListener("click", function () {
+
         // clearing <ul>
         while (tasksToDo.firstChild) {
             tasksToDo.removeChild(tasksToDo.firstChild);
