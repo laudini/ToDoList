@@ -96,14 +96,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Button "WEEK" functionality
 
-
 // Today Array filling
     function checkTodayArray () {
 
         // getting current date/time
         var currentDate = new Date();
 
-        // day variable (need to ad "0" if day is less than 10)
+        // day variable (need to add "0" if day is less than 10)
         var dd = "";
         if (currentDate.getDate() < 10) {
             dd = "0" + currentDate.getDate();
@@ -111,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
             dd = currentDate.getDate();
         }
 
-        // month variable (need to ad "0" if month is less than 10)
+        // month variable (need to add "0" if month is less than 10)
         var mm = "";
         if (currentDate.getMonth() + 1 < 10) {
             mm = "0" + (currentDate.getMonth() + 1);
@@ -123,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
         var yyyy = currentDate.getFullYear();
 
         // our date combined
-        todayDate = (yyyy + "-" + mm + "-" + dd);
+        var todayDate = (yyyy + "-" + mm + "-" + dd);
 
         // clearing array before filling it
         today = [];
@@ -135,8 +134,53 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-
 // Tomorrow Array filling
+checkTomorrowArray();
+    function checkTomorrowArray () {
+
+        // getting current date/time
+        var currentDate = new Date();
+        var sevenDays = [];
+
+        // this for loop creates an array with next seven days date
+        for (var k = 0; k < 6; k++) {
+
+            currentDate.setDate(currentDate.getDate() + 1);
+
+            // day variable (need to add "0" if day number is less than 10)
+            var dd = "";
+            if (currentDate.getDate() < 10) {
+                dd = "0" + currentDate.getDate();
+            } else {
+                dd = currentDate.getDate();
+            }
+
+            // month variable (need to add "0" if month number is less than 10)
+            var mm = "";
+            if (currentDate.getMonth() + 1 < 10) {
+                mm = "0" + (currentDate.getMonth() + 1);
+            } else {
+                mm = currentDate.getMonth();
+            }
+
+            // year variable
+            var yyyy = currentDate.getFullYear();
+
+            // our date combined
+            var todayDate = (yyyy + "-" + mm + "-" + dd);
+
+            sevenDays.push(todayDate);
+        }
+
+        // clearing array before filling it
+        week = [];
+        // looping through ALL array to find next 7 days tasks
+        for (var i = 0; i < all.length; i++) {
+            if (all[i].date === todayDate) {
+                week.push(all[i]);
+            }
+        }
+    }
 
 
 // Week Array filling
