@@ -12,12 +12,18 @@ document.addEventListener("DOMContentLoaded", function () {
     var all = [
         {
             name: "umyj naczynia",
-            date: "2018-04-01",
+            date: "2018-04-03",
             priority: 3
         },
         {
             name: "ustaw nowe zadanie",
-            date: "2018-04-02",
+            date: "2018-04-10",
+            priority: 4
+        },
+
+        {
+            name: "ustaw tez nowe zadanie",
+            date: "2018-04-06",
             priority: 4
         },
         {
@@ -92,9 +98,40 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // Button "TOMORROW" functionality
-
+// ---------TO BE DONE------------
 
 // Button "WEEK" functionality
+    weekBtn.addEventListener("click", function () {
+        // executing 'week task check' function
+        checkWeekArray();
+        // clearing <ul>
+        while (tasksToDo.firstChild) {
+            tasksToDo.removeChild(tasksToDo.firstChild);
+        }
+
+        // creating <li>, <div> inside and pushing elements into them.
+        for (var i = 0; i < week.length; i++) {
+
+            // creating new element <li>
+            var newLi = document.createElement("li");
+
+            // taking elements from object sent by user (name, date, priority)
+            var weekElements = Object.values(week[i]);
+
+            // assigning new <li> to <ul>
+            tasksToDo.appendChild(newLi);
+
+            // creating new divs in <li> and putting user information in divs
+            for (var j = 0; j < 4; j++) {
+                var newDiv = document.createElement("div");
+                tasksToDo.children[i].append(newDiv);
+                if (j !== 0) {
+                    newDiv.innerText = (weekElements[j - 1]);
+                }
+            }
+        }
+    });
+
 
 // Today Array filling
     function checkTodayArray() {
@@ -134,10 +171,12 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-// Tomorrow Array filling
-    checkTomorrowArray();
 
-    function checkTomorrowArray() {
+// Tomorrow Array filling
+// ---------TO BE DONE------------
+
+// Week Array filling
+    function checkWeekArray() {
 
         // getting current date/time
         var currentDate = new Date();
@@ -195,6 +234,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-// Week Array filling
+// PRIORITY
+// ---------TO BE DONE------------
 
 });
