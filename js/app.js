@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // Button "WEEK" functionality
 
 // Today Array filling
-    function checkTodayArray () {
+    function checkTodayArray() {
 
         // getting current date/time
         var currentDate = new Date();
@@ -135,17 +135,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 // Tomorrow Array filling
-checkTomorrowArray();
-    function checkTomorrowArray () {
+    checkTomorrowArray();
+
+    function checkTomorrowArray() {
 
         // getting current date/time
         var currentDate = new Date();
         var sevenDays = [];
 
         // this for loop creates an array with next seven days date
-        for (var k = 0; k < 6; k++) {
-
-            currentDate.setDate(currentDate.getDate() + 1);
+        for (var k = 0; k < 7; k++) {
 
             // day variable (need to add "0" if day number is less than 10)
             var dd = "";
@@ -170,15 +169,28 @@ checkTomorrowArray();
             var todayDate = (yyyy + "-" + mm + "-" + dd);
 
             sevenDays.push(todayDate);
+
+            // Next day date for next loop
+            currentDate.setDate(currentDate.getDate() + 1);
         }
 
         // clearing array before filling it
         week = [];
+
         // looping through ALL array to find next 7 days tasks
         for (var i = 0; i < all.length; i++) {
-            if (all[i].date === todayDate) {
-                week.push(all[i]);
+
+            //looping through SEVENDAYS array
+            for (var h = 0; h < sevenDays.length; h++) {
+
+                if (all[i].date === sevenDays[h]) {
+
+                    week.push(all[i]);
+
+                }
+
             }
+
         }
     }
 
