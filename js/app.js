@@ -247,4 +247,34 @@ document.addEventListener("DOMContentLoaded", function () {
 // PRIORITY
 // ---------TO BE DONE------------
 
+//--------------------ADD CATEGORY------------------
+
+    var addCategory = document.querySelector('.add-category');
+
+    addCategory.addEventListener('click',function(){
+        var parent = document.querySelector(".header-add-category");
+        var element = document.createElement("div");
+        if(document.querySelector(".window")===null){
+            element.classList.add("window");
+            element.innerHTML =
+                '<input type="text" id="place-category" placeholder="Kategoria">'+
+                '<button id="btn-category">Dodaj Kat</button>'+
+                '<button id="cancel">Anuluj</button>';
+
+            parent.appendChild(element);
+
+            var cancel = document.querySelector("#cancel");
+
+            cancel.addEventListener('click',function(){
+                parent.removeChild(element);
+            });
+        }
+
+
+    });
+
+//---------ADD CATEGORY--------FINISH----------------
+
+
+
 });

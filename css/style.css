@@ -48,7 +48,7 @@ li {
 }
 
 
-.header-sort-function {
+.header-add-category {
     width: 15%;
     height: 100%;
     border: 1px black dashed;
@@ -122,4 +122,35 @@ li {
     width: 100%;
     word-wrap:break-word;
     display: inline-block;
+}
+
+/*----------- adding category-------------*/
+.window {
+    position: absolute;
+    left:120px;
+    margin: auto;
+    width: 175px;
+    height: 100px;
+    background: yellow;
+    display:block
+}
+
+#place-category{
+    height: 30px;
+    width: 150px;
+    border: 1px solid fuchsia;
+    font-size: 20px;
+    font-weight: 300;
+    margin:10px;
+
+}
+
+#btn-category{
+
+    height: 22px;
+    width: 100px;
+    background: red;
+}
+#cancel{
+    background:orange;
 }
