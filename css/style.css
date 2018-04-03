@@ -8,6 +8,7 @@ li {
     border: 2px solid purple;
     display: block;
     margin: 5px;
+    width:100px;
 }
 
 
@@ -21,7 +22,13 @@ li {
     margin: 0 auto;
     display: flex;
 }
+/* ------------- menu-left --------------*/
 
+.wide-menu{
+    border:3px dotted red;
+    width:300px;
+    background: yellow;
+}
 
 /* ------------- header -----------------*/
 .header {
