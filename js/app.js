@@ -1,8 +1,9 @@
-<<<<<<< HEAD
 document.addEventListener("DOMContentLoaded", function () {
 
 
 // All variables are here
+    var hamburger= document.querySelector(".hamb");
+    var menuToggle = document.getElementsByClassName("menu-list");
     var todayBtn = document.querySelector("#todayBtn");         // TODAY <button>
     var tomorrowBtn = document.querySelector("#tomorrowBtn");   // TOMORROW <button>
     var weekBtn = document.querySelector("#weekBtn");           // WEEK <button>
@@ -36,6 +37,14 @@ document.addEventListener("DOMContentLoaded", function () {
     var tomorrow = [];
     var week = [];
     var userCats = [];
+
+// HAMBURGER
+
+    hamburger.addEventListener("click", function () {
+        for (var i=0;i<menuToggle.length;i++){
+            menuToggle[i].classList.toggle("wide-menu");
+        }
+    });
 
 // Button "ALL" functionality
     allBtn.addEventListener("click", function () {
@@ -238,16 +247,4 @@ document.addEventListener("DOMContentLoaded", function () {
 // PRIORITY
 // ---------TO BE DONE------------
 
-=======
-document.addEventListener("DOMContentLoaded", function() {
-
-    var hamburger= document.querySelector(".hamb");
-    var menuToggle = document.getElementsByClassName("menu-list");
-
-    hamburger.addEventListener("click", function () {
-        for (var i=0;i<menuToggle.length;i++){
-            menuToggle[i].classList.toggle("wide-menu");
-        }
-    });
->>>>>>> feature-hamburgerMenu
 });
