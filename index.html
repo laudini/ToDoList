@@ -43,9 +43,32 @@
              <!--This is a main 'body' containing active tasks and fulfilled ones.-->
             <div>TU BEDZIE MAINBODY</div>
             <div class="main-body">
-                <ul class="tasks-to-do">
-                    <!-- <li> appears here with click events -->
-                </ul>
+                <!--<ul class="tasks-to-do">-->
+
+                <div class="sectionAddTask">
+                    <input type="text" id="myInput" placeholder="Title...">
+                    <span onclick="newElement()" class="addBtn">Add</span>
+
+                    <!--------- calendar --------->
+                    <input type="date" id="date"><br>
+
+                    <div class="priority-section">
+                        <p class="priorityHeader">Priorytet:</p>
+                        <p class="priority"><label><input type="radio" name="kolor" id="pGreen" value="1" checked> 1 </label></p>
+                        <p class="priority"><label><input type="radio" name="kolor" value="2"> 2 </label></p>
+                        <p class="priority"><label><input type="radio" name="kolor" value="3"> 3 </label></p>
+                        <p class="priority"><label><input type="radio" name="kolor" value="4"> 4 </label></p>
+                        <p class="priority"><label><input type="radio" name="kolor" value="5"> 5 </label></p>
+                    </div>
+
+                    <div class="tasksAdded">
+                        <ul id="myUL">
+                            <li> </li>
+
+                        </ul>
+                    </div>
+                </div>
+
                 <button class = "btn-tasks-finished"> zadania zakonczone >> </button>
                 <ul class = "tasks-finished">
                     <li> zad ukonczone </li>
