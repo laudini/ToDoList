@@ -8,18 +8,21 @@ li {
     list-style-type: none;
 }
 .menu-list {
+    background: #0d3349;
     border: 2px solid purple;
     display: block;
     margin: 5px;
     width: 40px;
 }
-
-
+.main-col-1 {
+    background: #3D8EB9;
+}
 .main-col-1 > div {
     border: 2px solid green;
     height: 100%;
 }
 .main-container {
+    background: sandybrown;
     width: 100%;
     height: 100%;
     border: pink 2px solid;
@@ -37,6 +40,7 @@ li {
 /* ------------- header -----------------*/
 .header {
     border: 1px red solid;
+    background: #00bb33;
     width: 100%;
     height: 50px;
     display: inline-block;
