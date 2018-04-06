@@ -1,3 +1,6 @@
+html {
+    height: 100%
+}
 ul {
     padding: 0;
 }
@@ -8,12 +11,13 @@ li {
     border: 2px solid purple;
     display: block;
     margin: 5px;
-    width:100px;
+    width: 40px;
 }
 
 
 .main-col-1 > div {
     border: 2px solid green;
+    height: 100%;
 }
 .main-container {
     width: 100%;
@@ -26,7 +30,7 @@ li {
 
 .wide-menu{
     border:3px dotted red;
-    width:300px;
+    width:150px;
     background: yellow;
 }
 
@@ -66,7 +70,7 @@ li {
     display: inline-block;
     margin: 0;
     padding: 0;
-}
+}   
 
 
 

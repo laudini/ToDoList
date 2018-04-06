@@ -14,23 +14,23 @@ document.addEventListener("DOMContentLoaded", function () {
     var all = [
         {
             name: "umyj naczynia",
-            date: "2018-04-03",
+            date: "2018-04-06",
             priority: 3
         },
         {
             name: "ustaw nowe zadanie",
-            date: "2018-04-10",
+            date: "2018-04-07",
             priority: 4
         },
 
         {
             name: "ustaw tez nowe zadanie",
-            date: "2018-04-06",
+            date: "2018-04-08",
             priority: 4
         },
         {
             name: "ustaw nowe zadanie",
-            date: "2018-05-01",
+            date: "2018-05-06",
             priority: 5
         }];
     var today = [];
@@ -108,7 +108,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // Button "TOMORROW" functionality
-// ---------TO BE DONE------------
+    tomorrowBtn.addEventListener("click", function () {
+        // executing 'today task check' function
+        checkTomorrowArray();
+        // clearing <ul>
+        while (tasksToDo.firstChild) {
+            tasksToDo.removeChild(tasksToDo.firstChild);
+        }
+
+        // creating <li>, <div> inside and pushing elements into them.
+        for (var i = 0; i < tomorrow.length; i++) {
+
+            // creating new element <li>
+            var newLi = document.createElement("li");
+            // taking elements from object sent by user (name, date, priority)
+            var tommorowElements = Object.values(tomorrow[i]);
+            // assigning new <li> to <ul>
+            tasksToDo.appendChild(newLi);
+
+            // creating new divs in <li> and putting user information in divs
+            for (var j = 0; j < 4; j++) {
+                var newDiv = document.createElement("div");
+                tasksToDo.children[i].append(newDiv);
+                if (j !== 0) {
+                    newDiv.innerText = (tommorowElements[j - 1]);
+                }
+            }
+        }
+    });
 
 // Button "WEEK" functionality
     weekBtn.addEventListener("click", function () {
@@ -183,7 +210,45 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // Tomorrow Array filling
-// ---------TO BE DONE------------
+    function checkTomorrowArray() {
+
+        // getting current date/time
+        var currentDate = new Date();
+        // switching date + 24hours
+        currentDate.setDate(currentDate.getDate() + 1);
+
+        // day variable (need to add "0" if day is less than 10)
+        var dd = "";
+        if (currentDate.getDate() < 10) {
+            dd = "0" + currentDate.getDate();
+        } else {
+            dd = currentDate.getDate();
+        }
+
+        // month variable (need to add "0" if month is less than 10)
+        var mm = "";
+        if (currentDate.getMonth() + 1 < 10) {
+            mm = "0" + (currentDate.getMonth() + 1);
+        } else {
+            mm = currentDate.getMonth();
+        }
+
+        // year variable
+        var yyyy = currentDate.getFullYear();
+
+        // our date combined
+        var todayDate = (yyyy + "-" + mm + "-" + dd);
+
+        // clearing array before filling it
+        tomorrow = [];
+        // looping through ALL array to find today's tasks
+        for (var i = 0; i < all.length; i++) {
+            if (all[i].date === todayDate) {
+                tomorrow.push(all[i]);
+            }
+        }
+    }
+
 
 // Week Array filling
     function checkWeekArray() {
