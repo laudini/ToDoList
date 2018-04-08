@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // All variables are here
-    var hamburger= document.querySelector(".hamb");
+    var hamburger = document.querySelector(".hamb");
     var menuToggle = document.getElementsByClassName("menu-list");
     var todayBtn = document.querySelector("#todayBtn");         // TODAY <button>
     var tomorrowBtn = document.querySelector("#tomorrowBtn");   // TOMORROW <button>
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // HAMBURGER
 
     hamburger.addEventListener("click", function () {
-        for (var i=0;i<menuToggle.length;i++){
+        for (var i = 0; i < menuToggle.length; i++) {
             menuToggle[i].classList.toggle("wide-menu");
         }
     });
@@ -251,21 +251,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
     var addCategory = document.querySelector('.add-category');
 
-    addCategory.addEventListener('click',function(){
+    addCategory.addEventListener('click', function () {
         var parent = document.querySelector(".header-add-category");
         var element = document.createElement("div");
-        if(document.querySelector(".window")===null){
+        if (document.querySelector(".window") === null) {
             element.classList.add("window");
             element.innerHTML =
-                '<input type="text" id="input-category" placeholder="Kategoria">'+
-                '<button id="btn-category">Dodaj Kat</button>'+
-                '<button id="cancel">Anuluj</button>';
+                '<input type="text" id="input-category" placeholder="Kategoria">' +
+                '<button id="btn-category">Dodaj Kat</button>' +
+                '<button id="cancel">Zakończ</button>';
 
             parent.appendChild(element);
 
             var btnCategory = document.querySelector("#btn-category");
             var inputCategory = document.querySelector("#input-category");
-            btnCategory.addEventListener('click',function(){
+            btnCategory.addEventListener('click', function () {
 
                     var categList = document.querySelector("#categ");
                     var newCategory = document.createElement("li");
@@ -273,15 +273,14 @@ document.addEventListener("DOMContentLoaded", function () {
                     newCategory.classList.add("categ-list");
                     categList.appendChild(newCategory);
 
+
                 }
-
-                );
-
+            );
 
 
             var cancel = document.querySelector("#cancel");
 
-            cancel.addEventListener('click',function(){
+            cancel.addEventListener('click', function () {
                 parent.removeChild(element);
             });
         }
@@ -290,7 +289,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 //---------ADD CATEGORY--------FINISH----------------
-
 
 
 });
