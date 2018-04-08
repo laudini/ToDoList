@@ -257,11 +257,27 @@ document.addEventListener("DOMContentLoaded", function () {
         if(document.querySelector(".window")===null){
             element.classList.add("window");
             element.innerHTML =
-                '<input type="text" id="place-category" placeholder="Kategoria">'+
+                '<input type="text" id="input-category" placeholder="Kategoria">'+
                 '<button id="btn-category">Dodaj Kat</button>'+
                 '<button id="cancel">Anuluj</button>';
 
             parent.appendChild(element);
+
+            var btnCategory = document.querySelector("#btn-category");
+            var inputCategory = document.querySelector("#input-category");
+            btnCategory.addEventListener('click',function(){
+                
+                    var categList = document.querySelector("#categ");
+                    var newCategory = document.createElement("li");
+                    newCategory.innerText = inputCategory.value;
+                    newCategory.classList.add("menu-list");
+                    categList.appendChild(newCategory);
+
+                }
+
+                );
+
+
 
             var cancel = document.querySelector("#cancel");
 
