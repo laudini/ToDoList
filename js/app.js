@@ -266,11 +266,11 @@ document.addEventListener("DOMContentLoaded", function () {
             var btnCategory = document.querySelector("#btn-category");
             var inputCategory = document.querySelector("#input-category");
             btnCategory.addEventListener('click',function(){
-                
+
                     var categList = document.querySelector("#categ");
                     var newCategory = document.createElement("li");
                     newCategory.innerText = inputCategory.value;
-                    newCategory.classList.add("menu-list");
+                    newCategory.classList.add("categ-list");
                     categList.appendChild(newCategory);
 
                 }
