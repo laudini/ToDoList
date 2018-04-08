@@ -273,11 +273,17 @@ document.addEventListener("DOMContentLoaded", function () {
                         var newCategory = document.createElement("li");
                         newCategory.innerText = inputCategory.value;
                         newCategory.classList.add("categ-list");
-                        categList.appendChild(newCategory);
-                        inputCategory.value="";
+                        //categList.append(newCategory);
+                        //inputCategory.value="";
+
+
+                        categList.insertBefore(newCategory,categList.firstChild);
+
+                        parent.removeChild(element);
                     }
 
-                                      
+
+
 
 
                 }
