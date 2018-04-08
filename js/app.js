@@ -265,13 +265,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
             var btnCategory = document.querySelector("#btn-category");
             var inputCategory = document.querySelector("#input-category");
+            var categList = document.querySelector("#categ");
+
             btnCategory.addEventListener('click', function () {
 
-                    var categList = document.querySelector("#categ");
-                    var newCategory = document.createElement("li");
-                    newCategory.innerText = inputCategory.value;
-                    newCategory.classList.add("categ-list");
-                    categList.appendChild(newCategory);
+                    if( inputCategory.value!==""){
+                        var newCategory = document.createElement("li");
+                        newCategory.innerText = inputCategory.value;
+                        newCategory.classList.add("categ-list");
+                        categList.appendChild(newCategory);
+                        inputCategory.value="";
+                    }
+
+                                      
 
 
                 }
