@@ -14,23 +14,23 @@ document.addEventListener("DOMContentLoaded", function () {
     var all = [
         {
             name: "umyj naczynia",
-            date: "2018-04-06",
+            date: "2018-04-10",
             priority: 3
         },
         {
             name: "ustaw nowe zadanie",
-            date: "2018-04-07",
+            date: "2018-04-09",
             priority: 4
         },
 
         {
             name: "ustaw tez nowe zadanie",
-            date: "2018-04-08",
+            date: "2018-04-12",
             priority: 4
         },
         {
             name: "ustaw nowe zadanie",
-            date: "2018-05-06",
+            date: "2018-07-06",
             priority: 5
         }];
     var today = [];
@@ -336,11 +336,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     if( inputCategory.value!==""){
                         var newCategory = document.createElement("li");
-                        newCategory.innerText = inputCategory.value;
+                        newCategory.innerText = inputCategory.value[0];
                         newCategory.classList.add("categ-list");
                         //categList.append(newCategory);
                         //inputCategory.value="";
-
 
                         categList.insertBefore(newCategory,categList.firstChild);
 
