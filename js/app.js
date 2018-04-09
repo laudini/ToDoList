@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // All variables are here
-    var hamburger= document.querySelector(".hamb");
+    var hamburger = document.querySelector(".hamb");
     var menuToggle = document.getElementsByClassName("menu-list");
     var todayBtn = document.querySelector("#todayBtn");         // TODAY <button>
     var tomorrowBtn = document.querySelector("#tomorrowBtn");   // TOMORROW <button>
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // HAMBURGER
 
     hamburger.addEventListener("click", function () {
-        for (var i=0;i<menuToggle.length;i++){
+        for (var i = 0; i < menuToggle.length; i++) {
             menuToggle[i].classList.toggle("wide-menu");
         }
     });
@@ -311,5 +311,61 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // PRIORITY
 // ---------TO BE DONE------------
+
+//--------------------ADD CATEGORY------------------
+
+    var addCategory = document.querySelector('.add-category');
+
+    addCategory.addEventListener('click', function () {
+        var parent = document.querySelector(".header-add-category");
+        var element = document.createElement("div");
+        if (document.querySelector(".window") === null) {
+            element.classList.add("window");
+            element.innerHTML =
+                '<input type="text" id="input-category" placeholder="Kategoria">' +
+                '<button id="btn-category">Dodaj Kat</button>' +
+                '<button id="cancel">Zakończ</button>';
+
+            parent.appendChild(element);
+
+            var btnCategory = document.querySelector("#btn-category");
+            var inputCategory = document.querySelector("#input-category");
+            var categList = document.querySelector("#categ");
+
+            btnCategory.addEventListener('click', function () {
+
+                    if( inputCategory.value!==""){
+                        var newCategory = document.createElement("li");
+                        newCategory.innerText = inputCategory.value;
+                        newCategory.classList.add("categ-list");
+                        //categList.append(newCategory);
+                        //inputCategory.value="";
+
+
+                        categList.insertBefore(newCategory,categList.firstChild);
+
+                        parent.removeChild(element);
+                    }
+
+
+
+
+
+                }
+            );
+
+
+            var cancel = document.querySelector("#cancel");
+
+            cancel.addEventListener('click', function () {
+                parent.removeChild(element);
+            });
+        }
+
+
+    });
+
+//---------ADD CATEGORY--------FINISH----------------
+
 
 });
