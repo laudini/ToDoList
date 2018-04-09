@@ -8,50 +8,85 @@
 </head>
 <body>
 
- <!--This is the main container containing two columns-->
-    <section class="main-container">
+<!--This is the main container containing two columns-->
+<section class="main-container">
 
-         <!--This is the left column containing main menu-->
-        <div class="main-col-1">
-            <div>
-                <ul>
-                    <li class="menu-list"><button class="hamb">|||</button></li>
-                    <li class="menu-list">
-                        <ul id="categ">
-                            <!-- LI with user categories are here-->
-                        </ul>
-                    </li>
-                    <li class="menu-list"><button id="todayBtn">D</button></li>
-                    <li class="menu-list"><button id="tomorrowBtn">J</button></li>
-                    <li class="menu-list"><button id="weekBtn">7</button></li>
-                    <li class="menu-list"><button id="allBtn">ALL</button></li>
-                </ul>
+    <!--This is the left column containing main menu-->
+    <div class="main-col-1">
+        <div>
+            <ul>
+                <li class="menu-list">
+                    <button class="hamb">|||</button>
+                </li>
+                <li class="menu-list">
+                    <ul id="categ">
+                        <!-- LI with user categories are here-->
+                    </ul>
+                </li>
+                <li class="menu-list">
+                    <button id="todayBtn">D</button>
+                </li>
+                <li class="menu-list">
+                    <button id="tomorrowBtn">J</button>
+                </li>
+                <li class="menu-list">
+                    <button id="weekBtn">7</button>
+                </li>
+                <li class="menu-list">
+                    <button id="allBtn">ALL</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!--This is the right column with header and main 'body' of our app-->
+    <div class="main-col-2">
+
+        <!--This is a header section contain logo, sort function and progress tracker-->
+        <header class="header">
+            <div class="header-logo"> logo</div>
+            <div class="header-add-category">
+                <button class="add-category">add</button>
+            </div>
+            <div class="header-progress-tracker"> prog</div>
+        </header>
+        <!--This is a main 'body' containing active tasks and fulfilled ones.-->
+        <div class="main-body">
+            <ul class="tasks-to-do"></ul>
+            <button class="addTaskButton">Add task</button>
+            <div class="sectionAddTask invisible">
+                <input type="text" id="myInput" placeholder="Title...">
+                <span class="addBtn">Add</span>
+
+                <!--------- calendar --------->
+                <input type="date" id="date"><br>
+
+                <div class="priority-section">
+                    <p class="priorityHeader">Priorytet:</p>
+                    <p class="priority"><label><input type="radio" name="kolor" id="pGreen" value="1" checked> 1 </label></p>
+                    <p class="priority"><label><input type="radio" name="kolor" value="2"> 2 </label></p>
+                    <p class="priority"><label><input type="radio" name="kolor" value="3"> 3 </label></p>
+                    <p class="priority"><label><input type="radio" name="kolor" value="4"> 4 </label></p>
+                    <p class="priority"><label><input type="radio" name="kolor" value="5"> 5 </label></p>
+                </div>
+
+                <div class="tasksAdded">
+                    <ul id="myUL">
+                        <li> </li>
+
+                    </ul>
             </div>
         </div>
 
-        <!--This is the right column with header and main 'body' of our app-->
-        <div class="main-col-2">
+        <button class="btn-tasks-finished"> zadania zakonczone >></button>
+        <ul class="tasks-finished">
+            <li> zad ukonczone</li>
+            <li> zad ukonczone</li>
+        </ul>
+    </div>
+    </div>
 
-             <!--This is a header section contain logo, sort function and progress tracker-->
-            <header class="header">
-                <div class="header-logo"> logo </div>
-                <div class="header-add-category"><button class="add-category">add</button></div>
-                <div class="header-progress-tracker"> prog </div>
-            </header>
-             <!--This is a main 'body' containing active tasks and fulfilled ones.-->
-            <div class="main-body">
-                <ul class="tasks-to-do">
-                    <!-- <li> appears here with click events -->
-                </ul>
-                <button class = "btn-tasks-finished"> zadania zakonczone >> </button>
-                <ul class = "tasks-finished">
-                    <li> zad ukonczone </li>
-                    <li> zad ukonczone </li>
-                </ul>
-            </div>
-        </div>
-
-    </section>
+</section>
 
 </body>
 </html>
