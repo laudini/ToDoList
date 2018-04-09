@@ -336,8 +336,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     if( inputCategory.value!==""){
                         var newCategory = document.createElement("li");
-                        newCategory.innerText = inputCategory.value[0];
-                        newCategory.classList.add("categ-list");
+                        var newButton = document.createElement('button');
+                        newButton.innerText = inputCategory.value[0];
+                        newButton.classList.add("categ-list");
+                        newCategory.appendChild(newButton);
                         //categList.append(newCategory);
                         //inputCategory.value="";
 
