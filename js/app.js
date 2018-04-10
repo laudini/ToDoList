@@ -334,49 +334,11 @@ document.addEventListener("DOMContentLoaded", function () {
                         // ADD ID to button
                         newButton.id = document.querySelectorAll(".categ-list").length - 1;
                         currentCategoryChosen = newButton.id;
-                        console.log(currentCategoryChosen);
-                        newButton.addEventListener("click", function(){
-                            categoriesTasks = [];
-                            currentCategoryChosen = this.id;
-                            console.log('this id', currentCategoryChosen);
-                            for (var i = 0; i < all.length; i++) {
-                                for (var j in all[i]) {
-                                    if (all[i][j] === currentCategoryChosen) {
-                                        console.log(all[i]);
-                                        categoriesTasks.push(all[i]);
-                                    }
-                                }
-                            }
-                            // clearing <ul>
-                            while (tasksToDo.firstChild) {
-                                tasksToDo.removeChild(tasksToDo.firstChild);
-                            }
-
-                            // creating <li>, <div> inside and pushing elements into them.
-                            for (var i = 0; i < categoriesTasks.length; i++) {
-
-                                // creating new element <li>
-                                var newLi = document.createElement("li");
-                                // taking elements from object sent by user (name, date, priority)
-                                var categoriesElements = Object.values(categoriesTasks[i]);
-                                // assigning new <li> to <ul>
-                                tasksToDo.appendChild(newLi);
-
-                                // creating new divs in <li> and putting user information in divs
-                                for (var j = 0; j < 4; j++) {
-                                    var newDiv = document.createElement("div");
-                                    tasksToDo.children[i].append(newDiv);
-                                    if (j !== 0) {
-                                        newDiv.innerText = (categoriesElements[j - 1]);
-                                    }
-                                }
-                            }
-                        })
 
 
                     }
 
-
+                    catFilling();
                 }
             );
 
@@ -390,6 +352,53 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     });
+
+    //xxxx
+
+    function catFilling() {
+        var catButtons = document.getElementsByClassName('categ-list');
+        for (var i = 0; i < catButtons.length; i++) {
+            catButtons[i].addEventListener("click", function () {
+                categoriesTasks = [];
+                currentCategoryChosen = this.id;
+                console.log('kat: ', currentCategoryChosen);
+                for (var i = 0; i < all.length; i++) {
+                    if (all[i].catId === currentCategoryChosen) {
+                        console.log(all[i]);
+                        categoriesTasks.push(all[i]);
+                    }
+                }
+                // clearing <ul>
+                while (tasksToDo.firstChild) {
+                    tasksToDo.removeChild(tasksToDo.firstChild);
+                }
+
+                // creating <li>, <div> inside and pushing elements into them.
+                for (var i = 0; i < categoriesTasks.length; i++) {
+
+                    // creating new element <li>
+                    var newLi = document.createElement("li");
+                    // taking elements from object sent by user (name, date, priority)
+                    var categoriesElements = Object.values(categoriesTasks[i]);
+                    // assigning new <li> to <ul>
+                    tasksToDo.appendChild(newLi);
+
+                    // creating new divs in <li> and putting user information in divs
+                    for (var j = 0; j < 4; j++) {
+                        var newDiv = document.createElement("div");
+                        tasksToDo.children[i].append(newDiv);
+                        if (j !== 0) {
+                            newDiv.innerText = (categoriesElements[j - 1]);
+                        }
+                    }
+                }
+            })
+        }
+    }
+
+
+//xxxx
+
 
 //---------ADD CATEGORY--------FINISH----------------
 
@@ -419,7 +428,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     var mainAddTaskBtn = document.querySelector('.addTaskButton');
     var toggledSection = document.querySelector('.sectionAddTask');
-    mainAddTaskBtn.addEventListener("click", function() {
+    mainAddTaskBtn.addEventListener("click", function () {
         toggledSection.classList.toggle('invisible');
     });
 
@@ -427,6 +436,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // Create a new list item when clicking on the "Add" button
     var addTaskBtn = document.querySelector('.addBtn');
     addTaskBtn.addEventListener('click', newElement);
+
     function newElement() {
 
         var taskName = document.getElementById("myInput").value;
@@ -440,7 +450,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             }
         }
-        var categoryObject = { name: taskName, date: taskDate, priority: priorityValue, catId: currentCategoryChosen };
+        var categoryObject = {name: taskName, date: taskDate, priority: priorityValue, catId: currentCategoryChosen};
         console.log(categoryObject.catId);
         all.push(categoryObject);
         document.getElementById("myInput").value = "";
