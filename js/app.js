@@ -408,12 +408,11 @@ document.addEventListener("DOMContentLoaded", function () {
         if (options) {
             for (var i = 0; i < options.length; i++) {
                 if (options[i].checked) {
-                    priorityValue = options[i].value;
+                    var priorityValue = options[i].value;
                 }
             }
         }
-        var taskPriority = priorityValue;
-        var categoryObject = { name: taskName, date: taskDate, priority: taskPriority };
+        var categoryObject = { name: taskName, date: taskDate, priority: priorityValue };
         all.push(categoryObject);
         document.getElementById("myInput").value = "";
 

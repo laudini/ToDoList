@@ -35,6 +35,7 @@ li {
     border: pink 2px solid;
     margin: 0 auto;
     display: flex;
+    position: relative;
 }
 /* ------------- menu-left --------------*/
 
@@ -148,7 +149,8 @@ li {
     width: 175px;
     height: 100px;
     background: yellow;
-    display:block
+    display:block;
+    z-index: 100;
 }
 
 #input-category{
