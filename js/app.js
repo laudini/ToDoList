@@ -353,7 +353,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
-    //xxxx
+    // filling category buttons
 
     function catFilling() {
         var catButtons = document.getElementsByClassName('categ-list');
@@ -395,9 +395,6 @@ document.addEventListener("DOMContentLoaded", function () {
             })
         }
     }
-
-
-//xxxx
 
 
 //---------ADD CATEGORY--------FINISH----------------
