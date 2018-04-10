@@ -400,16 +400,10 @@ document.addEventListener("DOMContentLoaded", function () {
     var addTaskBtn = document.querySelector('.addBtn');
     addTaskBtn.addEventListener('click', newElement);
     function newElement() {
-        var li = document.createElement("li");
-        var liDiv1 = document.createElement('div');
-        var liDiv2 = document.createElement('div');
-        var liDiv3 = document.createElement('div');
-        var liDiv4 = document.createElement('div');
 
-        liDiv1.innerText = document.getElementById("myInput").value;
-        liDiv2.innerText = document.getElementById("date").value;
+        var taskName = document.getElementById("myInput").value;
+        var taskDate = document.getElementById("date").value;
         var options = document.getElementsByName("kolor");
-        var priorityValue = 1;
 
         if (options) {
             for (var i = 0; i < options.length; i++) {
@@ -418,31 +412,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             }
         }
-        liDiv3.innerText = priorityValue;
-
-        li.appendChild(liDiv4);
-        li.appendChild(liDiv1);
-        li.appendChild(liDiv2);
-        li.appendChild(liDiv3);
-        if (liDiv1.innerText === '' || liDiv2.innerText === '') {
-            alert("You must write something!");
-        } else {
-            document.querySelector(".tasks-to-do").appendChild(li);
-        }
+        var taskPriority = priorityValue;
+        var categoryObject = { name: taskName, date: taskDate, priority: taskPriority };
+        all.push(categoryObject);
         document.getElementById("myInput").value = "";
 
-        var span = document.createElement("SPAN");
-        var txt = document.createTextNode("\u00D7");
-        span.onclick = function () {
-            var div = this.parentElement;
-            div.parentElement.removeChild(div);
-            // div.style.display = "none";
-
-        };
-
-        span.className = "close";
-        span.appendChild(txt);
-        li.appendChild(span);
         toggledSection.classList.toggle('invisible');
     }
 });
