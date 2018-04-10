@@ -9,30 +9,11 @@ document.addEventListener("DOMContentLoaded", function () {
     var weekBtn = document.querySelector("#weekBtn");           // WEEK <button>
     var allBtn = document.querySelector("#allBtn");             // ALL <button>
     var tasksToDo = document.querySelector(".tasks-to-do");     // TASKS TO DO <ul>
+    var currentCategoryChosen = 0;
+    var categoriesTasks = [];
 
 // all required arrays
-    var all = [
-        {
-            name: "umyj naczynia",
-            date: "2018-04-10",
-            priority: 3
-        },
-        {
-            name: "ustaw nowe zadanie",
-            date: "2018-04-09",
-            priority: 4
-        },
-
-        {
-            name: "ustaw tez nowe zadanie",
-            date: "2018-04-12",
-            priority: 4
-        },
-        {
-            name: "ustaw nowe zadanie",
-            date: "2018-07-06",
-            priority: 5
-        }];
+    var all = [];
     var today = [];
     var tomorrow = [];
     var week = [];
@@ -338,15 +319,61 @@ document.addEventListener("DOMContentLoaded", function () {
                     if (inputCategory.value !== "") {
                         var newCategory = document.createElement("li");
                         var newButton = document.createElement('button');
+
+
+                        // ADD FIRST LETTER OF CAT NAME TO BUTTON
                         newButton.innerText = inputCategory.value[0];
+                        userCats.push(inputCategory.value);
                         newButton.classList.add("categ-list");
                         newCategory.appendChild(newButton);
-                        //categList.append(newCategory);
+                        categList.append(newCategory);
                         //inputCategory.value="";
 
-                        categList.insertBefore(newCategory, categList.firstChild);
-
+                        // categList.insertBefore(newCategory, categList.firstChild);
                         parent.removeChild(element);
+                        // ADD ID to button
+                        newButton.id = document.querySelectorAll(".categ-list").length - 1;
+                        currentCategoryChosen = newButton.id;
+                        console.log(currentCategoryChosen);
+                        newButton.addEventListener("click", function(){
+                            categoriesTasks = [];
+                            currentCategoryChosen = this.id;
+                            console.log('this id', currentCategoryChosen);
+                            for (var i = 0; i < all.length; i++) {
+                                for (var j in all[i]) {
+                                    if (all[i][j] === currentCategoryChosen) {
+                                        console.log(all[i]);
+                                        categoriesTasks.push(all[i]);
+                                    }
+                                }
+                            }
+                            // clearing <ul>
+                            while (tasksToDo.firstChild) {
+                                tasksToDo.removeChild(tasksToDo.firstChild);
+                            }
+
+                            // creating <li>, <div> inside and pushing elements into them.
+                            for (var i = 0; i < categoriesTasks.length; i++) {
+
+                                // creating new element <li>
+                                var newLi = document.createElement("li");
+                                // taking elements from object sent by user (name, date, priority)
+                                var categoriesElements = Object.values(categoriesTasks[i]);
+                                // assigning new <li> to <ul>
+                                tasksToDo.appendChild(newLi);
+
+                                // creating new divs in <li> and putting user information in divs
+                                for (var j = 0; j < 4; j++) {
+                                    var newDiv = document.createElement("div");
+                                    tasksToDo.children[i].append(newDiv);
+                                    if (j !== 0) {
+                                        newDiv.innerText = (categoriesElements[j - 1]);
+                                    }
+                                }
+                            }
+                        })
+
+
                     }
 
 
@@ -365,6 +392,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 //---------ADD CATEGORY--------FINISH----------------
+
 
 // Task adding feature WORK IN PROGRESS
 
@@ -412,7 +440,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             }
         }
-        var categoryObject = { name: taskName, date: taskDate, priority: priorityValue };
+        var categoryObject = { name: taskName, date: taskDate, priority: priorityValue, catId: currentCategoryChosen };
+        console.log(categoryObject.catId);
         all.push(categoryObject);
         document.getElementById("myInput").value = "";
 
