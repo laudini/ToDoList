@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", function () {
 // All variables are here
     var hamburger = document.querySelector(".hamb");
     var menuToggle = document.getElementsByClassName("menu-list");
+    var leftCol = document.querySelector(".main-col-1");
+    var rightCol = document.querySelector(".main-col-2");
     var todayBtn = document.querySelector("#todayBtn");         // TODAY <button>
     var tomorrowBtn = document.querySelector("#tomorrowBtn");   // TOMORROW <button>
     var weekBtn = document.querySelector("#weekBtn");           // WEEK <button>
@@ -22,9 +24,11 @@ document.addEventListener("DOMContentLoaded", function () {
 // HAMBURGER
 
     hamburger.addEventListener("click", function () {
-        for (var i = 0; i < menuToggle.length; i++) {
-            menuToggle[i].classList.toggle("wide-menu");
-        }
+        leftCol.classList.toggle("wide-menu");
+        rightCol.style.filter = rightCol.style.filter != "blur(10px)" ? "blur(10px)" : "blur(0)";
+        // for (var i = 0; i < menuToggle.length; i++) {
+        //     menuToggle[i].classList.toggle("wide-menu");
+        // }
     });
 
 // Button "ALL" functionality
@@ -361,10 +365,8 @@ document.addEventListener("DOMContentLoaded", function () {
             catButtons[i].addEventListener("click", function () {
                 categoriesTasks = [];
                 currentCategoryChosen = this.id;
-                console.log('kat: ', currentCategoryChosen);
                 for (var i = 0; i < all.length; i++) {
                     if (all[i].catId === currentCategoryChosen) {
-                        console.log(all[i]);
                         categoriesTasks.push(all[i]);
                     }
                 }
@@ -448,7 +450,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
         var categoryObject = {name: taskName, date: taskDate, priority: priorityValue, catId: currentCategoryChosen};
-        console.log(categoryObject.catId);
         all.push(categoryObject);
         document.getElementById("myInput").value = "";
 

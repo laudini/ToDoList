@@ -1,6 +1,9 @@
 html {
     height: 100%
 }
+body {
+    background: #00a99d;
+}
 * {
     box-sizing: border-box;
 }
@@ -15,11 +18,13 @@ li {
     display: none;
 }
 .menu-list {
-    background: #0d3349;
-    border: 2px solid purple;
     display: block;
-    margin: 5px;
-    width: 40px;
+    margin: 10px 5px 5px 5px;
+    max-width: 35px;
+}
+.menu-list button {
+    max-width: 30px;
+    max-height: 30px;
 }
 .main-col-1 {
     background: #3D8EB9;
@@ -40,9 +45,9 @@ li {
 /* ------------- menu-left --------------*/
 
 .wide-menu{
-    border:3px dotted red;
-    width:150px;
-    background: yellow;
+    border: dotted;
+    width:300px;
+    background: orange;
 }
 
 /* ------------- header -----------------*/
@@ -275,8 +280,6 @@ input {
 .listActive {
     display: block;
 }
-
-
 
 input[type=checkbox] {
 
