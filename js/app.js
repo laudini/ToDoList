@@ -455,4 +455,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
         toggledSection.classList.toggle('invisible');
     }
+
+
+
+//---------------------------------SEARCH--------------------------------
+    
+
+
+
+//-----------------------------SEARCH-----FINISH---------------------------
+
 });
