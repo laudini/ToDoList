@@ -23,8 +23,11 @@ li {
     max-width: 35px;
 }
 .menu-list button {
-    max-width: 30px;
-    max-height: 30px;
+    width: 40px;
+    height: 40px;
+    max-width: 40px;
+    max-height: 40px;
+    border-radius: 40%;
 }
 .main-col-1 {
     background: #3D8EB9;
@@ -202,23 +205,23 @@ li {
 }
 
 /* Set all odd list items to a different color (zebra-stripes) */
-ul li:nth-child(odd) {
-    background: #f9f9f9;
-}
+/*ul li:nth-child(odd) {*/
+    /*background: #f9f9f9;*/
+/*}*/
 
-/* Darker background-color on hover */
-ul li:hover {
-    background: #ddd;
-}
+/*!* Darker background-color on hover *!*/
+/*ul li:hover {*/
+    /*background: #ddd;*/
+/*}*/
 
-/* When clicked on, add a background color and strike out text */
-ul li.checked {
-    background: #888;
-    color: #fff;
-    text-decoration: line-through;
-}
+/*!* When clicked on, add a background color and strike out text *!*/
+/*ul li.checked {*/
+    /*background: #888;*/
+    /*color: #fff;*/
+    /*text-decoration: line-through;*/
+/*}*/
 
-/* Add a "checked" mark when clicked on */
+/*!* Add a "checked" mark when clicked on *!*/
 ul li.checked::before {
     content: '';
     border-color: #fff;
