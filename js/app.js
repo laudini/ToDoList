@@ -27,23 +27,35 @@ document.addEventListener("DOMContentLoaded", function () {
     hamburger.addEventListener("click", function () {
         leftCol.classList.toggle("wide-menu");
         rightCol.style.filter = rightCol.style.filter != "blur(10px)" ? "blur(10px)" : "blur(0)";
+        var catButtons = document.getElementsByClassName("categ-list");
+
         if (openHamburger === false) {
             todayBtn.innerText = "TODAY";
             tomorrowBtn.innerText = "TOMORROW";
             weekBtn.innerText = "UPCOMING 7 DAYS";
             allBtn.innerText = "ALL TASKS";
             openHamburger = true;
+            for (var i = 0; i < catButtons.length; i++ ) {
+                catButtons[i].innerText = userCats[i];
+            }
         } else {
             todayBtn.innerText = "T";
             tomorrowBtn.innerText = "T";
             weekBtn.innerText = "7";
             allBtn.innerText = "A";
             openHamburger = false;
+            for (var i = 0; i < catButtons.length; i++ ) {
+                catButtons[i].innerText = userCats[i][0];
+            }
         }
         todayBtn.classList.toggle("wide-today-btn");
         tomorrowBtn.classList.toggle("wide-tomorrow-btn");
         weekBtn.classList.toggle("wide-week-btn");
         allBtn.classList.toggle("wide-all-btn");
+
+        for (var i = 0; i < catButtons.length; i++ ) {
+            catButtons[i].classList.toggle("wide-all-btn");
+        }
     });
 
 // Button "ALL" functionality
