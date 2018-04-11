@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // All variables are here
     var hamburger = document.querySelector(".hamb");
-    var menuToggle = document.getElementsByClassName("menu-list");
+    var leftMenuLis = document.getElementsByClassName("menu-list");
     var leftCol = document.querySelector(".main-col-1");
     var rightCol = document.querySelector(".main-col-2");
     var todayBtn = document.querySelector("#todayBtn");         // TODAY <button>
@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var tasksToDo = document.querySelector(".tasks-to-do");     // TASKS TO DO <ul>
     var currentCategoryChosen = 0;
     var categoriesTasks = [];
+    var openHamburger = false;
 
 // all required arrays
     var all = [];
@@ -26,9 +27,23 @@ document.addEventListener("DOMContentLoaded", function () {
     hamburger.addEventListener("click", function () {
         leftCol.classList.toggle("wide-menu");
         rightCol.style.filter = rightCol.style.filter != "blur(10px)" ? "blur(10px)" : "blur(0)";
-        // for (var i = 0; i < menuToggle.length; i++) {
-        //     menuToggle[i].classList.toggle("wide-menu");
-        // }
+        if (openHamburger === false) {
+            todayBtn.innerText = "TODAY";
+            tomorrowBtn.innerText = "TOMORROW";
+            weekBtn.innerText = "UPCOMING 7 DAYS";
+            allBtn.innerText = "ALL TASKS";
+            openHamburger = true;
+        } else {
+            todayBtn.innerText = "T";
+            tomorrowBtn.innerText = "T";
+            weekBtn.innerText = "7";
+            allBtn.innerText = "A";
+            openHamburger = false;
+        }
+        todayBtn.classList.toggle("wide-today-btn");
+        tomorrowBtn.classList.toggle("wide-tomorrow-btn");
+        weekBtn.classList.toggle("wide-week-btn");
+        allBtn.classList.toggle("wide-all-btn");
     });
 
 // Button "ALL" functionality
