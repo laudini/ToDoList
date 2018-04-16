@@ -418,6 +418,11 @@ document.addEventListener("DOMContentLoaded", function () {
                             tasksToDo.children[i].append(newDiv);
                             if (j !== 0) {
                                 newDiv.innerText = (categoriesElements[j - 1]);
+                            } else {
+                                var checkBox = document.createElement('input');
+                                newDiv.append(checkBox);
+                                checkBox.classList.add("completeCheckbox");
+                                checkBox.type = "checkbox";
                             }
                         }
                     }

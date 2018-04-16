@@ -128,6 +128,10 @@ li {
 
 /* --------------tasks to do -------------*/
 
+.completeCheckbox {
+
+}
+
 .main-body .tasks-to-do {
     border: 1px red solid;
     height: auto;
