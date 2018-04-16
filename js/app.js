@@ -407,6 +407,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                         // creating new element <li>
                         var newLi = document.createElement("li");
+                        newLi.classList.add('taskLis');
                         // taking elements from object sent by user (name, date, priority)
                         var categoriesElements = Object.values(categoriesTasks[i]);
                         // assigning new <li> to <ul>
@@ -415,6 +416,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         // creating new divs in <li> and putting user information in divs
                         for (var j = 0; j < 4; j++) {
                             var newDiv = document.createElement("div");
+                            newDiv.classList.add("taskDivs");
                             tasksToDo.children[i].append(newDiv);
                             if (j !== 0) {
                                 newDiv.innerText = (categoriesElements[j - 1]);

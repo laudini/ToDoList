@@ -1,9 +1,11 @@
 html {
     height: 100%
 }
+
 body {
     background: #00a99d;
 }
+
 * {
     box-sizing: border-box;
 }
@@ -12,56 +14,67 @@ ul {
     padding: 0;
     margin: 0;
 }
+
 li {
     list-style-type: none;
 }
+
 .invisible {
     display: none;
 }
+
 .menu-list {
     display: block;
     margin: 10px 5px 5px 5px;
     max-width: 35px;
 }
+
 .menu-list button {
     width: 40px;
     height: 40px;
     border-radius: 40%;
 }
+
 .menu-list .wide-today-btn {
     width: 120px;
     height: 40px;
     border-radius: 10%;
 }
+
 .menu-list .wide-tomorrow-btn {
     width: 120px;
     height: 40px;
     border-radius: 10%;
 }
+
 .menu-list .wide-week-btn {
     width: 120px;
     height: 40px;
     border-radius: 10%;
 }
+
 .menu-list .wide-all-btn {
     width: 120px;
     height: 40px;
     border-radius: 10%;
 }
+
 .main-col-1 {
     background: #3D8EB9;
     border: 2px solid black;
 }
+
 .main-col-2 {
     background: #3D8EB9;
     border: 2px solid black;
 }
+
 /*.main-col-1 > div {*/
-    /*border: 2px solid green;*/
-    /*height: 100%;*/
+/*border: 2px solid green;*/
+/*height: 100%;*/
 /*}*/
 .main-container {
-    background: sandybrown;
+    background: #3D8EB9;
     width: 100%;
     height: 100%;
     border: pink 2px solid;
@@ -69,18 +82,18 @@ li {
     display: flex;
     position: relative;
 }
+
 /* ------------- menu-left --------------*/
 
-.wide-menu{
+.wide-menu {
     border: dotted;
-    width:300px;
-    background: lightskyblue;
+    width: 300px;
+    background: #3D8EB9;
 }
 
 /* ------------- header -----------------*/
 .header {
-    border: 1px red solid;
-    background: #00bb33;
+    background: #3D8EB9;
     width: 100%;
     height: 50px;
     display: inline-block;
@@ -95,7 +108,6 @@ li {
     padding: 0;
 }
 
-
 .header-add-category {
     width: 15%;
     height: 100%;
@@ -103,7 +115,6 @@ li {
     display: inline-block;
     margin: 0;
     padding: 0;
-
 
 }
 
@@ -114,13 +125,10 @@ li {
     display: inline-block;
     margin: 0;
     padding: 0;
-}   
-
-
+}
 
 /* ----------- body app ------------------*/
 .main-body {
-    border: 1px red solid;
     width: 100%;
     height: auto;
     position: relative;
@@ -129,11 +137,41 @@ li {
 /* --------------tasks to do -------------*/
 
 .completeCheckbox {
+    max-width: 10px;
+    max-height: 10px;
+}
 
+.taskLis {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.taskDivs {
+    padding: 5px;
+}
+
+.taskDivs:nth-child(1) {
+    width: 30%;
+}
+
+.taskDivs:nth-child(2) {
+    width: 70%;
+}
+
+.taskDivs:nth-child(3) {
+    width: 70%;
+}
+
+.taskDivs:nth-child(4) {
+    background: darkslateblue;
+    border-radius: 50%;
+    margin-right: 15px;
+    text-align: center;
+    font-weight: 900;
 }
 
 .main-body .tasks-to-do {
-    border: 1px red solid;
     height: auto;
     width: auto;
 }
@@ -142,7 +180,7 @@ li {
     border: 1px black solid;
     list-style-type: none;
     width: 100%;
-    word-wrap:break-word;
+    word-wrap: break-word;
 
 }
 
@@ -151,14 +189,14 @@ li {
     background-color: red;
     border: none;
     color: white;
-    padding: 10px 20px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+    display: inline;
     font-size: 14px;
     border-radius: 5px;
     float: left;
-    margin-left: 35%;
+    margin-top: 15%;
+    margin-left: 5%;
 }
 
 .btn-tasks-finished:hover {
@@ -166,14 +204,13 @@ li {
     color: white;
 }
 
-
 /* ---------tasks finished ---------------*/
 
 .tasks-finished li {
     border: 1px black solid;
     list-style-type: none;
     width: 100%;
-    word-wrap:break-word;
+    word-wrap: break-word;
     display: inline-block;
 }
 
@@ -184,37 +221,41 @@ li {
 /*----------- adding category-------------*/
 .window {
     position: absolute;
-    left:120px;
+    border: 2px solid black;
+    border-radius:  5%;
+    left: 120px;
     margin: auto;
     width: 175px;
     height: 100px;
-    background: yellow;
-    display:block;
+    background: lightgoldenrodyellow;
+    display: block;
     z-index: 100;
 }
 
-#input-category{
+#input-category {
     height: 30px;
     width: 150px;
-    border: 1px solid fuchsia;
+    border: 1px solid deepskyblue;
     font-size: 20px;
     font-weight: 300;
-    margin:10px;
+    margin: 10px;
 
 }
 
-#btn-category{
+#btn-category {
 
     height: 22px;
     width: 100px;
-    background: red;
+    background: deepskyblue;
 }
-#cancel{
-    background:orange;
+
+#cancel {
+    background: deepskyblue;
 }
+
 /*-------------- section to add task -------------------*/
 .sectionAddTask {
-    background: #00FF00;
+    background: deepskyblue;
     position: absolute;
     top: 0%;
     left: 0%;
@@ -238,19 +279,19 @@ li {
 
 /* Set all odd list items to a different color (zebra-stripes) */
 /*ul li:nth-child(odd) {*/
-    /*background: #f9f9f9;*/
+/*background: #f9f9f9;*/
 /*}*/
 
 /*!* Darker background-color on hover *!*/
 /*ul li:hover {*/
-    /*background: #ddd;*/
+/*background: #ddd;*/
 /*}*/
 
 /*!* When clicked on, add a background color and strike out text *!*/
 /*ul li.checked {*/
-    /*background: #888;*/
-    /*color: #fff;*/
-    /*text-decoration: line-through;*/
+/*background: #888;*/
+/*color: #fff;*/
+/*text-decoration: line-through;*/
 /*}*/
 
 /*!* Add a "checked" mark when clicked on *!*/
@@ -300,13 +341,13 @@ input {
 
 /* ----------- calendar ---------------*/
 
-.input{
+.input {
     padding-left: 30px;
     display: block;
 
 }
 
-#date{
+#date {
     width: 40%;
     border: 1px black solid;
 
@@ -319,7 +360,6 @@ input {
 input[type=checkbox] {
 
 }
-
 
 .priority {
     display: inline-block;
