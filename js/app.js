@@ -26,7 +26,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         hamburger.addEventListener("click", function () {
             leftCol.classList.toggle("wide-menu");
-            rightCol.style.filter = rightCol.style.filter != "blur(10px)" ? "blur(10px)" : "blur(0)";
+            // TO ZMIENIC NA MAX/WIN WIDTH VVVV
+            rightCol.style.filter = rightCol.style.filter != "blur(8px)" ? "blur(8px)" : "blur(0)";
             var catButtons = document.getElementsByClassName("categ-list");
 
             if (openHamburger === false) {
