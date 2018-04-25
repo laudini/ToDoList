@@ -492,10 +492,36 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 //////////////// SEARCH ////////////////////////
     document.querySelector('.search').addEventListener("click", function(){
-        var searchFor = this.previousElementSibling.value;
-        console.log(searchFor);
-    })
-        
+        var value = this.previousElementSibling.value.toUpperCase();
+
+               // var value = searchFor.toUpperCase();
+                //var taskLi = document.querySelectorAll("#myUL > li");
+                console.log(all.length);
+        for(var i=0;i<all.length;i++) {
+                console.log(all[i].name);
+                    if (all[i].name.toUpperCase().search(value) > -1){
+                        //console.log(all[i]);
+                        var newLi = document.createElement("li");
+                            var weekElements = Object.values(all[i]);
+                            tasksToDo.appendChild(newLi);
+                            for (var j = 0; j < 4; j++) {
+                                var newDiv = document.createElement("div");
+                                console.log(tasksToDo);
+                                console.log(tasksToDo.children[i]);
+                                tasksToDo.children[i].append(newDiv);
+                                if (j !== 0) {
+                                    newDiv.innerText = (weekElements[j - 1]);
+                                }
+                            }
+                        }
+                        //tasksToDo.append(all[i]);
+
+                    else {
+                    console.log("brak");
+                    }
+                }
+    });
+       ///// linia 510 nie działa
         
         
 }
