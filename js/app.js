@@ -490,6 +490,13 @@ document.addEventListener("DOMContentLoaded", function () {
             const el = document.querySelector('.tasks-finished');
             el.style.visibility = el.style.visibility === "hidden" ? "visible": "hidden";
         }
-
+//////////////// SEARCH ////////////////////////
+    document.querySelector('.search').addEventListener("click", function(){
+        var searchFor = this.previousElementSibling.value;
+        console.log(searchFor);
+    })
+        
+        
+        
 }
 );

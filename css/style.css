@@ -93,8 +93,16 @@ li {
     display: inline-block;
     margin: 0;
     padding: 0;
-}
 
+}
+.header-logo input{
+width:95px;
+    height: 90%;
+}
+.header-logo button{
+    width: 30px;
+    height: 90%;
+}
 
 .header-add-category {
     width: 15%;
@@ -105,6 +113,10 @@ li {
     padding: 0;
 
 
+}
+
+.add-category{
+    width:30px;
 }
 
 .header-progress-tracker {
