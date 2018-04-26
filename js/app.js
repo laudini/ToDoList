@@ -498,9 +498,9 @@ document.addEventListener("DOMContentLoaded", function () {
             var value = this.previousElementSibling.value.toUpperCase();
             var n = 0;
 
-            if(all.length==0){
+            if (all.length == 0) {
                 var newLi = document.createElement("li");
-                newLi.innerText = "Brak zadań z wyszukiwaną frazą"
+                newLi.innerText = "Brak zadań z wyszukiwaną frazą";
                 tasksToDo.appendChild(newLi);
 
             }
@@ -521,11 +521,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
                 else {
                     var newLi = document.createElement("li");
-                    newLi.innerText = "Brak zadań z wyszukiwaną frazą"
+                    newLi.innerText = "Brak zadań z wyszukiwaną frazą";
                     tasksToDo.appendChild(newLi);
                 }
             }
         });
-
+/////////////////////////////// SEARCH FINISH //////////////////////////
     }
 );
