@@ -86,7 +86,7 @@ li {
 /* ------------- menu-left --------------*/
 
 .wide-menu {
-    border: solid black;
+    border: 1px solid black;
     width: 300px;
     background: #3D8EB9;
 }
