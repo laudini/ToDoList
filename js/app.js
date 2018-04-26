@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
         var currentCategoryChosen = 0;
         var categoriesTasks = [];
         var openHamburger = false;
+        var shownTasks = document.getElementsByClassName("completeCheckbox");
 
 // all required arrays
         var all = [];
@@ -66,6 +67,9 @@ document.addEventListener("DOMContentLoaded", function () {
             while (tasksToDo.firstChild) {
                 tasksToDo.removeChild(tasksToDo.firstChild);
             }
+            while (tasksFinished.firstChild) {
+                tasksFinished.removeChild(tasksFinished.firstChild);
+            }
 
             // creating <li>, <div> inside and pushing elements into them.
             for (var i = 0; i < all.length; i++) {
@@ -90,6 +94,12 @@ document.addEventListener("DOMContentLoaded", function () {
                             fcheckBox.classList.add("completeCheckbox");
                             fcheckBox.type = "checkbox";
                             fcheckBox.checked = true;
+                            fcheckBox.id = String(i);
+                            fcheckBox.addEventListener("change", (e)=> {
+                                console.log(e.currentTarget.id);
+
+                                all[e.currentTarget.id].finished = false;
+                            })
                         }
                     }
                 } else {
@@ -113,9 +123,8 @@ document.addEventListener("DOMContentLoaded", function () {
                             checkBox.classList.add("completeCheckbox");
                             checkBox.type = "checkbox";
                             checkBox.id = String(i);
-                            checkBox.addEventListener("change", ()=> {
-                                all[checkBox.id].finished = true;
-                                console.log(all[checkBox.id].finished);
+                            checkBox.addEventListener("change", (e)=> {
+                                all[e.currentTarget.id].finished = true;
                             })
                         }
                     }
