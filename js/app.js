@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
         hamburger.addEventListener("click", function () {
             leftCol.classList.toggle("wide-menu");
             // TO ZMIENIC NA MAX/WIN WIDTH VVVV
-            rightCol.style.filter = rightCol.style.filter != "blur(8px)" ? "blur(8px)" : "blur(0)";
+            rightCol.style.filter = rightCol.style.filter != "blur(6px)" ? "blur(6px)" : "blur(0)";
             var catButtons = document.getElementsByClassName("categ-list");
 
             if (openHamburger === false) {
@@ -74,15 +74,22 @@ document.addEventListener("DOMContentLoaded", function () {
                 var newLi = document.createElement("li");
                 // taking elements from object sent by user (name, date, priority)
                 var allElements = Object.values(all[i]);
+                console.log(allElements);
                 // assigning new <li> to <ul>
                 tasksToDo.appendChild(newLi);
 
                 // creating new divs in <li> and putting user information in divs
                 for (var j = 0; j < 4; j++) {
                     var newDiv = document.createElement("div");
+                    newDiv.classList.add("taskDivs");
                     tasksToDo.children[i].append(newDiv);
                     if (j !== 0) {
                         newDiv.innerText = (allElements[j - 1]);
+                    } else {
+                        var checkBox = document.createElement('input');
+                        newDiv.append(checkBox);
+                        checkBox.classList.add("completeCheckbox");
+                        checkBox.type = "checkbox";
                     }
                 }
             }
@@ -111,9 +118,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 // creating new divs in <li> and putting user information in divs
                 for (var j = 0; j < 4; j++) {
                     var newDiv = document.createElement("div");
+                    newDiv.classList.add("taskDivs");
                     tasksToDo.children[i].append(newDiv);
                     if (j !== 0) {
                         newDiv.innerText = (todayElements[j - 1]);
+                    } else {
+                        var checkBox = document.createElement('input');
+                        newDiv.append(checkBox);
+                        checkBox.classList.add("completeCheckbox");
+                        checkBox.type = "checkbox";
                     }
                 }
             }
@@ -142,9 +155,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 // creating new divs in <li> and putting user information in divs
                 for (var j = 0; j < 4; j++) {
                     var newDiv = document.createElement("div");
+                    newDiv.classList.add("taskDivs");
                     tasksToDo.children[i].append(newDiv);
                     if (j !== 0) {
                         newDiv.innerText = (tommorowElements[j - 1]);
+                    } else {
+                        var checkBox = document.createElement('input');
+                        newDiv.append(checkBox);
+                        checkBox.classList.add("completeCheckbox");
+                        checkBox.type = "checkbox";
                     }
                 }
             }
@@ -174,9 +193,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 // creating new divs in <li> and putting user information in divs
                 for (var j = 0; j < 4; j++) {
                     var newDiv = document.createElement("div");
+                    newDiv.classList.add("taskDivs");
                     tasksToDo.children[i].append(newDiv);
                     if (j !== 0) {
-                        newDiv.innerText = (weekElements[j - 1]);
+                        newDiv.innerText = weekElements[j - 1];
+                    } else {
+                        var checkBox = document.createElement('input');
+                        newDiv.append(checkBox);
+                        checkBox.classList.add("completeCheckbox");
+                        checkBox.type = "checkbox";
                     }
                 }
             }
