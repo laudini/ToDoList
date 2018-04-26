@@ -497,7 +497,13 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             var value = this.previousElementSibling.value.toUpperCase();
             var n = 0;
-            console.log(all.length);
+
+            if(all.length==0){
+                var newLi = document.createElement("li");
+                newLi.innerText = "Brak zadań z wyszukiwaną frazą"
+                tasksToDo.appendChild(newLi);
+
+            }
             for (var i = 0; i < all.length; i++) {
                 if (all[i].name.toUpperCase().search(value) > -1) {
                     console.log(all[i].name.toUpperCase());
@@ -514,10 +520,12 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 }
                 else {
-                    console.log("brak");
+                    var newLi = document.createElement("li");
+                    newLi.innerText = "Brak zadań z wyszukiwaną frazą"
+                    tasksToDo.appendChild(newLi);
                 }
             }
         });
-        
+
     }
 );
