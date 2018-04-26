@@ -488,41 +488,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
         document.getElementById("t-f").onclick = function () {
             const el = document.querySelector('.tasks-finished');
-            el.style.visibility = el.style.visibility === "hidden" ? "visible": "hidden";
+            el.style.visibility = el.style.visibility === "hidden" ? "visible" : "hidden";
         }
 //////////////// SEARCH ////////////////////////
-    document.querySelector('.search').addEventListener("click", function(){
-        var value = this.previousElementSibling.value.toUpperCase();
-
-               // var value = searchFor.toUpperCase();
-                //var taskLi = document.querySelectorAll("#myUL > li");
-                console.log(all.length);
-        for(var i=0;i<all.length;i++) {
-                console.log(all[i].name);
-                    if (all[i].name.toUpperCase().search(value) > -1){
-                        //console.log(all[i]);
-                        var newLi = document.createElement("li");
-                            var weekElements = Object.values(all[i]);
-                            tasksToDo.appendChild(newLi);
-                            for (var j = 0; j < 4; j++) {
-                                var newDiv = document.createElement("div");
-                                console.log(tasksToDo);
-                                console.log(tasksToDo.children[i]);
-                                tasksToDo.children[i].append(newDiv);
-                                if (j !== 0) {
-                                    newDiv.innerText = (weekElements[j - 1]);
-                                }
-                            }
+        document.querySelector('.search').addEventListener("click", function () {
+            while (tasksToDo.firstChild) {
+                tasksToDo.removeChild(tasksToDo.firstChild);
+            }
+            var value = this.previousElementSibling.value.toUpperCase();
+            var n = 0;
+            console.log(all.length);
+            for (var i = 0; i < all.length; i++) {
+                if (all[i].name.toUpperCase().search(value) > -1) {
+                    console.log(all[i].name.toUpperCase());
+                    n = n + 1;
+                    var newLi = document.createElement("li");
+                    var weekElements = Object.values(all[i]);
+                    tasksToDo.appendChild(newLi);
+                    for (var j = 0; j < 4; j++) {
+                        var newDiv = document.createElement("div");
+                        tasksToDo.children[n - 1].append(newDiv);
+                        if (j !== 0) {
+                            newDiv.innerText = (weekElements[j - 1]);
                         }
-                        //tasksToDo.append(all[i]);
-
-                    else {
-                    console.log("brak");
                     }
                 }
-    });
-       ///// linia 510 nie działa
+                else {
+                    console.log("brak");
+                }
+            }
+        });
         
-        
-}
+    }
 );
