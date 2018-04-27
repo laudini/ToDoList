@@ -525,23 +525,43 @@ document.addEventListener("DOMContentLoaded", function () {
             btnCategory.addEventListener('click', function () {
 
                     if (inputCategory.value !== "") {
-                        var newCategory = document.createElement("li");
-                        var newButton = document.createElement('button');
+                        if (addCategory.classList.contains('wide-addCat-btn')) {
+                            var newCategory = document.createElement("li");
+                            var newButton = document.createElement('button');
 
 
-                        // ADD FIRST LETTER OF CAT NAME TO BUTTON
-                        newButton.innerText = inputCategory.value[0];
-                        userCats.push(inputCategory.value);
-                        newButton.classList.add("categ-list");
-                        newCategory.appendChild(newButton);
-                        categList.append(newCategory);
-                        //inputCategory.value="";
+                            // ADD FIRST LETTER OF CAT NAME TO BUTTON
+                            newButton.innerText = inputCategory.value;
+                            userCats.push(inputCategory.value);
+                            newButton.classList.add("categ-list");
+                            newButton.classList.add("wide-all-btn");
+                            newCategory.appendChild(newButton);
+                            categList.append(newCategory);
 
-                        parent.removeChild(element);
-                        // ADD ID to button
-                        newButton.id = document.querySelectorAll(".categ-list").length - 1;
-                        currentCategoryChosen = newButton.id;
+                            parent.removeChild(element);
+                            // ADD ID to button
+                            newButton.id = document.querySelectorAll(".categ-list").length - 1;
+                            currentCategoryChosen = newButton.id;
 
+                        } else {
+
+                            var newCategory = document.createElement("li");
+                            var newButton = document.createElement('button');
+
+
+                            // ADD FIRST LETTER OF CAT NAME TO BUTTON
+                            newButton.innerText = inputCategory.value[0];
+                            userCats.push(inputCategory.value);
+                            newButton.classList.add("categ-list");
+                            newCategory.appendChild(newButton);
+                            categList.append(newCategory);
+                            //inputCategory.value="";
+
+                            parent.removeChild(element);
+                            // ADD ID to button
+                            newButton.id = document.querySelectorAll(".categ-list").length - 1;
+                            currentCategoryChosen = newButton.id;
+                        }
 
                     }
 
