@@ -718,5 +718,25 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
     });
+    /////////////////////////////// SEARCH FINISH //////////////////////////
+
+
+    // PROGRESS
+
+
+    document.querySelector('.progress-button').addEventListener("click", function () {
+
+        document.querySelector('.show-progress').classList.toggle('invisible');
+    });
+
+    document.querySelector('.close-progress').addEventListener("click", function () {
+
+        document.querySelector('.show-progress').classList.toggle('invisible');
+    })
+
+
+
+
+
 });
-/////////////////////////////// SEARCH FINISH //////////////////////////
+
