@@ -36,6 +36,7 @@ li {
     height: 40px;
     border-radius: 0;
 }
+
 .menu-list .wide-addCat-btn {
     width: 120px;
     height: 40px;
@@ -65,22 +66,23 @@ li {
     height: 40px;
     border-radius: 10%;
 }
+
 .hide-right-col {
     height: 100vh;
 }
 
 /*----------- adding category-------------*/
 
-.add-category{
-    width:30px;
+.add-category {
+    width: 30px;
 }
 
 .category-window {
     position: absolute;
     left: 50px;
-    top:50px;
+    top: 50px;
     border: 2px solid black;
-    border-radius:  5%;
+    border-radius: 5%;
     margin: auto;
     width: 175px;
     height: 100px;
@@ -97,7 +99,7 @@ li {
     font-size: 20px;
     font-weight: 300;
     margin: 10px;
-    border-radius:5px;
+    border-radius: 5px;
 
 }
 
@@ -107,18 +109,17 @@ li {
     width: 80px;
     background: deepskyblue;
     display: block;
-    float:left;
+    float: left;
     border-radius: 40%;
-    margin-left:3px;
+    margin-left: 3px;
 }
-
-
 
 .main-col-1 {
     background: #f79774;
     min-height: 100vh;
 }
-.main-col-1 > div> ul {
+
+.main-col-1 > div > ul {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -170,7 +171,8 @@ li {
     padding-left: 5px;
     padding-top: 5px;
 }
-.header-logo button{
+
+.header-logo button {
     width: 30px;
     height: 100%;
     margin-left: 2px;
@@ -178,7 +180,8 @@ li {
     background-size: contain;
     border-radius: 5px;
 }
-.header-logo input{
+
+.header-logo input {
     width: 80%;
     height: 100%;
     border-radius: 5px;
@@ -200,10 +203,12 @@ li {
     color: white;
     z-index: 200;
 }
+
 .close-progress {
     align-self: right;
     font-size: 70%;
 }
+
 .progress-button {
     width: 30px;
     display: block;
@@ -215,6 +220,7 @@ li {
     background-size: contain;
     border-radius: 5px;
 }
+
 .header-progress-tracker {
     height: 100%;
 
@@ -283,6 +289,7 @@ li {
     flex-wrap: wrap;
 
 }
+
 .tasks-to-do li:nth-child(2) {
     border: 1px black solid;
     list-style-type: none;
@@ -327,7 +334,6 @@ li {
     display: none;
 }
 
-
 /*-------------- section to add task -------------------*/
 .addTaskButton {
     background-color: #f79774;
@@ -343,28 +349,25 @@ li {
     left: 5%;
     margin: 10px;
 }
+
 .sectionAddTask {
-    background: deepskyblue;
+    width: 90%;
+    border-radius: 5%;
+    background: #f79774;
     position: absolute;
     z-index: 50;
-    top: 0%;
-    left: 0%;
+    margin: 10% 2% 0 2%;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Style the list items */
-#myUL ul li {
-    cursor: pointer;
-    padding: 12px 8px 12px 40px;
-    background: #eee;
-    font-size: 18px;
-    transition: 0.2s;
-    display: inline-block;
+.sectionAddTask > div {
+}
 
-    /* make the list items unselectable */
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+#myInput {
+    width: 95%;
 }
 
 /* Set all odd list items to a different color (zebra-stripes) */
@@ -386,24 +389,19 @@ li {
 
 /*!* Add a "checked" mark when clicked on *!*/
 /*ul li.checked::before {*/
-    /*content: '';*/
-    /*border-color: #fff;*/
-    /*border-style: solid;*/
-    /*border-width: 0 2px 2px 0;*/
-    /*top: 10px;*/
-    /*left: 16px;*/
-    /*transform: rotate(45deg);*/
-    /*height: 15px;*/
-    /*width: 7px;*/
+/*content: '';*/
+/*border-color: #fff;*/
+/*border-style: solid;*/
+/*border-width: 0 2px 2px 0;*/
+/*top: 10px;*/
+/*left: 16px;*/
+/*transform: rotate(45deg);*/
+/*height: 15px;*/
+/*width: 7px;*/
 /*}*/
 
-#myUL li {
-    display: table;
-    width: 100%;
-}
-
 /* Style the input */
-input {
+#searchInput {
     border: none;
     width: 75%;
     padding: 10px;
@@ -413,15 +411,15 @@ input {
 
 /* Style the "Add" button */
 .addBtn {
+    margin-top: 10px;
     padding: 10px;
-    width: 25%;
+    width: 80px;
+    height: auto;
     background: #d9d9d9;
-    color: #555;
-    float: left;
+    color: black;
     text-align: center;
-    font-size: 16px;
+    font-size: 12px;
     cursor: pointer;
-    transition: 0.3s;
     display: inline-block;
 }
 
@@ -438,19 +436,18 @@ input {
 }
 
 #date {
-    width: 40%;
-
+    max-width: 70%;
 }
 
 .listActive {
     display: block;
 }
 
-
 .priority {
     display: inline-block;
-    color: deeppink;
+    color: darkcyan;
     font-size: 12px;
+    font-weight: 500;
     text-align: center;
     padding: 0;
     margin: 0;
@@ -467,4 +464,7 @@ input {
 
 }
 
-
+#addThisTask {
+    height: 50px;
+    align-self: center;
+}

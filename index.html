@@ -50,7 +50,7 @@
         <header class="header">
             <div class="header-logo">
                 <button class="search"></button>
-                <input type="text" placeholder="Search">
+                <input id="searchInput" type="text" placeholder="Search">
 
             </div>
 
@@ -62,7 +62,7 @@
                     <span id="level">0</span>
                     <div>To level</div>
                     <span id="to-level-up">0</span>
-                    <div class="close-progress">close </div>
+                    <div class="close-progress">close</div>
                 </div>
             </div>
         </header>
@@ -71,29 +71,30 @@
             <ul class="tasks-to-do"></ul>
             <button class="addTaskButton">ADD NEW TASK</button>
             <div class="sectionAddTask invisible">
-                <input type="text" id="myInput" placeholder="Title...">
-                <span class="addBtn">Add</span>
-
-                <!--------- calendar --------->
                 <div>
-                <input type="date" id="date" pattern="\d{2}/\d{2}/\d{4}">
+                    <input type="text" id="myInput" placeholder="Title...">
+                </div>
+                <div>
+                    <input type="date" id="date" pattern="\d{2}/\d{2}/\d{4}">
                 </div>
                 <div class="priority-section">
                     <p class="priorityHeader">Priorytet:</p>
-                    <p class="priority"><label><input type="radio" name="kolor" id="pGreen" value="1" checked> 1
-                    </label></p>
-                    <p class="priority"><label><input type="radio" name="kolor" value="2"> 2 </label></p>
-                    <p class="priority"><label><input type="radio" name="kolor" value="3"> 3 </label></p>
-                    <p class="priority"><label><input type="radio" name="kolor" value="4"> 4 </label></p>
-                    <p class="priority"><label><input type="radio" name="kolor" value="5"> 5 </label></p>
+                    <p class="priority"><label><input type="radio" name="kolor" value="1" checked>1</label></p>
+                    <p class="priority"><label><input type="radio" name="kolor" id="pBlue" value="2">2</label></p>
+                    <p class="priority"><label><input type="radio" name="kolor" id="pYellow" value="3">3</label></p>
+                    <p class="priority"><label><input type="radio" name="kolor" id="pOrange" value="4">4</label></p>
+                    <p class="priority"><label><input type="radio" name="kolor" id="pRed" value="5">5</label></p>
                 </div>
 
-                <div class="tasksAdded">
-                    <ul id="myUL">
-
-
-                    </ul>
+                <div id="addThisTask">
+                    <span class="addBtn">ADD</span>
                 </div>
+
+                <!--<div class="tasksAdded">-->
+                <!--<ul id="myUL">-->
+
+                <!--</ul>-->
+                <!--</div>-->
             </div>
 
             <button id="t-f" class="btn-tasks-finished"> TASK FINISHED</button>
