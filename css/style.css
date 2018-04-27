@@ -410,7 +410,6 @@ input {
 
 #date {
     width: 40%;
-    border: 1px black solid;
 
 }
 
@@ -429,7 +428,7 @@ input {
 }
 
 .priority-section {
-    display: inline;
+    display: block;
 }
 
 .priorityHeader {
