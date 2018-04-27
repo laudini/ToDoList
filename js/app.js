@@ -95,11 +95,11 @@ document.addEventListener("DOMContentLoaded", function () {
                         fcheckBox.type = "checkbox";
                         fcheckBox.checked = true;
                         fcheckBox.id = String(i);
-                        fcheckBox.addEventListener("change", (e) => {
+                        fcheckBox.addEventListener("change", function (e) {
                             console.log(e.currentTarget.id);
 
-                            all[e.currentTarget.id].finished = false;
-                        })
+                        all[e.currentTarget.id].finished = false;
+                    })
                     }
                 }
             } else {
@@ -123,9 +123,9 @@ document.addEventListener("DOMContentLoaded", function () {
                         checkBox.classList.add("completeCheckbox");
                         checkBox.type = "checkbox";
                         checkBox.id = String(i);
-                        checkBox.addEventListener("change", (e) => {
+                        checkBox.addEventListener("change", function (e) {
                             all[e.currentTarget.id].finished = true;
-                        })
+                    })
                     }
                 }
             }
@@ -141,29 +141,66 @@ document.addEventListener("DOMContentLoaded", function () {
         while (tasksToDo.firstChild) {
             tasksToDo.removeChild(tasksToDo.firstChild);
         }
-
+        while (tasksFinished.firstChild) {
+            tasksFinished.removeChild(tasksFinished.firstChild);
+        }
         // creating <li>, <div> inside and pushing elements into them.
         for (var i = 0; i < today.length; i++) {
 
-            // creating new element <li>
-            var newLi = document.createElement("li");
-            // taking elements from object sent by user (name, date, priority)
-            var todayElements = Object.values(today[i]);
-            // assigning new <li> to <ul>
-            tasksToDo.appendChild(newLi);
+            if (today[i].finished) {
+                // creating new element <li>
+                var fnewLi = document.createElement("li");
+                // taking elements from object sent by user (name, date, priority)
+                var ftodayElements = Object.values(today[i]);
+                // assigning new <li> to <ul>
+                tasksFinished.appendChild(fnewLi);
 
-            // creating new divs in <li> and putting user information in divs
-            for (var j = 0; j < 4; j++) {
-                var newDiv = document.createElement("div");
-                newDiv.classList.add("taskDivs");
-                tasksToDo.children[i].append(newDiv);
-                if (j !== 0) {
-                    newDiv.innerText = (todayElements[j - 1]);
-                } else {
-                    var checkBox = document.createElement('input');
-                    newDiv.append(checkBox);
-                    checkBox.classList.add("completeCheckbox");
-                    checkBox.type = "checkbox";
+                for (var j = 0; j < 4; j++) {
+                    var fnewDiv = document.createElement("div");
+                    fnewDiv.classList.add("taskDivs");
+                    var currentFLenght = tasksFinished.children.length;
+                    tasksFinished.children[currentFLenght - 1].append(fnewDiv);
+                    if (j !== 0) {
+                        fnewDiv.innerText = (ftodayElements[j - 1]);
+                    } else {
+                        var fcheckBox = document.createElement('input');
+                        fnewDiv.append(fcheckBox);
+                        fcheckBox.classList.add("completeCheckbox");
+                        fcheckBox.type = "checkbox";
+                        fcheckBox.checked = true;
+                        fcheckBox.id = String(i);
+                        fcheckBox.addEventListener("change", function (e) {
+                            console.log(e.currentTarget.id);
+
+                            today[e.currentTarget.id].finished = false;
+                        })
+                    }
+                }
+            } else {
+                // creating new element <li>
+                var newLi = document.createElement("li");
+                // taking elements from object sent by user (name, date, priority)
+                var todayElements = Object.values(all[i]);
+                // assigning new <li> to <ul>
+                tasksToDo.appendChild(newLi);
+                // creating new divs in <li> and putting user information in divs
+                for (var j = 0; j < 4; j++) {
+                    var newDiv = document.createElement("div");
+                    newDiv.classList.add("taskDivs");
+                    var currentLength = tasksToDo.children.length;
+                    tasksToDo.children[currentLength - 1].append(newDiv);
+                    if (j !== 0) {
+                        newDiv.innerText = (todayElements[j - 1]);
+                    } else {
+                        var checkBox = document.createElement('input');
+                        newDiv.append(checkBox);
+                        checkBox.classList.add("completeCheckbox");
+                        checkBox.type = "checkbox";
+                        checkBox.id = String(i);
+                        checkBox.addEventListener("change", function (e) {
+                            today[e.currentTarget.id].finished = true;
+                        })
+                    }
                 }
             }
         }
@@ -178,29 +215,66 @@ document.addEventListener("DOMContentLoaded", function () {
         while (tasksToDo.firstChild) {
             tasksToDo.removeChild(tasksToDo.firstChild);
         }
-
+        while (tasksFinished.firstChild) {
+            tasksFinished.removeChild(tasksFinished.firstChild);
+        }
         // creating <li>, <div> inside and pushing elements into them.
         for (var i = 0; i < tomorrow.length; i++) {
 
-            // creating new element <li>
-            var newLi = document.createElement("li");
-            // taking elements from object sent by user (name, date, priority)
-            var tommorowElements = Object.values(tomorrow[i]);
-            // assigning new <li> to <ul>
-            tasksToDo.appendChild(newLi);
+            if (tomorrow[i].finished) {
+                // creating new element <li>
+                var fnewLi = document.createElement("li");
+                // taking elements from object sent by user (name, date, priority)
+                var ftomorrowElements = Object.values(tomorrow[i]);
+                // assigning new <li> to <ul>
+                tasksFinished.appendChild(fnewLi);
 
-            // creating new divs in <li> and putting user information in divs
-            for (var j = 0; j < 4; j++) {
-                var newDiv = document.createElement("div");
-                newDiv.classList.add("taskDivs");
-                tasksToDo.children[i].append(newDiv);
-                if (j !== 0) {
-                    newDiv.innerText = (tommorowElements[j - 1]);
-                } else {
-                    var checkBox = document.createElement('input');
-                    newDiv.append(checkBox);
-                    checkBox.classList.add("completeCheckbox");
-                    checkBox.type = "checkbox";
+                for (var j = 0; j < 4; j++) {
+                    var fnewDiv = document.createElement("div");
+                    fnewDiv.classList.add("taskDivs");
+                    var currentFLenght = tasksFinished.children.length;
+                    tasksFinished.children[currentFLenght - 1].append(fnewDiv);
+                    if (j !== 0) {
+                        fnewDiv.innerText = (ftomorrowElements[j - 1]);
+                    } else {
+                        var fcheckBox = document.createElement('input');
+                        fnewDiv.append(fcheckBox);
+                        fcheckBox.classList.add("completeCheckbox");
+                        fcheckBox.type = "checkbox";
+                        fcheckBox.checked = true;
+                        fcheckBox.id = String(i);
+                        fcheckBox.addEventListener("change", function (e) {
+                            console.log(e.currentTarget.id);
+
+                            tomorrow[e.currentTarget.id].finished = false;
+                        })
+                    }
+                }
+            } else {
+                // creating new element <li>
+                var newLi = document.createElement("li");
+                // taking elements from object sent by user (name, date, priority)
+                var tomorrowElements = Object.values(all[i]);
+                // assigning new <li> to <ul>
+                tasksToDo.appendChild(newLi);
+                // creating new divs in <li> and putting user information in divs
+                for (var j = 0; j < 4; j++) {
+                    var newDiv = document.createElement("div");
+                    newDiv.classList.add("taskDivs");
+                    var currentLength = tasksToDo.children.length;
+                    tasksToDo.children[currentLength - 1].append(newDiv);
+                    if (j !== 0) {
+                        newDiv.innerText = (tomorrowElements[j - 1]);
+                    } else {
+                        var checkBox = document.createElement('input');
+                        newDiv.append(checkBox);
+                        checkBox.classList.add("completeCheckbox");
+                        checkBox.type = "checkbox";
+                        checkBox.id = String(i);
+                        checkBox.addEventListener("change", function (e) {
+                            tomorrow[e.currentTarget.id].finished = true;
+                        })
+                    }
                 }
             }
         }
@@ -447,7 +521,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
-    // filling category buttons
+// filling category buttons
 
     function catFilling() {
         var catButtons = document.getElementsByClassName('categ-list');
@@ -501,7 +575,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Task adding feature WORK IN PROGRESS
 
-    // Create a "close" button and append it to each list item
+// Create a "close" button and append it to each list item
     var myNodelist = document.getElementById("myUL");
     for (var q = 0; q < myNodelist.length; q++) {
         var span = document.createElement("SPAN");
@@ -582,7 +656,7 @@ document.addEventListener("DOMContentLoaded", function () {
             newLi.innerText = "Brak zadań z wyszukiwaną frazą";
             tasksToDo.appendChild(newLi);
 
-        }else {
+        } else {
 
             for (var i = 0; i < all.length; i++) {
                 if (all[i].name.toUpperCase().search(value) > -1) {
@@ -602,12 +676,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
             }
-            if (n==0){
+            if (n == 0) {
                 var newLi = document.createElement("li");
                 newLi.innerText = "Brak zadań z wyszukiwaną frazą";
                 tasksToDo.appendChild(newLi);
             }
         }
     });
-/////////////////////////////// SEARCH FINISH //////////////////////////
 });
+/////////////////////////////// SEARCH FINISH //////////////////////////
