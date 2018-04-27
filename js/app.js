@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var categoriesTasks = [];
     var openHamburger = false;
     var shownTasks = document.getElementsByClassName("completeCheckbox");
-
+    var catButtons = document.getElementsByClassName("categ-list");
 // all required arrays
     var all = [];
     var today = [];
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
         leftCol.classList.toggle("wide-menu");
         // TO ZMIENIC NA MAX/WIN WIDTH VVVV
         rightCol.style.filter = rightCol.style.filter != "blur(6px)" ? "blur(6px)" : "blur(0)";
-        var catButtons = document.getElementsByClassName("categ-list");
+
 
         if (openHamburger === false) {
             todayBtn.innerText = "TODAY";
@@ -414,7 +414,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         var newCategory = document.createElement("li");
                         var newButton = document.createElement('button');
 
-
+/*
                         // ADD FIRST LETTER OF CAT NAME TO BUTTON
                         newButton.innerText = inputCategory.value[0];
                         userCats.push(inputCategory.value);
@@ -428,6 +428,26 @@ document.addEventListener("DOMContentLoaded", function () {
                         // ADD ID to button
                         newButton.id = document.querySelectorAll(".categ-list").length - 1;
                         currentCategoryChosen = newButton.id;
+
+*/
+
+// ADD FIRST LETTER OF CAT NAME TO BUTTON
+                        newButton.innerText = inputCategory.value[0];
+                        userCats.push(inputCategory.value);
+                        newButton.classList.add("categ-list");
+                        if(document.querySelector('.wide-menu') !== null){
+                            newButton.classList.add('.wide-new-btn');
+                        }
+                        newCategory.appendChild(newButton);
+                        categList.append(newCategory);
+                        //inputCategory.value="";
+
+                        // categList.insertBefore(newCategory, categList.firstChild);
+                        parent.removeChild(element);
+                        // ADD ID to button
+                        newButton.id = document.querySelectorAll(".categ-list").length - 1;
+                        currentCategoryChosen = newButton.id;
+
 
 
                     }
@@ -605,4 +625,55 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 /////////////////////////////// SEARCH FINISH //////////////////////////
+
+    ////////////////////MEDIA QUERY/////////////////////
+
+    window.addEventListener('resize', function() {
+        if (this.innerWidth >= 768) {
+            console.log("Wersja desktopowa");
+            leftCol.classList.add("wide-menu");
+
+            rightCol.style.filter = "blur(0)";
+            todayBtn.innerText = "TODAY";
+            tomorrowBtn.innerText = "TOMORROW";
+            weekBtn.innerText = "UPCOMING 7 DAYS";
+            allBtn.innerText = "ALL TASKS";
+            //openHamburger = true;
+
+            todayBtn.classList.add("wide-today-btn");
+            tomorrowBtn.classList.add("wide-tomorrow-btn");
+            weekBtn.classList.add("wide-week-btn");
+            allBtn.classList.add("wide-all-btn");
+
+            for (var i = 0; i < catButtons.length; i++) {
+                catButtons[i].innerText = userCats[i];
+                catButtons[i].classList.add(".wide-new-btn")
+            }
+        } else {
+            console.log("Wersja mobilna");
+            leftCol.classList.remove("wide-menu");
+            todayBtn.innerText = "T";
+            tomorrowBtn.innerText = "T";
+            weekBtn.innerText = "7";
+            allBtn.innerText = "A";
+            //openHamburger = false;
+
+            todayBtn.classList.remove("wide-today-btn");
+            tomorrowBtn.classList.remove("wide-tomorrow-btn");
+            weekBtn.classList.remove("wide-week-btn");
+            allBtn.classList.remove("wide-all-btn");
+            for (var i = 0; i < catButtons.length; i++) {
+                catButtons[i].innerText = userCats[i][0];
+                catButtons[i].classList.remove(".wide-new-btn")
+            }
+
+
+
+        }
+    });
+
+
+
+
+
 });

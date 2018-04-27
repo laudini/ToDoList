@@ -31,10 +31,17 @@ li {
     max-width: 35px;
 }
 
+
 .menu-list button {
     width: 40px;
     height: 40px;
     border-radius: 40%;
+}
+
+.menu-list .wide-new-btn{
+    width: 120px;
+    height: 40px;
+    border-radius: 10%;
 }
 
 .menu-list .wide-today-btn {
@@ -60,6 +67,8 @@ li {
     height: 40px;
     border-radius: 10%;
 }
+
+
 
 .main-col-1 {
     background: #3D8EB9;
@@ -402,6 +411,10 @@ input[type=checkbox] {
     body {
         background: #a92a17;
     }
-
-
+.wide-menu{
+    background: deeppink;
+}
+.hamb{
+    display:none;
+}
 }
