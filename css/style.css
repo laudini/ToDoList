@@ -59,6 +59,51 @@ li {
     border-radius: 10%;
 }
 
+/*----------- adding category-------------*/
+
+.add-category{
+    width:30px;
+}
+
+.category-window {
+    position: absolute;
+    left: 50px;
+    top:50px;
+    border: 2px solid black;
+    border-radius:  5%;
+    margin: auto;
+    width: 175px;
+    height: 100px;
+    background: lightgoldenrodyellow;
+    display: block;
+    z-index: 100;
+
+}
+
+#input-category {
+    height: 30px;
+    width: 150px;
+    border: 1px solid deepskyblue;
+    font-size: 20px;
+    font-weight: 300;
+    margin: 10px;
+    border-radius:5px;
+
+}
+
+#btn-category, #cancel {
+
+    height: 40px;
+    width: 80px;
+    background: deepskyblue;
+    display: block;
+    float:left;
+    border-radius: 40%;
+    margin-left:3px;
+}
+
+
+
 .main-col-1 {
     background: #3D8EB9;
 }
@@ -108,27 +153,18 @@ li {
     padding: 0;
 
 }
-.header-logo input{
-width:95px;
-    height: 90%;
-}
 .header-logo button{
     width: 30px;
     height: 90%;
+    border-radius: 5px;
 }
-.header-add-category {
-    width: 15%;
-    height: 100%;
-    border: 1px black dashed;
-    display: inline-block;
-    margin: 0;
-    padding: 0;
-
+.header-logo input{
+    width:95px;
+    height: 90%;
+    border-radius: 5px;
 }
 
-.add-category{
-    width:30px;
-}
+
 
 .header-progress-tracker {
     width: 15%;
@@ -230,40 +266,6 @@ width:95px;
     display: none;
 }
 
-/*----------- adding category-------------*/
-.window {
-    position: absolute;
-    border: 2px solid black;
-    border-radius:  5%;
-    left: 120px;
-    margin: auto;
-    width: 175px;
-    height: 100px;
-    background: lightgoldenrodyellow;
-    display: block;
-    z-index: 100;
-}
-
-#input-category {
-    height: 30px;
-    width: 150px;
-    border: 1px solid deepskyblue;
-    font-size: 20px;
-    font-weight: 300;
-    margin: 10px;
-
-}
-
-#btn-category {
-
-    height: 22px;
-    width: 100px;
-    background: deepskyblue;
-}
-
-#cancel {
-    background: deepskyblue;
-}
 
 /*-------------- section to add task -------------------*/
 .sectionAddTask {

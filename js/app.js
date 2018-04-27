@@ -395,11 +395,11 @@ document.addEventListener("DOMContentLoaded", function () {
     addCategory.addEventListener('click', function () {
         var parent = document.querySelector(".header-add-category");
         var element = document.createElement("div");
-        if (document.querySelector(".window") === null) {
-            element.classList.add("window");
+        if (document.querySelector(".category-window") === null) {
+            element.classList.add("category-window");
             element.innerHTML =
                 '<input type="text" id="input-category" placeholder="Kategoria">' +
-                '<button id="btn-category">Dodaj Kat</button>' +
+                '<button id="btn-category">Dodaj<br>Kategorię</button>' +
                 '<button id="cancel">Zakończ</button>';
 
             parent.appendChild(element);
