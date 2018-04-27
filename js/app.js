@@ -33,6 +33,8 @@ document.addEventListener("DOMContentLoaded", function () {
         var catButtons = document.getElementsByClassName("categ-list");
 
         if (openHamburger === false) {
+
+            addCategory.innerText = "Add new category";
             todayBtn.innerText = "TODAY";
             tomorrowBtn.innerText = "TOMORROW";
             weekBtn.innerText = "UPCOMING 7 DAYS";
@@ -42,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 catButtons[i].innerText = userCats[i];
             }
         } else {
+            addCategory.innerText = "C";
             todayBtn.innerText = "T";
             tomorrowBtn.innerText = "T";
             weekBtn.innerText = "7";
@@ -51,6 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 catButtons[i].innerText = userCats[i][0];
             }
         }
+        addCategory.classList.toggle("wide-addCat-btn");
         todayBtn.classList.toggle("wide-today-btn");
         tomorrowBtn.classList.toggle("wide-tomorrow-btn");
         weekBtn.classList.toggle("wide-week-btn");

@@ -34,6 +34,11 @@ li {
     height: 40px;
     border-radius: 40%;
 }
+.menu-list .wide-addCat-btn {
+    width: 120px;
+    height: 40px;
+    border-radius: 10%;
+}
 
 .menu-list .wide-today-btn {
     width: 120px;
