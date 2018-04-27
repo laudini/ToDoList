@@ -537,7 +537,6 @@ document.addEventListener("DOMContentLoaded", function () {
                         categList.append(newCategory);
                         //inputCategory.value="";
 
-                        // categList.insertBefore(newCategory, categList.firstChild);
                         parent.removeChild(element);
                         // ADD ID to button
                         newButton.id = document.querySelectorAll(".categ-list").length - 1;
@@ -613,26 +612,6 @@ document.addEventListener("DOMContentLoaded", function () {
 //---------ADD CATEGORY--------FINISH----------------
 
 
-// Task adding feature WORK IN PROGRESS
-
-// Create a "close" button and append it to each list item
-    var myNodelist = document.getElementById("myUL");
-    for (var q = 0; q < myNodelist.length; q++) {
-        var span = document.createElement("SPAN");
-        var txt = document.createTextNode("\u00D7");
-        span.className = "close";
-        span.appendChild(txt);
-        myNodelist[q].appendChild(span);
-    }
-
-
-// Add a "checked" symbol when clicking on a list item
-    var list = document.querySelector('ul');
-    list.addEventListener('click', function (ev) {
-        if (ev.target.tagName === 'LI') {
-            ev.target.classList.toggle('checked');
-        }
-    }, false);
 
 // MAIN ADD TASK button
 
