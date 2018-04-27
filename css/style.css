@@ -63,6 +63,8 @@ li {
     height: 40px;
     border-radius: 10%;
 }
+.hide-right-col {
+}
 
 /*----------- adding category-------------*/
 
@@ -111,12 +113,14 @@ li {
 
 .main-col-1 {
     background: #3D8EB9;
+    min-height: 80vh;
 }
 
 .main-col-2 {
     background: #3D8EB9;
     border-left: 1px solid black;
     width: 100%;
+    min-height: 80vh;
 }
 
 /*.main-col-1 > div {*/
@@ -137,7 +141,10 @@ li {
 
 .wide-menu {
     border: 1px solid black;
-    width: 300px;
+    position: absolute;
+    z-index: 100;
+    min-height: 80vh;
+    width: 70%;
     background: #3D8EB9;
 }
 
@@ -243,7 +250,7 @@ li {
 
 /* ------ button tasks finished ---------*/
 .btn-tasks-finished {
-    background-color: red;
+    background-color: blue;
     border: none;
     color: white;
     text-align: center;
@@ -406,7 +413,7 @@ input[type=checkbox] {
 
 /* PROGRESS*/
 .show-progress {
-    border-radius: 11%;
+    border-radius: 7%;
     width: 100px;
     height: 150px;
     display: flex;
@@ -419,5 +426,9 @@ input[type=checkbox] {
     background: black;
     color: white;
     z-index: 200;
+}
+.close-progress {
+    align-self: right;
+    font-size: 70%;
 }
 

@@ -28,8 +28,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     hamburger.addEventListener("click", function () {
         leftCol.classList.toggle("wide-menu");
+        rightCol.classList.toggle("hide-right-col");
         // TO ZMIENIC NA MAX/WIN WIDTH VVVV
-        rightCol.style.filter = rightCol.style.filter != "blur(6px)" ? "blur(6px)" : "blur(0)";
+        // rightCol.style.filter = rightCol.style.filter != "blur(6px)" ? "blur(6px)" : "blur(0)";
         var catButtons = document.getElementsByClassName("categ-list");
 
         if (openHamburger === false) {
