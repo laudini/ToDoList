@@ -503,23 +503,27 @@ document.addEventListener("DOMContentLoaded", function () {
                 newLi.innerText = "Brak zadań z wyszukiwaną frazą";
                 tasksToDo.appendChild(newLi);
 
-            }
-            for (var i = 0; i < all.length; i++) {
-                if (all[i].name.toUpperCase().search(value) > -1) {
-                    console.log(all[i].name.toUpperCase());
-                    n = n + 1;
-                    var newLi = document.createElement("li");
-                    var weekElements = Object.values(all[i]);
-                    tasksToDo.appendChild(newLi);
-                    for (var j = 0; j < 4; j++) {
-                        var newDiv = document.createElement("div");
-                        tasksToDo.children[n - 1].append(newDiv);
-                        if (j !== 0) {
-                            newDiv.innerText = (weekElements[j - 1]);
+            }else {
+
+                for (var i = 0; i < all.length; i++) {
+                    if (all[i].name.toUpperCase().search(value) > -1) {
+                        n = n + 1;
+                        var newLi = document.createElement("li");
+                        var weekElements = Object.values(all[i]);
+                        tasksToDo.appendChild(newLi);
+                        for (var j = 0; j < 4; j++) {
+                            var newDiv = document.createElement("div");
+                            tasksToDo.children[n - 1].append(newDiv);
+                            if (j !== 0) {
+                                newDiv.innerText = (weekElements[j - 1]);
+                            }
+
                         }
+
                     }
+
                 }
-                else {
+                if (n==0){
                     var newLi = document.createElement("li");
                     newLi.innerText = "Brak zadań z wyszukiwaną frazą";
                     tasksToDo.appendChild(newLi);
