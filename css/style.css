@@ -361,13 +361,15 @@ li {
     left: 0;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .sectionAddTask > div {
+    margin-bottom: 10px;
 }
 
 #myInput {
-    width: 95%;
+    width: 100%;
 }
 
 /* Set all odd list items to a different color (zebra-stripes) */
@@ -436,7 +438,7 @@ li {
 }
 
 #date {
-    max-width: 70%;
+    max-width: 100%;
 }
 
 .listActive {
@@ -460,10 +462,14 @@ li {
 .priorityHeader {
     padding: 0;
     margin: 0;
-    font-size: 14px;
+    font-size: 12px;
+    text-align: center;
 
 }
-
+#inputTitle {
+    margin-top: 5px;
+    align-items: center;
+}
 #addThisTask {
     height: 50px;
     align-self: center;
