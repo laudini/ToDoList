@@ -288,31 +288,66 @@ document.addEventListener("DOMContentLoaded", function () {
         while (tasksToDo.firstChild) {
             tasksToDo.removeChild(tasksToDo.firstChild);
         }
-
+        while (tasksFinished.firstChild) {
+            tasksFinished.removeChild(tasksFinished.firstChild);
+        }
         // creating <li>, <div> inside and pushing elements into them.
         for (var i = 0; i < week.length; i++) {
 
-            // creating new element <li>
-            var newLi = document.createElement("li");
+            if (week[i].finished) {
+                // creating new element <li>
+                var fnewLi = document.createElement("li");
+                // taking elements from object sent by user (name, date, priority)
+                var fweekElements = Object.values(week[i]);
+                // assigning new <li> to <ul>
+                tasksFinished.appendChild(fnewLi);
 
-            // taking elements from object sent by user (name, date, priority)
-            var weekElements = Object.values(week[i]);
+                for (var j = 0; j < 4; j++) {
+                    var fnewDiv = document.createElement("div");
+                    fnewDiv.classList.add("taskDivs");
+                    var currentFLenght = tasksFinished.children.length;
+                    tasksFinished.children[currentFLenght - 1].append(fnewDiv);
+                    if (j !== 0) {
+                        fnewDiv.innerText = (fweekElements[j - 1]);
+                    } else {
+                        var fcheckBox = document.createElement('input');
+                        fnewDiv.append(fcheckBox);
+                        fcheckBox.classList.add("completeCheckbox");
+                        fcheckBox.type = "checkbox";
+                        fcheckBox.checked = true;
+                        fcheckBox.id = String(i);
+                        fcheckBox.addEventListener("change", function (e) {
+                            console.log(e.currentTarget.id);
 
-            // assigning new <li> to <ul>
-            tasksToDo.appendChild(newLi);
-
-            // creating new divs in <li> and putting user information in divs
-            for (var j = 0; j < 4; j++) {
-                var newDiv = document.createElement("div");
-                newDiv.classList.add("taskDivs");
-                tasksToDo.children[i].append(newDiv);
-                if (j !== 0) {
-                    newDiv.innerText = weekElements[j - 1];
-                } else {
-                    var checkBox = document.createElement('input');
-                    newDiv.append(checkBox);
-                    checkBox.classList.add("completeCheckbox");
-                    checkBox.type = "checkbox";
+                            week[e.currentTarget.id].finished = false;
+                        })
+                    }
+                }
+            } else {
+                // creating new element <li>
+                var newLi = document.createElement("li");
+                // taking elements from object sent by user (name, date, priority)
+                var weekElements = Object.values(all[i]);
+                // assigning new <li> to <ul>
+                tasksToDo.appendChild(newLi);
+                // creating new divs in <li> and putting user information in divs
+                for (var j = 0; j < 4; j++) {
+                    var newDiv = document.createElement("div");
+                    newDiv.classList.add("taskDivs");
+                    var currentLength = tasksToDo.children.length;
+                    tasksToDo.children[currentLength - 1].append(newDiv);
+                    if (j !== 0) {
+                        newDiv.innerText = (weekElements[j - 1]);
+                    } else {
+                        var checkBox = document.createElement('input');
+                        newDiv.append(checkBox);
+                        checkBox.classList.add("completeCheckbox");
+                        checkBox.type = "checkbox";
+                        checkBox.id = String(i);
+                        checkBox.addEventListener("change", function (e) {
+                            week[e.currentTarget.id].finished = true;
+                        })
+                    }
                 }
             }
         }
