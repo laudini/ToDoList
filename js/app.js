@@ -573,7 +573,8 @@ document.addEventListener("DOMContentLoaded", function () {
         while (tasksToDo.firstChild) {
             tasksToDo.removeChild(tasksToDo.firstChild);
         }
-        var value = this.previousElementSibling.value.toUpperCase();
+
+        var value = this.nextElementSibling.value.toUpperCase();
         var n = 0;
 
         if (all.length == 0) {
