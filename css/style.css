@@ -11,6 +11,7 @@ body {
     background: #f79774;
     margin: 0;
     padding: 0;
+    font-family: 'Inconsolata', monospace;
 }
 
 * {
@@ -41,13 +42,24 @@ li {
     height: 40px;
     border-radius: 0;
     cursor: pointer;
+    /*font-family: 'Archivo Black', sans-serif;*/
+    font-family: 'Inconsolata', monospace;
+    font-weight: bold;
+    font-size: 12px;
+}
 
+.menu-list button:hover {
+    background-color: black;
+    color: white;
+    border: none;
+    font-size: 18px;
 }
 
 .menu-list .wide-addCat-btn {
     width: 120px;
     height: 40px;
     cursor: pointer;
+
 
 }
 
@@ -195,6 +207,8 @@ li {
     background: white url("../images/mglass.png") no-repeat center;
     background-size: contain;
     border-radius: 5px;
+    cursor: pointer;
+    border: none;
 }
 
 .header-logo input {
@@ -284,12 +298,10 @@ li {
 
 .taskDivs:nth-child(3) {
     width: 70%;
-    background: ;
-
 }
 
 .taskDivs:nth-child(4) {
-    background: #ffa500;
+    /*background: #ffa500;*/
     border-radius: 20%;
     margin-right: 15px;
     text-align: center;
@@ -335,6 +347,8 @@ li {
     width: 150px;
     left: 5%;
     margin: 10px;
+    font-family: 'Archivo Black', sans-serif;
+
 }
 
 .btn-tasks-finished:hover {
@@ -372,6 +386,8 @@ li {
     left: 5%;
     margin: 10px;
     cursor: pointer;
+    font-family: 'Archivo Black', sans-serif;
+
 
 }
 
@@ -391,6 +407,7 @@ li {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: 'Archivo Black', sans-serif;
 }
 
 .sectionAddTask > div {
@@ -453,6 +470,7 @@ li {
     display: inline-block;
     color: white;
     border-radius: 8px;
+    font-family: 'Archivo Black', sans-serif;
 }
 
 .addBtn:hover {
@@ -477,7 +495,7 @@ li {
 
 .priority {
     display: inline-block;
-    color: darkcyan;
+    color: black;
     font-size: 12px;
     font-weight: 500;
     text-align: center;
@@ -494,6 +512,7 @@ li {
     margin: 0;
     font-size: 12px;
     text-align: center;
+    text-transform: uppercase;
 
 }
 #inputTitle {
