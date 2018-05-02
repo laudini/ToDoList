@@ -286,18 +286,22 @@ li {
 
 .taskDivs {
     padding: 5px;
+    background-color: white;
 }
 
 .taskDivs:nth-child(1) {
     width: 30%;
+    background-color: white;
 }
 
 .taskDivs:nth-child(2) {
     width: 70%;
+    background-color: white;
 }
 
 .taskDivs:nth-child(3) {
     width: 70%;
+    background-color: white;
 }
 
 .taskDivs:nth-child(4) {
@@ -522,4 +526,20 @@ li {
 #addThisTask {
     height: 50px;
     align-self: center;
+}
+
+.logo-side {
+    font-size: 20px;
+    /*color: black;*/
+    color: #F04609;
+    writing-mode: vertical-rl;
+    -webkit-transform:rotate(180deg);
+    font-family: 'Archivo Black', sans-serif;
+    /*font-family: 'Kaushan Script', cursive;*/
+    border: 0;
+
+}
+
+.logo-box {
+    padding-top: 160px;
 }
