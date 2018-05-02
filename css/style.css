@@ -259,8 +259,9 @@ li {
 /* --------------tasks to do -------------*/
 
 .completeCheckbox {
-    max-width: 10px;
-    max-height: 10px;
+    max-width: 15px;
+    max-height: 15px;
+    cursor: pointer;
 }
 
 .taskLis {
@@ -283,11 +284,13 @@ li {
 
 .taskDivs:nth-child(3) {
     width: 70%;
+    background: ;
+
 }
 
 .taskDivs:nth-child(4) {
-    background: darkslateblue;
-    border-radius: 50%;
+    background: #ffa500;
+    border-radius: 20%;
     margin-right: 15px;
     text-align: center;
     font-weight: 900;
