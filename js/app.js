@@ -551,6 +551,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         };
                         userCats.push(categObject);
                         fillingCategoryBar();
+                        populateStorage();
                         parent.removeChild(element);
                     }
                 }
@@ -570,7 +571,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         var addCategory = document.querySelector('.add-category');
         var categList = document.getElementById("categ");
-        
+
         while (categList.firstChild) {
             categList.removeChild(categList.firstChild);
         }
