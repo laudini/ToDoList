@@ -26,14 +26,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // LOCAL STORAGE
     function populateStorage() {
-        //...
+        localStorage["allArray"] = JSON.stringify(all);
+        localStorage["userCats"] = JSON.stringify(userCats);
     }
 
-    if(!localStorage.getItem('allArray')) {
+    if (!localStorage.getItem('allArray')) {
         populateStorage();
     } else {
-        var all = JSON.parse(localStorage['allArray']);
+        all = JSON.parse(localStorage['allArray']);
     }
+    if (!localStorage.getItem('userCats')) {
+        populateStorage();
+    } else {
+        userCats = JSON.parse(localStorage['userCats']);
+    }
+
+    fillingCategoryBar();
+
 
 // HAMBURGER
 
@@ -53,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
             allBtn.innerText = "ALL TASKS";
             openHamburger = true;
             for (var i = 0; i < catButtons.length; i++) {
-                catButtons[i].innerText = userCats[i];
+                catButtons[i].innerText = userCats[i].name;
             }
         } else {
             addCategory.innerText = "C";
@@ -63,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
             allBtn.innerText = "A";
             openHamburger = false;
             for (var i = 0; i < catButtons.length; i++) {
-                catButtons[i].innerText = userCats[i][0];
+                catButtons[i].innerText = userCats[i].shortName;
             }
         }
         addCategory.classList.toggle("wide-addCat-btn");
@@ -114,8 +123,8 @@ document.addEventListener("DOMContentLoaded", function () {
                         fcheckBox.addEventListener("change", function (e) {
                             console.log(e.currentTarget.id);
 
-                        all[e.currentTarget.id].finished = false;
-                    })
+                            all[e.currentTarget.id].finished = false;
+                        })
                     }
                 }
             } else {
@@ -141,7 +150,8 @@ document.addEventListener("DOMContentLoaded", function () {
                         checkBox.id = String(i);
                         checkBox.addEventListener("change", function (e) {
                             all[e.currentTarget.id].finished = true;
-                    })
+                            populateStorage();
+                        })
                     }
                 }
             }
@@ -531,55 +541,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
             var btnCategory = document.querySelector("#btn-category");
             var inputCategory = document.querySelector("#input-category");
-            var categList = document.querySelector("#categ");
 
             btnCategory.addEventListener('click', function () {
 
                     if (inputCategory.value !== "") {
-                        if (addCategory.classList.contains('wide-addCat-btn')) {
-                            var newCategory = document.createElement("li");
-                            var newButton = document.createElement('button');
-
-
-                            // ADD FIRST LETTER OF CAT NAME TO BUTTON
-                            newButton.innerText = inputCategory.value;
-                            userCats.push(inputCategory.value);
-                            newButton.classList.add("categ-list");
-                            newButton.classList.add("wide-all-btn");
-                            newCategory.appendChild(newButton);
-                            categList.append(newCategory);
-
-                            parent.removeChild(element);
-                            // ADD ID to button
-                            newButton.id = document.querySelectorAll(".categ-list").length - 1;
-                            currentCategoryChosen = newButton.id;
-
-                        } else {
-
-                            var newCategory = document.createElement("li");
-                            var newButton = document.createElement('button');
-
-
-                            // ADD FIRST LETTER OF CAT NAME TO BUTTON
-                            newButton.innerText = inputCategory.value[0];
-                            userCats.push(inputCategory.value);
-                            newButton.classList.add("categ-list");
-                            newCategory.appendChild(newButton);
-                            categList.append(newCategory);
-                            //inputCategory.value="";
-
-                            parent.removeChild(element);
-                            // ADD ID to button
-                            newButton.id = document.querySelectorAll(".categ-list").length - 1;
-                            currentCategoryChosen = newButton.id;
-                        }
-
+                        var categObject = {
+                            name: inputCategory.value,
+                            shortName: inputCategory.value[0]
+                        };
+                        userCats.push(categObject);
+                        fillingCategoryBar();
+                        parent.removeChild(element);
                     }
-
-                    catFilling();
                 }
             );
-
 
             var cancel = document.querySelector("#cancel");
 
@@ -590,6 +565,53 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     });
+
+    function fillingCategoryBar() {
+
+        var addCategory = document.querySelector('.add-category');
+        var categList = document.getElementById("categ");
+        
+        while (categList.firstChild) {
+            categList.removeChild(categList.firstChild);
+        }
+
+        for (var i = 0; i < userCats.length; i++) {
+
+            if (addCategory.classList.contains('wide-addCat-btn')) {
+                var newCategory = document.createElement("li");
+                var newButton = document.createElement('button');
+
+                // ADD FIRST LETTER OF CAT NAME TO BUTTON
+                newButton.innerText = userCats[i].name;
+                newButton.classList.add("categ-list");
+                newButton.classList.add("wide-all-btn");
+                newCategory.appendChild(newButton);
+                categList.append(newCategory);
+
+                // ADD ID to button
+                newButton.id = (userCats.length - 1).toString();
+                currentCategoryChosen = newButton.id;
+
+            } else {
+
+                var newCategory = document.createElement("li");
+                var newButton = document.createElement('button');
+
+                // ADD FIRST LETTER OF CAT NAME TO BUTTON
+                newButton.innerText = userCats[i].shortName;
+                newButton.classList.add("categ-list");
+                newCategory.appendChild(newButton);
+                categList.append(newCategory);
+
+                // ADD ID to button
+                newButton.id = (userCats.length - 1).toString();
+                currentCategoryChosen = newButton.id;
+            }
+        }
+
+
+        catFilling();
+    }
 
 // filling category buttons
 
@@ -643,7 +665,6 @@ document.addEventListener("DOMContentLoaded", function () {
 //---------ADD CATEGORY--------FINISH----------------
 
 
-
 // MAIN ADD TASK button
 
     var mainAddTaskBtn = document.querySelector('.addTaskButton');
@@ -680,7 +701,7 @@ document.addEventListener("DOMContentLoaded", function () {
             uniqueId: uniqueId
         };
         all.push(categoryObject);
-        localStorage["allArray"] = JSON.stringify(all);
+        populateStorage();
         document.getElementById("myInput").value = "";
 
         toggledSection.classList.toggle('invisible');
@@ -749,9 +770,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         document.querySelector('.show-progress').classList.toggle('invisible');
     })
-
-
-
 
 
 });
