@@ -1,3 +1,8 @@
+:root {
+    --color: red;
+}
+
+
 html {
     height: 100%
 }
@@ -6,6 +11,7 @@ body {
     background: #f79774;
     margin: 0;
     padding: 0;
+    font-family: 'Inconsolata', monospace;
 }
 
 * {
@@ -35,36 +41,54 @@ li {
     width: 40px;
     height: 40px;
     border-radius: 0;
+    cursor: pointer;
+    /*font-family: 'Archivo Black', sans-serif;*/
+    font-family: 'Inconsolata', monospace;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.menu-list button:hover {
+    background-color: black;
+    color: white;
+    border: none;
+    font-size: 18px;
 }
 
 .menu-list .wide-addCat-btn {
     width: 120px;
     height: 40px;
-    border-radius: 10%;
+    cursor: pointer;
+
+
 }
 
 .menu-list .wide-today-btn {
     width: 120px;
     height: 40px;
-    border-radius: 10%;
+    cursor: pointer;
+
 }
 
 .menu-list .wide-tomorrow-btn {
     width: 120px;
     height: 40px;
-    border-radius: 10%;
+    cursor: pointer;
+
 }
 
 .menu-list .wide-week-btn {
     width: 120px;
     height: 40px;
-    border-radius: 10%;
+    cursor: pointer;
+
 }
 
 .menu-list .wide-all-btn {
     width: 120px;
     height: 40px;
-    border-radius: 10%;
+    cursor: pointer;
+
 }
 
 .hide-right-col {
@@ -75,18 +99,20 @@ li {
 
 .add-category {
     width: 30px;
+    cursor: pointer;
+
 }
 
 .category-window {
     position: absolute;
     left: 50px;
     top: 50px;
-    border: 2px solid black;
-    border-radius: 5%;
+    border: 1px solid black;
+    border-radius: 5px;
     margin: auto;
     width: 175px;
     height: 100px;
-    background: lightgoldenrodyellow;
+    background: white;
     display: block;
     z-index: 100;
 
@@ -94,8 +120,8 @@ li {
 
 #input-category {
     height: 30px;
-    width: 150px;
-    border: 1px solid deepskyblue;
+    width: 155px;
+    border: 1px solid grey;
     font-size: 20px;
     font-weight: 300;
     margin: 10px;
@@ -107,15 +133,16 @@ li {
 
     height: 40px;
     width: 80px;
-    background: deepskyblue;
+    background: black;
     display: block;
     float: left;
-    border-radius: 40%;
+    border-radius: 5px;
     margin-left: 3px;
+    color: white;
 }
 
 .main-col-1 {
-    background: #f79774;
+    background: #EEC801;
     min-height: 100vh;
 }
 
@@ -126,7 +153,8 @@ li {
 }
 
 .main-col-2 {
-    background: #82a6e0;
+    background-image: url("../images/messy-concept.jpg");
+    background-size: cover;
     width: 100%;
     min-height: 80vh;
 }
@@ -136,7 +164,7 @@ li {
 /*height: 100%;*/
 /*}*/
 .main-container {
-    background: #3D8EB9;
+    background: #D1D6D9;
     width: 100vw;
     height: 100%;
     margin: 0 auto;
@@ -150,13 +178,13 @@ li {
     position: absolute;
     z-index: 100;
     min-height: 100vh;
-    width: 50%;
-    background: #f79774;
+    width: 20%;
+    background: #EEC801;
 }
 
 /* ------------- header -----------------*/
 .header {
-    background: #82a6e0;
+    background: white;
     width: 100%;
     height: 50px;
     display: flex;
@@ -179,6 +207,8 @@ li {
     background: white url("../images/mglass.png") no-repeat center;
     background-size: contain;
     border-radius: 5px;
+    cursor: pointer;
+    border: none;
 }
 
 .header-logo input {
@@ -207,6 +237,7 @@ li {
 .close-progress {
     align-self: right;
     font-size: 70%;
+    cursor: pointer;
 }
 
 .progress-button {
@@ -216,9 +247,10 @@ li {
     line-height: 100%;
     text-align: center;
     margin-left: 2px;
-    background: #f79774 url("../images/progres.png") no-repeat center;
+    background: #EEC801 url("../images/progres.png") no-repeat center;
     background-size: contain;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .header-progress-tracker {
@@ -241,8 +273,9 @@ li {
 /* --------------tasks to do -------------*/
 
 .completeCheckbox {
-    max-width: 10px;
-    max-height: 10px;
+    max-width: 15px;
+    max-height: 15px;
+    cursor: pointer;
 }
 
 .taskLis {
@@ -253,23 +286,27 @@ li {
 
 .taskDivs {
     padding: 5px;
+    background-color: white;
 }
 
 .taskDivs:nth-child(1) {
     width: 30%;
+    background-color: white;
 }
 
 .taskDivs:nth-child(2) {
     width: 70%;
+    background-color: white;
 }
 
 .taskDivs:nth-child(3) {
     width: 70%;
+    background-color: white;
 }
 
 .taskDivs:nth-child(4) {
-    background: darkslateblue;
-    border-radius: 50%;
+    /*background: #ffa500;*/
+    border-radius: 20%;
     margin-right: 15px;
     text-align: center;
     font-weight: 900;
@@ -301,7 +338,8 @@ li {
 
 /* ------ button tasks finished ---------*/
 .btn-tasks-finished {
-    background-color: #f79774;
+    background-color: black;
+    cursor: pointer;
     border: none;
     color: white;
     text-align: center;
@@ -313,10 +351,12 @@ li {
     width: 150px;
     left: 5%;
     margin: 10px;
+    font-family: 'Archivo Black', sans-serif;
+
 }
 
 .btn-tasks-finished:hover {
-    background-color: mediumturquoise;
+    background-color: var(--color);
     color: white;
 }
 
@@ -328,6 +368,7 @@ li {
     width: 100%;
     word-wrap: break-word;
     display: inline-block;
+
 }
 
 .hidden {
@@ -336,7 +377,7 @@ li {
 
 /*-------------- section to add task -------------------*/
 .addTaskButton {
-    background-color: #f79774;
+    background-color: black;
     border: none;
     color: white;
     text-align: center;
@@ -348,12 +389,20 @@ li {
     width: 150px;
     left: 5%;
     margin: 10px;
+    cursor: pointer;
+    font-family: 'Archivo Black', sans-serif;
+
+
+}
+
+.addTaskButton:hover{
+    background-color: var(--color);
 }
 
 .sectionAddTask {
     width: 90%;
-    border-radius: 5%;
-    background: #f79774;
+    border: 1px gray dashed;
+    background: white;
     position: absolute;
     z-index: 50;
     margin: 10% 2% 0 2%;
@@ -362,6 +411,7 @@ li {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: 'Archivo Black', sans-serif;
 }
 
 .sectionAddTask > div {
@@ -404,11 +454,11 @@ li {
 
 /* Style the input */
 #searchInput {
-    border: none;
     width: 75%;
     padding: 10px;
     float: left;
     font-size: 16px;
+    border: gray 1px solid;
 }
 
 /* Style the "Add" button */
@@ -417,16 +467,18 @@ li {
     padding: 10px;
     width: 80px;
     height: auto;
-    background: #d9d9d9;
-    color: black;
+    background: black;
     text-align: center;
     font-size: 12px;
     cursor: pointer;
     display: inline-block;
+    color: white;
+    border-radius: 8px;
+    font-family: 'Archivo Black', sans-serif;
 }
 
 .addBtn:hover {
-    background-color: #bbb;
+    background-color: var(--color);
 }
 
 /* ----------- calendar ---------------*/
@@ -447,7 +499,7 @@ li {
 
 .priority {
     display: inline-block;
-    color: darkcyan;
+    color: black;
     font-size: 12px;
     font-weight: 500;
     text-align: center;
@@ -464,6 +516,7 @@ li {
     margin: 0;
     font-size: 12px;
     text-align: center;
+    text-transform: uppercase;
 
 }
 #inputTitle {
@@ -473,4 +526,20 @@ li {
 #addThisTask {
     height: 50px;
     align-self: center;
+}
+
+.logo-side {
+    font-size: 20px;
+    /*color: black;*/
+    color: #F04609;
+    writing-mode: vertical-rl;
+    -webkit-transform:rotate(180deg);
+    font-family: 'Archivo Black', sans-serif;
+    /*font-family: 'Kaushan Script', cursive;*/
+    border: 0;
+
+}
+
+.logo-box {
+    padding-top: 160px;
 }
