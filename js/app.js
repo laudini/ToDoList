@@ -24,6 +24,17 @@ document.addEventListener("DOMContentLoaded", function () {
     var week = [];
     var userCats = [];
 
+    // LOCAL STORAGE
+    function populateStorage() {
+        //...
+    }
+
+    if(!localStorage.getItem('allArray')) {
+        populateStorage();
+    } else {
+        var all = JSON.parse(localStorage['allArray']);
+    }
+
 // HAMBURGER
 
     hamburger.addEventListener("click", function () {
@@ -669,6 +680,7 @@ document.addEventListener("DOMContentLoaded", function () {
             uniqueId: uniqueId
         };
         all.push(categoryObject);
+        localStorage["allArray"] = JSON.stringify(all);
         document.getElementById("myInput").value = "";
 
         toggledSection.classList.toggle('invisible');
