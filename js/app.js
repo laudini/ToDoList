@@ -45,12 +45,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // HAMBURGER
+    function hamburgerChange () {
 
-    hamburger.addEventListener("click", function () {
         leftCol.classList.toggle("wide-menu");
         rightCol.classList.toggle("hide-right-col");
-        // TO ZMIENIC NA MAX/WIN WIDTH VVVV
-        // rightCol.style.filter = rightCol.style.filter != "blur(6px)" ? "blur(6px)" : "blur(0)";
         var catButtons = document.getElementsByClassName("categ-list");
 
         if (openHamburger === false) {
@@ -84,6 +82,9 @@ document.addEventListener("DOMContentLoaded", function () {
         for (var i = 0; i < catButtons.length; i++) {
             catButtons[i].classList.toggle("wide-all-btn");
         }
+    }
+    hamburger.addEventListener("click", function () {
+        hamburgerChange();
     });
 
 // Button "ALL" functionality
@@ -155,6 +156,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 }
             }
+        }
+        if (openHamburger === true) {
+            hamburgerChange();
         }
     });
 
@@ -230,6 +234,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             }
         }
+        if (openHamburger === true) {
+            hamburgerChange();
+        }
     });
 
 
@@ -304,6 +311,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             }
         }
+        if (openHamburger === true) {
+            hamburgerChange();
+        }
     });
 
 // Button "WEEK" functionality
@@ -376,6 +386,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 }
             }
+        }
+        if (openHamburger === true) {
+            hamburgerChange();
         }
     });
 
@@ -609,8 +622,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 currentCategoryChosen = newButton.id;
             }
         }
-
-
+        if (openHamburger === true) {
+            hamburgerChange();
+        }
         catFilling();
     }
 
@@ -657,6 +671,9 @@ document.addEventListener("DOMContentLoaded", function () {
                             checkBox.type = "checkbox";
                         }
                     }
+                }
+                if (openHamburger === true) {
+                    hamburgerChange();
                 }
             })
         }
