@@ -18,10 +18,10 @@ https://laudini.github.io/ToDoList/
 
 ## Authors
 
-** Krzemiński Kamil **      scrum master / contributor (https://github.com/laudini)
-** Krzysztof Kinder **      collaborator / contributor (https://github.com/krzyskin)
-** Karolina Smolarczyk **   collaborator / contributor (https://github.com/ksmolarczyk)
-** Dominik Wilk **          collaborator / contributor (https://github.com/dominikwilk)
+* ** Krzemiński Kamil **      scrum master / contributor (https://github.com/laudini)
+* ** Krzysztof Kinder **      collaborator / contributor (https://github.com/krzyskin)
+* ** Karolina Smolarczyk **   collaborator / contributor (https://github.com/ksmolarczyk)
+* ** Dominik Wilk **          collaborator / contributor (https://github.com/dominikwilk)
 
 Contributor list link.
 https://github.com/laudini/ToDoList/graphs/contributors 
