@@ -251,6 +251,7 @@ document.addEventListener("DOMContentLoaded", function () {
         while (tasksFinished.firstChild) {
             tasksFinished.removeChild(tasksFinished.firstChild);
         }
+        console.log(tomorrow);
         // creating <li>, <div> inside and pushing elements into them.
         for (var i = 0; i < tomorrow.length; i++) {
 
@@ -287,7 +288,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 // creating new element <li>
                 var newLi = document.createElement("li");
                 // taking elements from object sent by user (name, date, priority)
-                var tomorrowElements = Object.values(all[i]);
+                var tomorrowElements = Object.values(tomorrow[i]);
+                console.log(Object.values(all[i]));
+                console.log(tomorrowElements);
                 // assigning new <li> to <ul>
                 tasksToDo.appendChild(newLi);
                 // creating new divs in <li> and putting user information in divs
@@ -363,7 +366,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // creating new element <li>
                 var newLi = document.createElement("li");
                 // taking elements from object sent by user (name, date, priority)
-                var weekElements = Object.values(all[i]);
+                var weekElements = Object.values(week[i]);
                 // assigning new <li> to <ul>
                 tasksToDo.appendChild(newLi);
                 // creating new divs in <li> and putting user information in divs
@@ -425,6 +428,8 @@ document.addEventListener("DOMContentLoaded", function () {
         today = [];
         // looping through ALL array to find today's tasks
         for (var i = 0; i < all.length; i++) {
+            console.log(all[i].date);
+            console.log(todayDate);
             if (all[i].date === todayDate) {
                 today.push(all[i]);
             }
@@ -467,6 +472,8 @@ document.addEventListener("DOMContentLoaded", function () {
         // looping through ALL array to find today's tasks
         for (var i = 0; i < all.length; i++) {
             if (all[i].date === todayDate) {
+                console.log(all[i].date);
+                console.log(todayDate);
                 tomorrow.push(all[i]);
             }
         }
