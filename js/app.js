@@ -586,9 +586,9 @@ document.addEventListener("DOMContentLoaded", function () {
         while (categList.firstChild) {
             categList.removeChild(categList.firstChild);
         }
+        console.log('usercats len', userCats.length);
 
         for (var i = 0; i < userCats.length; i++) {
-
             if (addCategory.classList.contains('wide-addCat-btn')) {
                 var newCategory = document.createElement("li");
                 var newButton = document.createElement('button');
@@ -601,7 +601,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 categList.append(newCategory);
 
                 // ADD ID to button
-                newButton.id = (userCats.length - 1).toString();
+                newButton.id = (i).toString();
                 currentCategoryChosen = newButton.id;
 
             } else {
@@ -616,7 +616,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 categList.append(newCategory);
 
                 // ADD ID to button
-                newButton.id = (userCats.length - 1).toString();
+                newButton.id = (i).toString();
                 currentCategoryChosen = newButton.id;
             }
         }
