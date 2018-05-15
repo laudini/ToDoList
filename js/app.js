@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 // HAMBURGER
-    function hamburgerChange () {
+    function hamburgerChange() {
 
         leftCol.classList.toggle("wide-menu");
         rightCol.classList.toggle("hide-right-col");
@@ -86,6 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
             catButtons[i].classList.toggle("wide-all-btn");
         }
     }
+
     hamburger.addEventListener("click", function () {
         hamburgerChange();
     });
@@ -578,6 +579,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         userCats.push(categObject);
                         fillingCategoryBar();
                         populateStorage();
+                        document.querySelector('.main-body-header').innerText = inputCategory.value;
                         parent.removeChild(element);
                     }
                 }
@@ -657,8 +659,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (document.querySelector(".categ-list-chosen") !== null) {
                     document.querySelector(".categ-list-chosen").classList.remove('categ-list-chosen');
                 }
-
                 categoriesTasks = [];
+
                 currentCategoryChosen = this.id;
                 console.log(this.id);
                 for (var i = 0; i < all.length; i++) {
@@ -699,6 +701,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 }
                 document.getElementById(this.id).classList.add("categ-list-chosen");
+                document.querySelector('.main-body-header').innerText = userCats[this.id].name;
 
                 if (openHamburger === true) {
                     hamburgerChange();
