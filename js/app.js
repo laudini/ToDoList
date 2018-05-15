@@ -546,7 +546,12 @@ document.addEventListener("DOMContentLoaded", function () {
     var addCategory = document.querySelector('.add-category');
 
     addCategory.addEventListener('click', function () {
+
         var parent = document.querySelector(".header-add-category");
+        if (parent.classList.contains('tooltip')) {
+            document.querySelector(".tooltiptext").classList.add("hidden")
+        }
+
         var element = document.createElement("div");
         if (document.querySelector(".category-window") === null) {
             element.classList.add("category-window");
