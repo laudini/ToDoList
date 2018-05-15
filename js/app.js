@@ -42,7 +42,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     fillingCategoryBar();
-
+    var parent = document.querySelector(".header-add-category");
+    if (parent.classList.contains('tooltip')) {
+        document.querySelector(".tooltiptext").classList.add("hidden")
+    }
 
 // HAMBURGER
     function hamburgerChange () {
