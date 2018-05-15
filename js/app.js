@@ -89,6 +89,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Button "ALL" functionality
     allBtn.addEventListener("click", function () {
+        // setting up title
+        document.querySelector('.main-body-header').innerText = "ALL TASKS";
         // clearing <ul>
         while (tasksToDo.firstChild) {
             tasksToDo.removeChild(tasksToDo.firstChild);
@@ -164,6 +166,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Button "TODAY" functionality
     todayBtn.addEventListener("click", function () {
+        // setting up title
+        document.querySelector('.main-body-header').innerText = "TODAY TASKS";
         // executing 'today task check' function
         checkTodayArray();
         // clearing <ul>
@@ -240,6 +244,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Button "TOMORROW" functionality
     tomorrowBtn.addEventListener("click", function () {
+        // setting up title
+        document.querySelector('.main-body-header').innerText = "TOMORROW TASKS";
         // executing 'today task check' function
         checkTomorrowArray();
         // clearing <ul>
@@ -315,6 +321,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Button "WEEK" functionality
     weekBtn.addEventListener("click", function () {
+        // setting up title
+        document.querySelector('.main-body-header').innerText = "NEXT 7 DAYS";
         // executing 'week task check' function
         checkWeekArray();
         // clearing <ul>

@@ -152,7 +152,7 @@ li {
 }
 
 .main-col-2 {
-    background-image: url("../images/messy-concept.jpg");
+    background: url("../images/messy-concept.jpg") fixed;
     background-size: cover;
     width: 100%;
     min-height: 80vh;
@@ -269,6 +269,15 @@ li {
     display: flex;
     flex-direction: column;
 }
+.main-body-header {
+    background: white;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 5px;
+
+}
 
 /* --------------tasks to do -------------*/
 
@@ -356,7 +365,6 @@ li {
 }
 
 .btn-tasks-finished:hover {
-    background-color: var(--color);
     color: white;
 }
 
