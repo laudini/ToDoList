@@ -601,6 +601,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 // ADD ID to button
                 newButton.id = (i).toString();
                 currentCategoryChosen = newButton.id;
+                if (document.querySelector(".categ-list-chosen") !== null) {
+                    document.querySelector(".categ-list-chosen").classList.remove('categ-list-chosen');
+                }
+                document.getElementById(currentCategoryChosen).classList.add('categ-list-chosen');
 
             } else {
 
@@ -616,6 +620,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 // ADD ID to button
                 newButton.id = (i).toString();
                 currentCategoryChosen = newButton.id;
+                if (document.querySelector(".categ-list-chosen") !== null) {
+                    document.querySelector(".categ-list-chosen").classList.remove('categ-list-chosen');
+                }
+                document.getElementById(currentCategoryChosen).classList.add('categ-list-chosen');
             }
         }
         if (openHamburger === true) {
@@ -630,7 +638,6 @@ document.addEventListener("DOMContentLoaded", function () {
         var catButtons = document.getElementsByClassName('categ-list');
         for (var i = 0; i < catButtons.length; i++) {
             catButtons[i].addEventListener("click", function () {
-                console.log(document.querySelector(".categ-list-chosen"));
                 if (document.querySelector(".categ-list-chosen") !== null) {
                     document.querySelector(".categ-list-chosen").classList.remove('categ-list-chosen');
                 }
