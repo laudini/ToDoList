@@ -98,6 +98,9 @@ li {
     cursor: pointer;
 
 }
+.categ-list-chosen {
+    border: 3px dashed black;
+}
 
 .category-window {
     position: absolute;
@@ -161,6 +164,7 @@ li {
 /*}*/
 .main-container {
     background: #D1D6D9;
+    max-width: 100%;
     width: 100vw;
     height: 100%;
     margin: 0 auto;

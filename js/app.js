@@ -463,8 +463,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // looping through ALL array to find today's tasks
         for (var i = 0; i < all.length; i++) {
             if (all[i].date === todayDate) {
-                console.log(all[i].date);
-                console.log(todayDate);
+
                 tomorrow.push(all[i]);
             }
         }
@@ -586,7 +585,6 @@ document.addEventListener("DOMContentLoaded", function () {
         while (categList.firstChild) {
             categList.removeChild(categList.firstChild);
         }
-        console.log('usercats len', userCats.length);
 
         for (var i = 0; i < userCats.length; i++) {
             if (addCategory.classList.contains('wide-addCat-btn')) {
@@ -632,11 +630,15 @@ document.addEventListener("DOMContentLoaded", function () {
         var catButtons = document.getElementsByClassName('categ-list');
         for (var i = 0; i < catButtons.length; i++) {
             catButtons[i].addEventListener("click", function () {
+                console.log(document.querySelector(".categ-list-chosen"));
+                if (document.querySelector(".categ-list-chosen") !== null) {
+                    document.querySelector(".categ-list-chosen").classList.remove('categ-list-chosen');
+                }
+
                 categoriesTasks = [];
                 currentCategoryChosen = this.id;
                 console.log(this.id);
                 for (var i = 0; i < all.length; i++) {
-                    console.log(all[i].catId);
                     if (all[i].catId === currentCategoryChosen) {
 
                         categoriesTasks.push(all[i]);
@@ -673,6 +675,8 @@ document.addEventListener("DOMContentLoaded", function () {
                         }
                     }
                 }
+                document.getElementById(this.id).classList.add("categ-list-chosen");
+
                 if (openHamburger === true) {
                     hamburgerChange();
                 }
