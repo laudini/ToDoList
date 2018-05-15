@@ -43,8 +43,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     fillingCategoryBar();
     var parent = document.querySelector(".header-add-category");
-    if (parent.classList.contains('tooltip')) {
-        document.querySelector(".tooltiptext").classList.add("hidden")
+    if (userCats.length > 0) {
+        if (parent.classList.contains('tooltip')) {
+            document.querySelector(".tooltiptext").classList.add("hidden")
+        }
     }
 
 // HAMBURGER
