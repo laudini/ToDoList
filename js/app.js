@@ -821,7 +821,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
         document.querySelector('.show-progress').classList.toggle('invisible');
     })
+    //////////// select category///////////
 
+    var selector = document.querySelector("select");
 
+    for (var i = 0; i < userCats.length; i++) {
+       var categSelect = document.createElement("option");
+       categSelect.innerText = userCats[i].name;
+       selector.appendChild(categSelect);
+    }
 });
 
