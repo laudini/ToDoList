@@ -43,13 +43,26 @@ li {
     font-size: 12px;
 }
 
+
 .menu-list button:hover {
     background-color: black;
     color: white;
     border: none;
     font-size: 18px;
 }
+.menu-list .hamb{
+    transform: rotate(90deg);
+    font-size:25px;
+    letter-spacing: -5px;
+    text-align:center;
+    padding-bottom:4px;
+    color: rgba(0, 0, 0, 0.6);
+}
+.menu-list .hamb:hover{
+    font-size:25px;
+    font-weight:bold;
 
+}
 .menu-list .wide-addCat-btn {
     width: 120px;
     height: 40px;
