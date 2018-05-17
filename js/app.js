@@ -581,6 +581,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         userCats.push(categObject);
                         fillingCategoryBar();
                         populateStorage();
+                        catOptions();
                         document.querySelector('.main-body-header').innerText = inputCategory.value;
                         parent.removeChild(element);
                     }
@@ -722,12 +723,24 @@ document.addEventListener("DOMContentLoaded", function () {
     var toggledSection = document.querySelector('.sectionAddTask');
     mainAddTaskBtn.addEventListener("click", function () {
         toggledSection.classList.toggle('invisible');
+
+       catOptions();
     });
 
-
+    function catOptions() { //taking categories names to task-box for choosing category for a task
+        var selector = document.querySelector("select");
+        selector.innerHTML='';
+        for (var i = 0; i < userCats.length; i++) {
+            var categSelect = document.createElement("option");
+            categSelect.innerText = userCats[i].name;
+            selector.appendChild(categSelect);
+        }
+    };
 // Create a new list item when clicking on the "Add" button
     var addTaskBtn = document.querySelector('.addBtn');
     addTaskBtn.addEventListener('click', newElement);
+
+
 
     function newElement() {
 
@@ -822,13 +835,15 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector('.show-progress').classList.toggle('invisible');
     })
     //////////// select category///////////
-
+/*function catOptions()
+{
     var selector = document.querySelector("select");
 
     for (var i = 0; i < userCats.length; i++) {
-       var categSelect = document.createElement("option");
-       categSelect.innerText = userCats[i].name;
-       selector.appendChild(categSelect);
+        var categSelect = document.createElement("option");
+        categSelect.innerText = userCats[i].name;
+        selector.appendChild(categSelect);
     }
+};*/
 });
 
