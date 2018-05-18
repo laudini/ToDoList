@@ -96,7 +96,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Button "ALL" functionality
     allBtn.addEventListener("click", allFill);
-    console.log(all);
     function allFill() {
         // setting up title
         document.querySelector('.main-body-header').innerText = "ALL TASKS";
