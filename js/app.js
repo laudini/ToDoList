@@ -713,9 +713,7 @@ console.log(all);
                     var toRemoveName = userCats[this.id].name;
                     console.log(toRemoveName);
                     userCats.splice(this.id, 1);
-                    populateStorage();
                     fillingCategoryBar();
-                    allFill();
                     // removing task when removing cat
                     for (var j = 0; j < all.length; j++ ) {
                         if (all[j].catName == toRemoveName) {
@@ -723,6 +721,9 @@ console.log(all);
                             populateStorage();
                         }
                     }
+
+                populateStorage();
+                allFill();
                 });
                 if (openHamburger === true) {
                     hamburgerChange();
