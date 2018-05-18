@@ -712,8 +712,16 @@ document.addEventListener("DOMContentLoaded", function () {
                     populateStorage();
                     fillingCategoryBar();
                     allFill();
-                    console.log(all);
+                    // removing task when removing cat
+                    for (var j = 0; j < all.length; j++ ) {
+                        if (all[j].catId     == this.id) {
+                            console.log(this.id);
+                            all.splice(j,1);
+                            populateStorage();
+                        }
+                    }
                 });
+                console.log(all);
                 if (openHamburger === true) {
                     hamburgerChange();
                 }
