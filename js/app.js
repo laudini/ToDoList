@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var tasksToDo = document.querySelector(".tasks-to-do");     // TASKS TO DO <ul>
     var tasksFinished = document.querySelector(".tasks-finished");
     var currentCategoryChosen = 0;
+    var currentCategoryName = "";
     var categoriesTasks = [];
     var openHamburger = false;
     var shownTasks = document.getElementsByClassName("completeCheckbox");
@@ -95,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Button "ALL" functionality
     allBtn.addEventListener("click", allFill);
-
+    console.log(all);
     function allFill() {
         // setting up title
         document.querySelector('.main-body-header').innerText = "ALL TASKS";
@@ -641,6 +642,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // ADD ID to button
                 newButton.id = (i).toString();
                 currentCategoryChosen = newButton.id;
+                currentCategoryName = userCats[i].name;
                 if (document.querySelector(".categ-list-chosen") !== null) {
                     document.querySelector(".categ-list-chosen").classList.remove('categ-list-chosen');
                 }
@@ -658,15 +660,16 @@ document.addEventListener("DOMContentLoaded", function () {
     function catFilling() {
         var catButtons = document.getElementsByClassName('categ-list');
         for (var i = 0; i < catButtons.length; i++) {
-            catButtons[i].addEventListener("click", function () {
+            catButtons[i].addEventListener("click", function (e) {
                 if (document.querySelector(".categ-list-chosen") !== null) {
                     document.querySelector(".categ-list-chosen").classList.remove('categ-list-chosen');
                 }
                 categoriesTasks = [];
-
-                currentCategoryChosen = this.id;
+                currentCategoryChosen = userCats[e.target.id].name;
+                currentCategoryName = userCats[e.target.id].name;
+                console.log('current cat is', currentCategoryChosen);
                 for (var i = 0; i < all.length; i++) {
-                    if (all[i].catId === currentCategoryChosen) {
+                    if (all[i].catName === currentCategoryChosen) {
 
                         categoriesTasks.push(all[i]);
                     }
@@ -708,14 +711,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 removeCat.classList.add('remove');
                 document.querySelector('.main-body-header').appendChild(removeCat);
                 removeCat.addEventListener('click', () => {
+                    let toRemoveName = userCats[this.id].name;
                     userCats.splice(this.id, 1);
                     populateStorage();
                     fillingCategoryBar();
                     allFill();
                     // removing task when removing cat
                     for (var j = 0; j < all.length; j++ ) {
-                        if (all[j].catId     == this.id) {
-                            console.log(this.id);
+                        if (all[j].catName     == toRemoveName) {
                             all.splice(j,1);
                             populateStorage();
                         }
@@ -767,6 +770,7 @@ document.addEventListener("DOMContentLoaded", function () {
             date: taskDate,
             priority: priorityValue,
             catId: currentCategoryChosen,
+            catName: currentCategoryName,
             finished: false,
             uniqueId: uniqueId
         };
