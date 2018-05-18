@@ -94,7 +94,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 // Button "ALL" functionality
-    allBtn.addEventListener("click", function () {
+    allBtn.addEventListener("click", allFill);
+
+    function allFill() {
         // setting up title
         document.querySelector('.main-body-header').innerText = "ALL TASKS";
         // clearing <ul>
@@ -167,8 +169,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (openHamburger === true) {
             hamburgerChange();
         }
-    });
-
+    }
 
 // Button "TODAY" functionality
     todayBtn.addEventListener("click", function () {
@@ -664,7 +665,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 categoriesTasks = [];
 
                 currentCategoryChosen = this.id;
-                console.log(this.id);
                 for (var i = 0; i < all.length; i++) {
                     if (all[i].catId === currentCategoryChosen) {
 
@@ -704,7 +704,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
                 document.getElementById(this.id).classList.add("categ-list-chosen");
                 document.querySelector('.main-body-header').innerText = userCats[this.id].name;
-
+                var removeCat = document.createElement('span');
+                removeCat.classList.add('remove');
+                document.querySelector('.main-body-header').appendChild(removeCat);
+                removeCat.addEventListener('click', () => {
+                    userCats.splice(this.id, 1);
+                    populateStorage();
+                    fillingCategoryBar();
+                    allFill();
+                    console.log(all);
+                });
                 if (openHamburger === true) {
                     hamburgerChange();
                 }

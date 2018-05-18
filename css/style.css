@@ -270,6 +270,7 @@ li {
     flex-direction: column;
 }
 .main-body-header {
+    position: relative;
     background: white;
     font-size: 25px;
     font-weight: bold;
@@ -277,6 +278,15 @@ li {
     padding-top: 10px;
     padding-bottom: 5px;
 
+}
+.remove {
+    position: absolute;
+    top: 0.6em;
+    right: 10%;
+    background: url("../images/Delete.png");
+    background-size: contain;
+    width: 15px;
+    height: 15px;
 }
 
 /* --------------tasks to do -------------*/
@@ -425,6 +435,15 @@ li {
 .sectionAddTask > div {
     margin-bottom: 10px;
 }
+#removeCat {
+    background: url("../images/Delete.png") no-repeat;
+    background-size: contain;
+    height: 10px;
+    width: 10px;
+    float: right;
+    padding: 10px;
+    margin: 10px;
+}
 
 #myInput {
     width: 100%;
@@ -569,7 +588,7 @@ li {
     position: absolute;
     z-index: 15000;
     top: -20px;
-    left: 60px;
+    left: 70px;
 
     /*opacity: 0;*/
     /*transition: opacity 0.3s;*/
