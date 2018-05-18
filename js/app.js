@@ -728,6 +728,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // Create a new list item when clicking on the "Add" button
     var addTaskBtn = document.querySelector('.addBtn');
     addTaskBtn.addEventListener('click', newElement);
+    document.querySelector('.cancelBtn').addEventListener('click', cancelAddAction);
 
     function newElement() {
 
@@ -755,6 +756,9 @@ document.addEventListener("DOMContentLoaded", function () {
         populateStorage();
         document.getElementById("myInput").value = "";
 
+        toggledSection.classList.toggle('invisible');
+    }
+    function cancelAddAction(){
         toggledSection.classList.toggle('invisible');
     }
 
