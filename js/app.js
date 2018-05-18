@@ -735,6 +735,7 @@ document.addEventListener("DOMContentLoaded", function () {
         var taskName = document.getElementById("myInput").value;
         var taskDate = document.getElementById("date").value;
         var options = document.getElementsByName("kolor");
+        if (taskName !== "" && taskDate !== "") {
 
         if (options) {
             for (var i = 0; i < options.length; i++) {
@@ -757,6 +758,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("myInput").value = "";
 
         toggledSection.classList.toggle('invisible');
+        }
     }
     function cancelAddAction(){
         toggledSection.classList.toggle('invisible');
