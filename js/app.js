@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var categoriesTasks = [];
     var openHamburger = false;
     var shownTasks = document.getElementsByClassName("completeCheckbox");
+    var catButtons = document.getElementsByClassName('categ-list');
 
 // all required arrays
     var all = [];
@@ -655,20 +656,19 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 // filling category buttons
-
+console.log(all);
     function catFilling() {
-        var catButtons = document.getElementsByClassName('categ-list');
         for (var i = 0; i < catButtons.length; i++) {
             catButtons[i].addEventListener("click", function (e) {
                 if (document.querySelector(".categ-list-chosen") !== null) {
                     document.querySelector(".categ-list-chosen").classList.remove('categ-list-chosen');
                 }
                 categoriesTasks = [];
-                currentCategoryChosen = userCats[e.target.id].name;
+                // currentCategoryChosen = userCats[e.target.id].name;
                 currentCategoryName = userCats[e.target.id].name;
-                console.log('current cat is', currentCategoryChosen);
+                console.log('current cat id', currentCategoryChosen);
                 for (var i = 0; i < all.length; i++) {
-                    if (all[i].catName === currentCategoryChosen) {
+                    if (all[i].catName === currentCategoryName) {
 
                         categoriesTasks.push(all[i]);
                     }
@@ -710,20 +710,20 @@ document.addEventListener("DOMContentLoaded", function () {
                 removeCat.classList.add('remove');
                 document.querySelector('.main-body-header').appendChild(removeCat);
                 removeCat.addEventListener('click', () => {
-                    let toRemoveName = userCats[this.id].name;
+                    var toRemoveName = userCats[this.id].name;
+                    console.log(toRemoveName);
                     userCats.splice(this.id, 1);
                     populateStorage();
                     fillingCategoryBar();
                     allFill();
                     // removing task when removing cat
                     for (var j = 0; j < all.length; j++ ) {
-                        if (all[j].catName     == toRemoveName) {
+                        if (all[j].catName == toRemoveName) {
                             all.splice(j,1);
                             populateStorage();
                         }
                     }
                 });
-                console.log(all);
                 if (openHamburger === true) {
                     hamburgerChange();
                 }
@@ -780,6 +780,9 @@ document.addEventListener("DOMContentLoaded", function () {
         toggledSection.classList.toggle('invisible');
         document.getElementById("date").value = "";
         }
+        console.log(catButtons);
+        console.log(currentCategoryChosen);
+        catButtons[currentCategoryChosen].click();
     }
     function cancelAddAction(){
         toggledSection.classList.toggle('invisible');
