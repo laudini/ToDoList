@@ -758,6 +758,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("myInput").value = "";
 
         toggledSection.classList.toggle('invisible');
+        document.getElementById("date").value = "";
         }
     }
     function cancelAddAction(){
