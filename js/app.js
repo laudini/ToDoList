@@ -18,6 +18,10 @@ document.addEventListener("DOMContentLoaded", function () {
     var openHamburger = false;
     var shownTasks = document.getElementsByClassName("completeCheckbox");
     var catButtons = document.getElementsByClassName('categ-list');
+    var tasksDeleted = 0;
+    var level = document.querySelector('#level');
+    var levelTasks = document.querySelector('#level-tasks');
+    var levelUp = document.querySelector('#to-level-up');
 
 // all required arrays
     var all = [];
@@ -30,17 +34,24 @@ document.addEventListener("DOMContentLoaded", function () {
     function populateStorage() {
         localStorage["allArray"] = JSON.stringify(all);
         localStorage["userCats"] = JSON.stringify(userCats);
+        localStorage["tasksDeleted"] = JSON.stringify(tasksDeleted);
     }
 
     if (!localStorage.getItem('allArray')) {
-        populateStorage();
+        localStorage["allArray"] = JSON.stringify(all);
     } else {
         all = JSON.parse(localStorage['allArray']);
     }
+
     if (!localStorage.getItem('userCats')) {
-        populateStorage();
+        localStorage["userCats"] = JSON.stringify(userCats);
     } else {
         userCats = JSON.parse(localStorage['userCats']);
+    }
+    if (!localStorage.getItem('tasksDeleted')) {
+        localStorage["tasksDeleted"] = JSON.stringify(tasksDeleted);
+    } else {
+        tasksDeleted = JSON.parse(localStorage['tasksDeleted']);
     }
 
     fillingCategoryBar();
@@ -844,7 +855,7 @@ console.log(all);
 
 
     document.querySelector('.progress-button').addEventListener("click", function () {
-
+        calculateProgress();
         document.querySelector('.show-progress').classList.toggle('invisible');
     });
 
@@ -852,6 +863,14 @@ console.log(all);
 
         document.querySelector('.show-progress').classList.toggle('invisible');
     })
+
+    function calculateProgress () {
+        var tasks = tasksDeleted;
+        level.innerText = Math.floor(tasks / 5);
+        levelTasks.innerText = tasks;
+        levelUp.innerText = 5 - tasks % 5;
+
+    }
 
 
 });
