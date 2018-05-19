@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // assigning new <li> to <ul>
                 tasksFinished.appendChild(fnewLi);
 
-                for (var j = 0; j < 4; j++) {
+                for (var j = 0; j < 5; j++) {
                     var fnewDiv = document.createElement("div");
                     fnewDiv.classList.add("taskDivs");
                     var currentFLenght = tasksFinished.children.length;
@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // assigning new <li> to <ul>
                 tasksToDo.appendChild(newLi);
                 // creating new divs in <li> and putting user information in divs
-                for (var j = 0; j < 4; j++) {
+                for (var j = 0; j < 5; j++) {
                     var newDiv = document.createElement("div");
                     newDiv.classList.add("taskDivs");
                     var currentLength = tasksToDo.children.length;
@@ -194,7 +194,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // assigning new <li> to <ul>
                 tasksFinished.appendChild(fnewLi);
 
-                for (var j = 0; j < 4; j++) {
+                for (var j = 0; j < 5; j++) {
                     var fnewDiv = document.createElement("div");
                     fnewDiv.classList.add("taskDivs");
                     var currentFLenght = tasksFinished.children.length;
@@ -222,7 +222,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // assigning new <li> to <ul>
                 tasksToDo.appendChild(newLi);
                 // creating new divs in <li> and putting user information in divs
-                for (var j = 0; j < 4; j++) {
+                for (var j = 0; j < 5; j++) {
                     var newDiv = document.createElement("div");
                     newDiv.classList.add("taskDivs");
                     var currentLength = tasksToDo.children.length;
@@ -272,7 +272,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // assigning new <li> to <ul>
                 tasksFinished.appendChild(fnewLi);
 
-                for (var j = 0; j < 4; j++) {
+                for (var j = 0; j < 5; j++) {
                     var fnewDiv = document.createElement("div");
                     fnewDiv.classList.add("taskDivs");
                     var currentFLenght = tasksFinished.children.length;
@@ -300,7 +300,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // assigning new <li> to <ul>
                 tasksToDo.appendChild(newLi);
                 // creating new divs in <li> and putting user information in divs
-                for (var j = 0; j < 4; j++) {
+                for (var j = 0; j < 5; j++) {
                     var newDiv = document.createElement("div");
                     newDiv.classList.add("taskDivs");
                     var currentLength = tasksToDo.children.length;
@@ -349,7 +349,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // assigning new <li> to <ul>
                 tasksFinished.appendChild(fnewLi);
 
-                for (var j = 0; j < 4; j++) {
+                for (var j = 0; j < 5; j++) {
                     var fnewDiv = document.createElement("div");
                     fnewDiv.classList.add("taskDivs");
                     var currentFLenght = tasksFinished.children.length;
@@ -377,7 +377,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // assigning new <li> to <ul>
                 tasksToDo.appendChild(newLi);
                 // creating new divs in <li> and putting user information in divs
-                for (var j = 0; j < 4; j++) {
+                for (var j = 0; j < 5; j++) {
                     var newDiv = document.createElement("div");
                     newDiv.classList.add("taskDivs");
                     var currentLength = tasksToDo.children.length;
@@ -707,7 +707,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         }
                     }
                 }
-                document.getElementById(this.id).classList.add("categ-list-chosen");
+                //?document.getElementById(this.id).classList.add("categ-list-chosen");
                 document.querySelector('.main-body-header').innerText = userCats[this.id].name;
 
                 if (openHamburger === true) {
@@ -845,33 +845,6 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector('.show-progress').classList.toggle('invisible');
     })
 console.log(all);
-    //1//////wyświetlanie kategorii w divie taska
-
-    //2///////dodanie addeventlistenera do przycisków categorii po petli
-    /*
-function categoryTasksShowing(){
-
-       var taskInCategory = [];
-for (var i=0;i<all.length;i++){
-    if(all[i].catId)===
-    console.log(all[i].catId);
-}
-}();
-*/
-    for (var i=0;i<userCats.length;i++) {
-        //console.log(userCats[i].name);
-    }
-var catList = document.getElementsByClassName("categ-list");
-    //console.log(catList.length);
-
-    for (var i=0;i<catList.length;i++) {
-        console.log(catList[i].name);
-      /* catList[i].addEventListener('click',function(){
-           for(var z=0;z<all.length;z++){
-               if(all[z].catId)===
-           }
-       })*/
-           }
 
 });
 
