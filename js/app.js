@@ -614,6 +614,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 // ADD FIRST LETTER OF CAT NAME TO BUTTON
                 newButton.innerText = userCats[i].name;
+                newButton.value = userCats[i].name;
                 newButton.classList.add("categ-list");
                 newButton.classList.add("wide-all-btn");
                 newCategory.appendChild(newButton);
@@ -627,6 +628,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
                 document.getElementById(currentCategoryChosen).classList.add('categ-list-chosen');
 
+               //ADD Value to button
+
             } else {
 
                 var newCategory = document.createElement("li");
@@ -634,6 +637,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 // ADD FIRST LETTER OF CAT NAME TO BUTTON
                 newButton.innerText = userCats[i].shortName;
+                newButton.value = userCats[i].name;
                 newButton.classList.add("categ-list");
                 newCategory.appendChild(newButton);
                 categList.append(newCategory);
@@ -664,8 +668,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
                 categoriesTasks = [];
 
-                currentCategoryChosen = this.id;
-                console.log(this.id);
+                currentCategoryChosen = this.value;
+                console.log(this.value);
                 for (var i = 0; i < all.length; i++) {
                     if (all[i].catId === currentCategoryChosen) {
 
@@ -755,15 +759,21 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             }
         }
+
+        var sel = document.querySelector(".categ-select");
+        console.log(sel);
+        var categSelected = sel.options[sel.selectedIndex].value;
+        console.log(categSelected);
         var uniqueId = all.length;
         var categoryObject = {
             name: taskName,
             date: taskDate,
             priority: priorityValue,
-            catId: currentCategoryChosen,
+            catId: categSelected,
             finished: false,
             uniqueId: uniqueId
         };
+        console.log(categoryObject);
         all.push(categoryObject);
         populateStorage();
         document.getElementById("myInput").value = "";
@@ -834,16 +844,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
         document.querySelector('.show-progress').classList.toggle('invisible');
     })
-    //////////// select category///////////
-/*function catOptions()
-{
-    var selector = document.querySelector("select");
+console.log(all);
+    //1//////wyświetlanie kategorii w divie taska
 
-    for (var i = 0; i < userCats.length; i++) {
-        var categSelect = document.createElement("option");
-        categSelect.innerText = userCats[i].name;
-        selector.appendChild(categSelect);
+    //2///////dodanie addeventlistenera do przycisków categorii po petli
+    /*
+function categoryTasksShowing(){
+
+       var taskInCategory = [];
+for (var i=0;i<all.length;i++){
+    if(all[i].catId)===
+    console.log(all[i].catId);
+}
+}();
+*/
+    for (var i=0;i<userCats.length;i++) {
+        //console.log(userCats[i].name);
     }
-};*/
+var catList = document.getElementsByClassName("categ-list");
+    //console.log(catList.length);
+
+    for (var i=0;i<catList.length;i++) {
+        console.log(catList[i].name);
+      /* catList[i].addEventListener('click',function(){
+           for(var z=0;z<all.length;z++){
+               if(all[z].catId)===
+           }
+       })*/
+           }
+
 });
 
