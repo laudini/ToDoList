@@ -693,7 +693,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     tasksToDo.appendChild(newLi);
 
                     // creating new divs in <li> and putting user information in divs
-                    for (var j = 0; j < 4; j++) {
+                    for (var j = 0; j < 5; j++) {
                         var newDiv = document.createElement("div");
                         newDiv.classList.add("taskDivs");
                         tasksToDo.children[i].append(newDiv);
