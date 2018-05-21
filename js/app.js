@@ -667,7 +667,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 // filling category buttons
-console.log(all);
+
     function catFilling() {
         for (var i = 0; i < catButtons.length; i++) {
             catButtons[i].addEventListener("click", function (e) {
@@ -675,7 +675,7 @@ console.log(all);
                     document.querySelector(".categ-list-chosen").classList.remove('categ-list-chosen');
                 }
                 categoriesTasks = [];
-                // currentCategoryChosen = userCats[e.target.id].name;
+                currentCategoryChosen = e.target.id
                 currentCategoryName = userCats[e.target.id].name;
                 console.log('current cat id', currentCategoryChosen);
                 for (var i = 0; i < all.length; i++) {
@@ -762,7 +762,10 @@ console.log(all);
             categSelect.innerText = userCats[i].name;
             selector.appendChild(categSelect);
         }
-
+        selector.addEventListener("change", function(){
+            currentCategoryChosen = (this.options[this.selectedIndex].index);
+            console.log(currentCategoryChosen);
+        })
     });
 
 
@@ -775,7 +778,7 @@ console.log(all);
 
 
     function newElement() {
-
+        var selector = document.querySelector("select");
         var taskName = document.getElementById("myInput").value;
         var taskDate = document.getElementById("date").value;
         var options = document.getElementsByName("kolor");
@@ -794,7 +797,7 @@ console.log(all);
             date: taskDate,
             priority: priorityValue,
             catId: currentCategoryChosen,
-            catName: currentCategoryName,
+            catName: selector.value,
             finished: false,
             uniqueId: uniqueId
         };
