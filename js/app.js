@@ -753,13 +753,26 @@ console.log(all);
     var toggledSection = document.querySelector('.sectionAddTask');
     mainAddTaskBtn.addEventListener("click", function () {
         toggledSection.classList.toggle('invisible');
+        var selector = document.querySelector("select");
+        while (selector.firstChild) {
+            selector.removeChild(selector.firstChild);
+        }
+        for (var i = 0; i < userCats.length; i++) {
+            var categSelect = document.createElement("option");
+            categSelect.innerText = userCats[i].name;
+            selector.appendChild(categSelect);
+        }
+
     });
+
+
 
 
 // Create a new list item when clicking on the "Add" button
     var addTaskBtn = document.querySelector('.addBtn');
     addTaskBtn.addEventListener('click', newElement);
     document.querySelector('.cancelBtn').addEventListener('click', cancelAddAction);
+
 
     function newElement() {
 
@@ -862,7 +875,8 @@ console.log(all);
     document.querySelector('.close-progress').addEventListener("click", function () {
 
         document.querySelector('.show-progress').classList.toggle('invisible');
-    })
+    });
+    //////////// select category///////////
 
     function calculateProgress () {
         var tasks = tasksDeleted;
@@ -871,7 +885,6 @@ console.log(all);
         levelUp.innerText = 5 - tasks % 5;
 
     }
-
 
 });
 
