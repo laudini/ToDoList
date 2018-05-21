@@ -595,6 +595,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         fillingCategoryBar();
                         populateStorage();
                         document.querySelector('.main-body-header').innerText = inputCategory.value;
+                        catFilling();
                         parent.removeChild(element);
                     }
                 }
