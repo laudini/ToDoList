@@ -116,6 +116,20 @@ li {
     z-index: 100;
 
 }
+.category-window-wide {
+    position: absolute;
+    left: 130px;
+    top: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: auto;
+    width: 175px;
+    height: 100px;
+    background: white;
+    display: block;
+    z-index: 100;
+
+}
 
 #input-category {
     height: 30px;
@@ -227,8 +241,8 @@ li {
     justify-content: space-around;
     align-items: center;
     position: absolute;
-    right: 0;
-    top: 0;
+    right: 12%;
+    top: 12%;
     background: black;
     color: white;
     z-index: 200;
@@ -258,6 +272,7 @@ li {
 
     margin: 0;
     padding-top: 5px;
+    padding-right: 10px;
     position: relative;
 }
 
@@ -272,12 +287,15 @@ li {
 .main-body-header {
     position: relative;
     background: white;
+    max-width: 82vw;
     font-size: 25px;
     font-weight: bold;
     text-align: center;
     padding-top: 10px;
     padding-bottom: 5px;
-
+}
+.main-body-header:hover {
+    overflow: visible;
 }
 .remove {
     position: absolute;

@@ -573,11 +573,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
         var element = document.createElement("div");
         if (document.querySelector(".category-window") === null) {
-            element.classList.add("category-window");
+            if (openHamburger === true) {
+                element.classList.add("category-window-wide");
+            } else {
+                element.classList.add("category-window");
+            }
             element.innerHTML =
-                '<input type="text" id="input-category" placeholder="Kategoria">' +
-                '<button id="btn-category">Dodaj<br>Kategorię</button>' +
-                '<button id="cancel">Zakończ</button>';
+                '<input type="text" id="input-category" placeholder="category name">' +
+                '<button id="btn-category">Add<br>category</button>' +
+                '<button id="cancel">Cancel</button>';
 
             parent.appendChild(element);
 
