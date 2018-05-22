@@ -145,8 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         fcheckBox.checked = true;
                         fcheckBox.id = String(i);
                         fcheckBox.addEventListener("change", function (e) {
-
-                            all[e.currentTarget.id].finished = false;
+                            console.log("nothing")
                         })
                     }
                 }
@@ -718,7 +717,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             var newDiv = document.createElement("div");
                             newDiv.classList.add("taskDivs");
                             var tasksLength = tasksFinished.children.length;
-                            tasksFinished.children[tasksLength -1].append(newDiv);
+                            tasksFinished.children[tasksLength - 1].append(newDiv);
                             if (j !== 0) {
                                 newDiv.innerText = (categoriesElements[j - 1]);
                             } else {
@@ -726,11 +725,11 @@ document.addEventListener("DOMContentLoaded", function () {
                                 newDiv.append(checkBox);
                                 checkBox.classList.add("completeCheckbox");
                                 checkBox.type = "checkbox";
-
                                 checkBox.checked = true;
+                                checkBox.disabled = true;
                                 checkBox.id = String(i);
                                 checkBox.addEventListener("change", function (e) {
-                                    categoriesTasks[e.currentTarget.id].finished = false;
+                                    console.log('nothing')
                                 })
 
                             }
@@ -750,7 +749,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             var newDiv = document.createElement("div");
                             newDiv.classList.add("taskDivs");
                             var tasksLength = tasksToDo.children.length;
-                            tasksToDo.children[tasksLength- 1].append(newDiv);
+                            tasksToDo.children[tasksLength - 1].append(newDiv);
                             if (j !== 0) {
                                 newDiv.innerText = (categoriesElements[j - 1]);
                             } else {
@@ -763,6 +762,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                 checkBox.id = String(i);
                                 checkBox.addEventListener("change", function (e) {
                                     categoriesTasks[e.currentTarget.id].finished = true;
+                                    populateStorage();
                                 })
 
                             }
