@@ -176,6 +176,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             e.currentTarget.disabled = "true";
                             tasksDeleted += 1;
                             populateStorage();
+                            allBtn.click();
                         })
                     }
                 }
@@ -256,6 +257,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             e.currentTarget.disabled = "true";
                             tasksDeleted += 1;
                             populateStorage();
+                            todayBtn.click();
                         })
                     }
                 }
@@ -336,6 +338,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             tomorrow[e.currentTarget.id].finished = true;
                             e.currentTarget.disabled = "true";
                             tasksDeleted += 1;
+                            tomorrowBtn.click();
                             populateStorage();
                         })
                     }
@@ -416,6 +419,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             week[e.currentTarget.id].finished = true;
                             e.currentTarget.disabled = "true";
                             tasksDeleted += 1;
+                            weekBtn.click();
                             populateStorage();
                         })
                     }
