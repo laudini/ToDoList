@@ -235,7 +235,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // creating new element <li>
                 var newLi = document.createElement("li");
                 // taking elements from object sent by user (name, date, priority)
-                var todayElements = Object.values(all[i]);
+                var todayElements = Object.values(today[i]);
                 // assigning new <li> to <ul>
                 tasksToDo.appendChild(newLi);
                 // creating new divs in <li> and putting user information in divs
