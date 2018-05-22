@@ -223,10 +223,10 @@ document.addEventListener("DOMContentLoaded", function () {
                         fcheckBox.classList.add("completeCheckbox");
                         fcheckBox.type = "checkbox";
                         fcheckBox.checked = true;
+                        fcheckBox.disabled = true;
                         fcheckBox.id = String(i);
                         fcheckBox.addEventListener("change", function (e) {
-
-                            today[e.currentTarget.id].finished = false;
+                            console.log("nothing")
                         })
                     }
                 }
@@ -253,6 +253,9 @@ document.addEventListener("DOMContentLoaded", function () {
                         checkBox.id = String(i);
                         checkBox.addEventListener("change", function (e) {
                             today[e.currentTarget.id].finished = true;
+                            e.currentTarget.disabled = "true";
+                            tasksDeleted += 1;
+                            populateStorage();
                         })
                     }
                 }
@@ -301,10 +304,10 @@ document.addEventListener("DOMContentLoaded", function () {
                         fcheckBox.classList.add("completeCheckbox");
                         fcheckBox.type = "checkbox";
                         fcheckBox.checked = true;
+                        fcheckBox.disabled = true;
                         fcheckBox.id = String(i);
                         fcheckBox.addEventListener("change", function (e) {
-
-                            tomorrow[e.currentTarget.id].finished = false;
+                            console.log("nothing")
                         })
                     }
                 }
@@ -331,6 +334,9 @@ document.addEventListener("DOMContentLoaded", function () {
                         checkBox.id = String(i);
                         checkBox.addEventListener("change", function (e) {
                             tomorrow[e.currentTarget.id].finished = true;
+                            e.currentTarget.disabled = "true";
+                            tasksDeleted += 1;
+                            populateStorage();
                         })
                     }
                 }
@@ -378,10 +384,10 @@ document.addEventListener("DOMContentLoaded", function () {
                         fcheckBox.classList.add("completeCheckbox");
                         fcheckBox.type = "checkbox";
                         fcheckBox.checked = true;
+                        fcheckBox.disabled = true;
                         fcheckBox.id = String(i);
                         fcheckBox.addEventListener("change", function (e) {
-
-                            week[e.currentTarget.id].finished = false;
+                            console.log("nothing")
                         })
                     }
                 }
@@ -408,6 +414,9 @@ document.addEventListener("DOMContentLoaded", function () {
                         checkBox.id = String(i);
                         checkBox.addEventListener("change", function (e) {
                             week[e.currentTarget.id].finished = true;
+                            e.currentTarget.disabled = "true";
+                            tasksDeleted += 1;
+                            populateStorage();
                         })
                     }
                 }
