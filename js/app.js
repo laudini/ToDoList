@@ -766,8 +766,12 @@ document.addEventListener("DOMContentLoaded", function () {
         while (selector.firstChild) {
             selector.removeChild(selector.firstChild);
         }
+
         for (var i = 0; i < userCats.length; i++) {
             var categSelect = document.createElement("option");
+            if (i ==  currentCategoryChosen) {
+                categSelect.setAttribute("selected", "selected");
+            }
             categSelect.innerText = userCats[i].name;
             selector.appendChild(categSelect);
         }
