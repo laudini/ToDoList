@@ -589,18 +589,23 @@ document.addEventListener("DOMContentLoaded", function () {
             var inputCategory = document.querySelector("#input-category");
 
             btnCategory.addEventListener('click', function () {
-
-                    if (inputCategory.value !== "") {
-                        var categObject = {
-                            name: inputCategory.value.toUpperCase(),
-                            shortName: inputCategory.value[0].toUpperCase()
-                        };
-                        userCats.push(categObject);
-                        fillingCategoryBar();
-                        populateStorage();
-                        document.querySelector('.main-body-header').innerText = inputCategory.value.toUpperCase();
-                        catFilling();
-                        parent.removeChild(element);
+                    if (inputCategory.value.length > 15) {
+                        inputCategory.value = "";
+                        inputCategory.placeholder = "name it shorter";
+                        inputCategory.classList.add("coloredPlaceholder");
+                    } else {
+                        if (inputCategory.value !== "") {
+                            var categObject = {
+                                name: inputCategory.value.toUpperCase(),
+                                shortName: inputCategory.value[0].toUpperCase()
+                            };
+                            userCats.push(categObject);
+                            fillingCategoryBar();
+                            populateStorage();
+                            document.querySelector('.main-body-header').innerText = inputCategory.value.toUpperCase();
+                            catFilling();
+                            parent.removeChild(element);
+                        }
                     }
                 }
             );
