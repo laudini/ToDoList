@@ -108,6 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Button "ALL" functionality
     allBtn.addEventListener("click", allFill);
+
     function allFill() {
         // setting up title
         document.querySelector('.main-body-header').innerText = "ALL TASKS";
@@ -591,7 +592,7 @@ document.addEventListener("DOMContentLoaded", function () {
             btnCategory.addEventListener('click', function () {
                     if (inputCategory.value.length > 15) {
                         inputCategory.value = "";
-                        inputCategory.placeholder = "name it shorter";
+                        inputCategory.placeholder = "too long name";
                         inputCategory.classList.add("coloredPlaceholder");
                     } else {
                         if (inputCategory.value !== "") {
@@ -697,31 +698,74 @@ document.addEventListener("DOMContentLoaded", function () {
                 while (tasksToDo.firstChild) {
                     tasksToDo.removeChild(tasksToDo.firstChild);
                 }
-
+                while (tasksFinished.firstChild) {
+                    tasksFinished.removeChild(tasksFinished.firstChild);
+                }
                 // creating <li>, <div> inside and pushing elements into them.
                 for (var i = 0; i < categoriesTasks.length; i++) {
 
-                    // creating new element <li>
-                    var newLi = document.createElement("li");
-                    newLi.classList.add('taskLis');
-                    // taking elements from object sent by user (name, date, priority)
-                    var categoriesElements = Object.values(categoriesTasks[i]);
-                    // assigning new <li> to <ul>
-                    tasksToDo.appendChild(newLi);
+                    if (categoriesTasks[i].finished) {
+                        // creating new element <li>
+                        var newLi = document.createElement("li");
+                        newLi.classList.add('taskLis');
+                        // taking elements from object sent by user (name, date, priority)
+                        var categoriesElements = Object.values(categoriesTasks[i]);
+                        // assigning new <li> to <ul>
+                        tasksFinished.appendChild(newLi);
 
-                    // creating new divs in <li> and putting user information in divs
-                    for (var j = 0; j < 4; j++) {
-                        var newDiv = document.createElement("div");
-                        newDiv.classList.add("taskDivs");
-                        tasksToDo.children[i].append(newDiv);
-                        if (j !== 0) {
-                            newDiv.innerText = (categoriesElements[j - 1]);
-                        } else {
-                            var checkBox = document.createElement('input');
-                            newDiv.append(checkBox);
-                            checkBox.classList.add("completeCheckbox");
-                            checkBox.type = "checkbox";
+                        // creating new divs in <li> and putting user information in divs
+                        for (var j = 0; j < 4; j++) {
+                            var newDiv = document.createElement("div");
+                            newDiv.classList.add("taskDivs");
+                            tasksFinished.children[i].append(newDiv);
+                            if (j !== 0) {
+                                newDiv.innerText = (categoriesElements[j - 1]);
+                            } else {
+                                var checkBox = document.createElement('input');
+                                newDiv.append(checkBox);
+                                checkBox.classList.add("completeCheckbox");
+                                checkBox.type = "checkbox";
+
+                                checkBox.checked = true;
+                                checkBox.id = String(i);
+                                checkBox.addEventListener("change", function (e) {
+                                    categoriesTasks[e.currentTarget.id].finished = false;
+                                })
+
+                            }
                         }
+                    } else {
+
+                        // creating new element <li>
+                        var newLi = document.createElement("li");
+                        newLi.classList.add('taskLis');
+                        // taking elements from object sent by user (name, date, priority)
+                        var categoriesElements = Object.values(categoriesTasks[i]);
+                        // assigning new <li> to <ul>
+                        tasksToDo.appendChild(newLi);
+
+                        // creating new divs in <li> and putting user information in divs
+                        for (var j = 0; j < 4; j++) {
+                            var newDiv = document.createElement("div");
+                            newDiv.classList.add("taskDivs");
+                            tasksToDo.children[i].append(newDiv);
+                            if (j !== 0) {
+                                newDiv.innerText = (categoriesElements[j - 1]);
+                            } else {
+                                var checkBox = document.createElement('input');
+                                newDiv.append(checkBox);
+                                checkBox.classList.add("completeCheckbox");
+                                checkBox.type = "checkbox";
+
+                                checkBox.checked = false;
+                                checkBox.id = String(i);
+                                checkBox.addEventListener("change", function (e) {
+                                    categoriesTasks[e.currentTarget.id].finished = true;
+                                })
+
+                            }
+                        }
+
                     }
                 }
                 document.getElementById(this.id).classList.add("categ-list-chosen");
@@ -731,20 +775,21 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.querySelector('.main-body-header').appendChild(removeCat);
                 removeCat.addEventListener('click', () => {
                     var toRemoveName = userCats[this.id].name;
-                    console.log(toRemoveName);
-                    userCats.splice(this.id, 1);
-                    fillingCategoryBar();
-                    // removing task when removing cat
-                    for (var j = 0; j < all.length; j++ ) {
-                        if (all[j].catName == toRemoveName) {
-                            all.splice(j,1);
-                            populateStorage();
-                        }
+                console.log(toRemoveName);
+                userCats.splice(this.id, 1);
+                fillingCategoryBar();
+                // removing task when removing cat
+                for (var j = 0; j < all.length; j++) {
+                    if (all[j].catName == toRemoveName) {
+                        all.splice(j, 1);
+                        populateStorage();
                     }
+                }
 
                 populateStorage();
                 allFill();
-                });
+            })
+                ;
                 if (openHamburger === true) {
                     hamburgerChange();
                 }
@@ -769,19 +814,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
         for (var i = 0; i < userCats.length; i++) {
             var categSelect = document.createElement("option");
-            if (i ==  currentCategoryChosen) {
+            if (i == currentCategoryChosen) {
                 categSelect.setAttribute("selected", "selected");
             }
             categSelect.innerText = userCats[i].name;
             selector.appendChild(categSelect);
         }
-        selector.addEventListener("change", function(){
+        selector.addEventListener("change", function () {
             currentCategoryChosen = (this.options[this.selectedIndex].index);
             console.log(currentCategoryChosen);
         })
     });
-
-
 
 
 // Create a new list item when clicking on the "Add" button
@@ -797,35 +840,36 @@ document.addEventListener("DOMContentLoaded", function () {
         var options = document.getElementsByName("kolor");
         if (taskName !== "" && taskDate !== "") {
 
-        if (options) {
-            for (var i = 0; i < options.length; i++) {
-                if (options[i].checked) {
-                    var priorityValue = options[i].value;
+            if (options) {
+                for (var i = 0; i < options.length; i++) {
+                    if (options[i].checked) {
+                        var priorityValue = options[i].value;
+                    }
                 }
             }
-        }
-        var uniqueId = all.length;
-        var categoryObject = {
-            name: taskName,
-            date: taskDate,
-            priority: priorityValue,
-            catId: currentCategoryChosen,
-            catName: selector.value,
-            finished: false,
-            uniqueId: uniqueId
-        };
-        all.push(categoryObject);
-        populateStorage();
-        document.getElementById("myInput").value = "";
+            var uniqueId = all.length;
+            var categoryObject = {
+                name: taskName,
+                date: taskDate,
+                priority: priorityValue,
+                catId: currentCategoryChosen,
+                catName: selector.value,
+                finished: false,
+                uniqueId: uniqueId
+            };
+            all.push(categoryObject);
+            populateStorage();
+            document.getElementById("myInput").value = "";
 
-        toggledSection.classList.toggle('invisible');
-        document.getElementById("date").value = "";
+            toggledSection.classList.toggle('invisible');
+            document.getElementById("date").value = "";
         }
         console.log(catButtons);
         console.log(currentCategoryChosen);
         catButtons[currentCategoryChosen].click();
     }
-    function cancelAddAction(){
+
+    function cancelAddAction() {
         toggledSection.classList.toggle('invisible');
     }
 
@@ -892,9 +936,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         document.querySelector('.show-progress').classList.toggle('invisible');
     });
+
     //////////// select category///////////
 
-    function calculateProgress () {
+    function calculateProgress() {
         var tasks = tasksDeleted;
         level.innerText = Math.floor(tasks / 5);
         levelTasks.innerText = tasks;
