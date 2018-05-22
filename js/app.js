@@ -717,7 +717,8 @@ document.addEventListener("DOMContentLoaded", function () {
                         for (var j = 0; j < 4; j++) {
                             var newDiv = document.createElement("div");
                             newDiv.classList.add("taskDivs");
-                            tasksFinished.children[i].append(newDiv);
+                            var tasksLength = tasksFinished.children.length;
+                            tasksFinished.children[tasksLength -1].append(newDiv);
                             if (j !== 0) {
                                 newDiv.innerText = (categoriesElements[j - 1]);
                             } else {
@@ -748,7 +749,8 @@ document.addEventListener("DOMContentLoaded", function () {
                         for (var j = 0; j < 4; j++) {
                             var newDiv = document.createElement("div");
                             newDiv.classList.add("taskDivs");
-                            tasksToDo.children[i].append(newDiv);
+                            var tasksLength = tasksToDo.children.length;
+                            tasksToDo.children[tasksLength- 1].append(newDiv);
                             if (j !== 0) {
                                 newDiv.innerText = (categoriesElements[j - 1]);
                             } else {
