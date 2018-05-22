@@ -588,13 +588,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     if (inputCategory.value !== "") {
                         var categObject = {
-                            name: inputCategory.value,
-                            shortName: inputCategory.value[0]
+                            name: inputCategory.value.toUpperCase(),
+                            shortName: inputCategory.value[0].toUpperCase()
                         };
                         userCats.push(categObject);
                         fillingCategoryBar();
                         populateStorage();
-                        document.querySelector('.main-body-header').innerText = inputCategory.value;
+                        document.querySelector('.main-body-header').innerText = inputCategory.value.toUpperCase();
                         catFilling();
                         parent.removeChild(element);
                     }
@@ -678,7 +678,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 categoriesTasks = [];
                 currentCategoryChosen = e.target.id
                 currentCategoryName = userCats[e.target.id].name;
-                console.log('current cat id', currentCategoryChosen);
                 for (var i = 0; i < all.length; i++) {
                     if (all[i].catName === currentCategoryName) {
 
@@ -717,7 +716,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 }
                 document.getElementById(this.id).classList.add("categ-list-chosen");
-                document.querySelector('.main-body-header').innerText = userCats[this.id].name;
+                document.querySelector('.main-body-header').innerText = (userCats[this.id].name).toUpperCase();
                 var removeCat = document.createElement('span');
                 removeCat.classList.add('remove');
                 document.querySelector('.main-body-header').appendChild(removeCat);
