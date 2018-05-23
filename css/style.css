@@ -329,22 +329,23 @@ li {
 
 .taskDivs {
     padding: 5px;
-    background-color: white;
 }
 
 .taskDivs:nth-child(1) {
-    width: 30%;
-    background-color: white;
+    width: 10%;
 }
 
 .taskDivs:nth-child(2) {
-    width: 70%;
-    background-color: white;
+    width: 80%;
+    font-size: 1.2em;
+    border-bottom: dashed 2px #EEC801;
+    text-align: justify;
+    margin-right: 15px;
 }
 
 .taskDivs:nth-child(3) {
     width: 70%;
-    background-color: white;
+    font-size: 0.9em;
 }
 
 .taskDivs:nth-child(4) {
@@ -353,6 +354,7 @@ li {
     margin-right: 15px;
     text-align: center;
     font-weight: 900;
+    font-size: 0.9em;
 }
 
 .main-body .tasks-to-do {
@@ -361,21 +363,8 @@ li {
 }
 
 .tasks-to-do li {
-    border: 1px black solid;
+    background: white;
     list-style-type: none;
-    width: 100%;
-    word-wrap: break-word;
-    display: flex;
-    flex-wrap: wrap;
-
-}
-
-.tasks-to-do li:nth-child(2) {
-    border: 1px black solid;
-    list-style-type: none;
-    width: 100%;
-    word-wrap: break-word;
-    flex-grow: 5;
 
 }
 
