@@ -123,8 +123,14 @@ document.addEventListener("DOMContentLoaded", function () {
         // creating <li>, <div> inside and pushing elements into them.
         for (var i = 0; i < all.length; i++) {
             if (all[i].finished) {
+                if (i === 0) {
+                    var newHr = document.createElement("hr");
+                    newHr.classList.add('hr');
+                    tasksFinished.appendChild(newHr);
+                }
                 // creating new element <li>
                 var fnewLi = document.createElement("li");
+                fnewLi.classList.add('taskLis');
                 // taking elements from object sent by user (name, date, priority)
                 var fallElements = Object.values(all[i]);
                 // assigning new <li> to <ul>
@@ -150,9 +156,15 @@ document.addEventListener("DOMContentLoaded", function () {
                         })
                     }
                 }
+
+                var newHr = document.createElement("hr");
+                newHr.classList.add('hr');
+                tasksFinished.appendChild(newHr);
+
             } else {
                 // creating new element <li>
                 var newLi = document.createElement("li");
+                newLi.classList.add('taskLis');
                 // taking elements from object sent by user (name, date, priority)
                 var allElements = Object.values(all[i]);
                 // assigning new <li> to <ul>
@@ -180,6 +192,9 @@ document.addEventListener("DOMContentLoaded", function () {
                         })
                     }
                 }
+                var newHr = document.createElement("hr");
+                newHr.classList.add('hr');
+                tasksToDo.appendChild(newHr);
             }
         }
         if (openHamburger === true) {
@@ -204,8 +219,15 @@ document.addEventListener("DOMContentLoaded", function () {
         for (var i = 0; i < today.length; i++) {
 
             if (today[i].finished) {
+                if (i === 0) {
+
+                    var newHr = document.createElement("hr");
+                    newHr.classList.add('hr');
+                    tasksFinished.appendChild(newHr);
+                }
                 // creating new element <li>
                 var fnewLi = document.createElement("li");
+                fnewLi.classList.add('taskLis');
                 // taking elements from object sent by user (name, date, priority)
                 var ftodayElements = Object.values(today[i]);
                 // assigning new <li> to <ul>
@@ -231,9 +253,14 @@ document.addEventListener("DOMContentLoaded", function () {
                         })
                     }
                 }
+
+                var newHr = document.createElement("hr");
+                newHr.classList.add('hr');
+                tasksFinished.appendChild(newHr);
             } else {
                 // creating new element <li>
                 var newLi = document.createElement("li");
+                newLi.classList.add('taskLis');
                 // taking elements from object sent by user (name, date, priority)
                 var todayElements = Object.values(today[i]);
                 // assigning new <li> to <ul>
@@ -261,6 +288,10 @@ document.addEventListener("DOMContentLoaded", function () {
                         })
                     }
                 }
+
+                var newHr = document.createElement("hr");
+                newHr.classList.add('hr');
+                tasksToDo.appendChild(newHr);
             }
         }
         if (openHamburger === true) {
@@ -286,8 +317,14 @@ document.addEventListener("DOMContentLoaded", function () {
         for (var i = 0; i < tomorrow.length; i++) {
 
             if (tomorrow[i].finished) {
+                if (i === 0) {
+                    var newHr = document.createElement("hr");
+                    newHr.classList.add('hr');
+                    tasksFinished.appendChild(newHr);
+                }
                 // creating new element <li>
                 var fnewLi = document.createElement("li");
+                fnewLi.classList.add('taskLis');
                 // taking elements from object sent by user (name, date, priority)
                 var ftomorrowElements = Object.values(tomorrow[i]);
                 // assigning new <li> to <ul>
@@ -313,9 +350,15 @@ document.addEventListener("DOMContentLoaded", function () {
                         })
                     }
                 }
+
+                var newHr = document.createElement("hr");
+                newHr.classList.add('hr');
+                tasksFinished.appendChild(newHr);
+
             } else {
                 // creating new element <li>
                 var newLi = document.createElement("li");
+                newLi.classList.add('taskLis');
                 // taking elements from object sent by user (name, date, priority)
                 var tomorrowElements = Object.values(tomorrow[i]);
                 // assigning new <li> to <ul>
@@ -343,6 +386,10 @@ document.addEventListener("DOMContentLoaded", function () {
                         })
                     }
                 }
+
+                var newHr = document.createElement("hr");
+                newHr.classList.add('hr');
+                tasksToDo.appendChild(newHr);
             }
         }
         if (openHamburger === true) {
@@ -367,8 +414,14 @@ document.addEventListener("DOMContentLoaded", function () {
         for (var i = 0; i < week.length; i++) {
 
             if (week[i].finished) {
+                if (i === 0) {
+                    var newHr = document.createElement("hr");
+                    newHr.classList.add('hr');
+                    tasksFinished.appendChild(newHr);
+                }
                 // creating new element <li>
                 var fnewLi = document.createElement("li");
+                fnewLi.classList.add('taskLis');
                 // taking elements from object sent by user (name, date, priority)
                 var fweekElements = Object.values(week[i]);
                 // assigning new <li> to <ul>
@@ -394,9 +447,15 @@ document.addEventListener("DOMContentLoaded", function () {
                         })
                     }
                 }
+
+                var newHr = document.createElement("hr");
+                newHr.classList.add('hr');
+                tasksFinished.appendChild(newHr);
+
             } else {
                 // creating new element <li>
                 var newLi = document.createElement("li");
+                newLi.classList.add('taskLis');
                 // taking elements from object sent by user (name, date, priority)
                 var weekElements = Object.values(week[i]);
                 // assigning new <li> to <ul>
@@ -424,6 +483,9 @@ document.addEventListener("DOMContentLoaded", function () {
                         })
                     }
                 }
+                var newHr = document.createElement("hr");
+                newHr.classList.add('hr');
+                tasksToDo.appendChild(newHr);
             }
         }
         if (openHamburger === true) {
@@ -717,9 +779,17 @@ document.addEventListener("DOMContentLoaded", function () {
                     tasksFinished.removeChild(tasksFinished.firstChild);
                 }
                 // creating <li>, <div> inside and pushing elements into them.
+
                 for (var i = 0; i < categoriesTasks.length; i++) {
 
                     if (categoriesTasks[i].finished) {
+                        if (i === 0) {
+
+                            var newHr = document.createElement("hr");
+                            newHr.classList.add('hrSlim');
+                            tasksFinished.appendChild(newHr);
+
+                        }
                         // creating new element <li>
                         var newLi = document.createElement("li");
                         newLi.classList.add('taskLis');
@@ -750,6 +820,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
                             }
                         }
+
+                        var newHr = document.createElement("hr");
+                        newHr.classList.add('hr');
+                        tasksFinished.appendChild(newHr);
+
                     } else {
 
                         // creating new element <li>

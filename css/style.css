@@ -297,7 +297,7 @@ li {
     text-align: center;
     padding-top: 10px;
     padding-bottom: 5px;
-    border-bottom: 1px solid darkslategrey;
+    border-bottom: 3px solid darkslategrey;
 }
 .remove {
     position: absolute;
@@ -363,7 +363,13 @@ li {
 .hr {
     margin: 0;
     padding: 0;
-    height: 5px;
+    height: 3px;
+    background-color: darkslategrey;
+}
+.hrSlim {
+    margin: 0;
+    padding: 0;
+    height: 3px;
     background-color: darkslategrey;
 }
 
@@ -373,9 +379,14 @@ li {
 }
 
 .tasks-to-do li {
-    background: white;
+    background: rgba(255,255,255, 0.85);
     list-style-type: none;
 
+}
+.tasks-finished li {
+
+    background: rgba(255,255,255, 0.85);
+    list-style-type: none;
 }
 
 /* ------ button tasks finished ---------*/
@@ -399,17 +410,6 @@ li {
 
 .btn-tasks-finished:hover {
     color: white;
-}
-
-/* ---------tasks finished ---------------*/
-
-.tasks-finished li {
-    border: 1px black solid;
-    list-style-type: none;
-    width: 100%;
-    word-wrap: break-word;
-    display: inline-block;
-
 }
 
 .hidden {
