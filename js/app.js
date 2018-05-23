@@ -967,5 +967,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
+    // TEMPORARY CLEAR LOCAL STORAGE
+    document.querySelector('.temporaryClean').addEventListener('click', function () {
+        localStorage.clear();
+    })
+
 });
 
