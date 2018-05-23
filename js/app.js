@@ -780,6 +780,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                     categoriesTasks[e.currentTarget.id].finished = true;
                                     e.currentTarget.disabled = "true";
                                     tasksDeleted += 1;
+                                    catButtons[currentCategoryChosen].click();
                                     populateStorage();
                                 })
 
@@ -911,7 +912,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (all.length == 0) {
             var newLi = document.createElement("li");
-            newLi.innerText = "Brak zadań z wyszukiwaną frazą";
+            newLi.innerText = "No matches found";
             tasksToDo.appendChild(newLi);
 
         } else {
@@ -936,7 +937,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             if (n == 0) {
                 var newLi = document.createElement("li");
-                newLi.innerText = "Brak zadań z wyszukiwaną frazą";
+                newLi.innerText = "No matches found";
                 tasksToDo.appendChild(newLi);
             }
         }
