@@ -785,7 +785,11 @@ document.addEventListener("DOMContentLoaded", function () {
                                 })
 
                             }
+
                         }
+                        var newHr = document.createElement("hr");
+                        newHr.classList.add('hr');
+                        tasksToDo.appendChild(newHr);
 
                     }
                 }
