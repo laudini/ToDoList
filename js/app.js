@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var allBtn = document.querySelector("#allBtn");             // ALL <button>
     var tasksToDo = document.querySelector(".tasks-to-do");     // TASKS TO DO <ul>
     var tasksFinished = document.querySelector(".tasks-finished");
+    var btnTasksFinished = document.querySelector(".btn-tasks-finished");
     var currentCategoryChosen = 0;
     var currentCategoryName = "";
     var categoriesTasks = [];
@@ -984,10 +985,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 //button finished - hide/show
-
+    const el = document.querySelector('.tasks-finished');
+    el.style.visibility =  "hidden";
     document.getElementById("t-f").onclick = function () {
-        const el = document.querySelector('.tasks-finished');
         el.style.visibility = el.style.visibility === "hidden" ? "visible" : "hidden";
+        btnTasksFinished.innerText = btnTasksFinished.innerText === "HIDE FINISHED" ? "SHOW FINISHED" : "HIDE FINISHED";
     }
 //////////////// SEARCH ////////////////////////
     document.querySelector('.search').addEventListener("click", function () {
