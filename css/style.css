@@ -627,3 +627,12 @@ li {
     border-style: solid;
     border-color:  transparent black transparent transparent;
 }
+
+.temporaryClean {
+    background: red;
+    color: white;
+    font-weight: bolder;
+    position: absolute;
+    left: 10%;
+    bottom: 10%;
+}
