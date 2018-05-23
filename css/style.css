@@ -269,6 +269,12 @@ li {
     border-radius: 5px;
     cursor: pointer;
 }
+#level {
+    font-size: 1.3rem;
+}
+#level-text {
+    font-size: 1.5rem;
+}
 
 .header-progress-tracker {
     height: 100%;
