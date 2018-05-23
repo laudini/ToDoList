@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var level = document.querySelector('#level');
     var levelTasks = document.querySelector('#level-tasks');
     var levelUp = document.querySelector('#to-level-up');
+    var first = false;
 
 // all required arrays
     var all = [];
@@ -121,12 +122,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         // creating <li>, <div> inside and pushing elements into them.
+        first = true;
         for (var i = 0; i < all.length; i++) {
             if (all[i].finished) {
-                if (i === 0) {
+                if (first) {
                     var newHr = document.createElement("hr");
                     newHr.classList.add('hr');
                     tasksFinished.appendChild(newHr);
+                    first = false;
                 }
                 // creating new element <li>
                 var fnewLi = document.createElement("li");
@@ -216,14 +219,16 @@ document.addEventListener("DOMContentLoaded", function () {
             tasksFinished.removeChild(tasksFinished.firstChild);
         }
         // creating <li>, <div> inside and pushing elements into them.
+
+        first = true;
         for (var i = 0; i < today.length; i++) {
 
             if (today[i].finished) {
-                if (i === 0) {
-
+                if (first) {
                     var newHr = document.createElement("hr");
                     newHr.classList.add('hr');
                     tasksFinished.appendChild(newHr);
+                    first = false;
                 }
                 // creating new element <li>
                 var fnewLi = document.createElement("li");
@@ -314,13 +319,15 @@ document.addEventListener("DOMContentLoaded", function () {
             tasksFinished.removeChild(tasksFinished.firstChild);
         }
         // creating <li>, <div> inside and pushing elements into them.
+        first = true;
         for (var i = 0; i < tomorrow.length; i++) {
 
             if (tomorrow[i].finished) {
-                if (i === 0) {
+                if (first) {
                     var newHr = document.createElement("hr");
                     newHr.classList.add('hr');
                     tasksFinished.appendChild(newHr);
+                    first = false;
                 }
                 // creating new element <li>
                 var fnewLi = document.createElement("li");
@@ -411,13 +418,15 @@ document.addEventListener("DOMContentLoaded", function () {
             tasksFinished.removeChild(tasksFinished.firstChild);
         }
         // creating <li>, <div> inside and pushing elements into them.
+        first = true;
         for (var i = 0; i < week.length; i++) {
 
             if (week[i].finished) {
-                if (i === 0) {
+                if (first) {
                     var newHr = document.createElement("hr");
                     newHr.classList.add('hr');
                     tasksFinished.appendChild(newHr);
+                    first = false;
                 }
                 // creating new element <li>
                 var fnewLi = document.createElement("li");
@@ -779,16 +788,16 @@ document.addEventListener("DOMContentLoaded", function () {
                     tasksFinished.removeChild(tasksFinished.firstChild);
                 }
                 // creating <li>, <div> inside and pushing elements into them.
-
+                first = true;
                 for (var i = 0; i < categoriesTasks.length; i++) {
 
                     if (categoriesTasks[i].finished) {
-                        if (i === 0) {
+                        if (first) {
 
                             var newHr = document.createElement("hr");
                             newHr.classList.add('hrSlim');
                             tasksFinished.appendChild(newHr);
-
+                            first = false;
                         }
                         // creating new element <li>
                         var newLi = document.createElement("li");
