@@ -315,6 +315,11 @@ li {
     height: 15px;
     cursor: pointer;
 }
+.hiding {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 1s, opacity 1s;
+}
 .coloredPlaceholder::placeholder {
     text-align: center;
     color: red;

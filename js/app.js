@@ -863,11 +863,15 @@ document.addEventListener("DOMContentLoaded", function () {
                                 checkBox.checked = false;
                                 checkBox.id = String(i);
                                 checkBox.addEventListener("change", function (e) {
+                                    e.currentTarget.parentElement.parentElement.classList.add('hiding');
                                     categoriesTasks[e.currentTarget.id].finished = true;
                                     e.currentTarget.disabled = "true";
                                     tasksDeleted += 1;
-                                    catButtons[currentCategoryChosen].click();
+                                    setTimeout(function(){
+                                        catButtons[currentCategoryChosen].click()
+                                    }, 1200);
                                     populateStorage();
+
                                 })
 
                             }
