@@ -691,10 +691,11 @@ document.addEventListener("DOMContentLoaded", function () {
                             fillingCategoryBar();
                             populateStorage();
                             document.querySelector('.main-body-header').innerText = inputCategory.value.toUpperCase();
-                            catFilling();
+
                             parent.removeChild(element);
                         }
                     }
+                catButtons[catButtons.length - 1].click();
                 }
             );
 
@@ -885,7 +886,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.querySelector('.main-body-header').appendChild(removeCat);
                 removeCat.addEventListener('click', () => {
                     var toRemoveName = userCats[this.id].name;
-                console.log(toRemoveName);
                 userCats.splice(this.id, 1);
                 fillingCategoryBar();
                 // removing task when removing cat
@@ -932,7 +932,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         selector.addEventListener("change", function () {
             currentCategoryChosen = (this.options[this.selectedIndex].index);
-            console.log(currentCategoryChosen);
         })
     });
 
@@ -974,8 +973,6 @@ document.addEventListener("DOMContentLoaded", function () {
             toggledSection.classList.toggle('invisible');
             document.getElementById("date").value = "";
         }
-        console.log(catButtons);
-        console.log(currentCategoryChosen);
         catButtons[currentCategoryChosen].click();
     }
 
