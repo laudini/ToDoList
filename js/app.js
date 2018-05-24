@@ -188,11 +188,15 @@ document.addEventListener("DOMContentLoaded", function () {
                         checkBox.type = "checkbox";
                         checkBox.id = String(i);
                         checkBox.addEventListener("change", function (e) {
+                            e.currentTarget.parentElement.parentElement.classList.add('hiding');
+
                             all[e.currentTarget.id].finished = true;
                             e.currentTarget.disabled = "true";
                             tasksDeleted += 1;
                             populateStorage();
-                            allBtn.click();
+                            setTimeout(function(){
+                                allBtn.click();
+                            }, 1200);
                         })
                     }
                 }
@@ -286,11 +290,15 @@ document.addEventListener("DOMContentLoaded", function () {
                         checkBox.type = "checkbox";
                         checkBox.id = String(i);
                         checkBox.addEventListener("change", function (e) {
+                            e.currentTarget.parentElement.parentElement.classList.add('hiding');
+
                             today[e.currentTarget.id].finished = true;
                             e.currentTarget.disabled = "true";
                             tasksDeleted += 1;
                             populateStorage();
-                            todayBtn.click();
+                            setTimeout(function(){
+                                todayBtn.click();
+                            }, 1200);
                         })
                     }
                 }
@@ -386,10 +394,14 @@ document.addEventListener("DOMContentLoaded", function () {
                         checkBox.type = "checkbox";
                         checkBox.id = String(i);
                         checkBox.addEventListener("change", function (e) {
+                            e.currentTarget.parentElement.parentElement.classList.add('hiding');
+
                             tomorrow[e.currentTarget.id].finished = true;
                             e.currentTarget.disabled = "true";
                             tasksDeleted += 1;
-                            tomorrowBtn.click();
+                            setTimeout(function(){
+                                tomorrowBtn.click();
+                            }, 1200);
                             populateStorage();
                         })
                     }
@@ -485,10 +497,13 @@ document.addEventListener("DOMContentLoaded", function () {
                         checkBox.type = "checkbox";
                         checkBox.id = String(i);
                         checkBox.addEventListener("change", function (e) {
+                            e.currentTarget.parentElement.parentElement.classList.add('hiding');
                             week[e.currentTarget.id].finished = true;
                             e.currentTarget.disabled = "true";
                             tasksDeleted += 1;
-                            weekBtn.click();
+                            setTimeout(function(){
+                                weekBtn.click();
+                            }, 1200);
                             populateStorage();
                         })
                     }
@@ -871,7 +886,6 @@ document.addEventListener("DOMContentLoaded", function () {
                                         catButtons[currentCategoryChosen].click()
                                     }, 1200);
                                     populateStorage();
-
                                 })
 
                             }
