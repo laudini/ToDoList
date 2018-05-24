@@ -33,6 +33,58 @@ li {
     max-width: 35px;
 }
 
+.hamb span{
+    position: relative;
+    width:24px;
+    height: 3px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 2px;
+    display:block;
+}
+.hamb span::after, .hamb span::before{
+    display:block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+    background: rgba(0, 0, 0, 0.7);
+    content: '';
+}
+.hamb span::after{
+    margin-top:9px;
+}
+.hamb span::before{
+    margin-top:-9px;
+}
+
+.hamb:hover span, .hamb:hover span::before, .hamb:hover span::after{
+    background-color: white;
+    width:28px;
+
+}
+
+.wide-menu .hamb span {
+    background: none;
+    margin-left:-2px;
+
+}
+.wide-menu .hamb span::after{
+    width:30px;
+    transform: rotate(-45deg);
+    margin-top:0;
+
+}
+.wide-menu .hamb span::before{
+    width:30px;
+    transform: rotate(45deg);
+    margin-top:0;
+}
+.wide-menu .hamb:hover span::before, .wide-menu .hamb:hover span::after{
+    margin-left:2px;
+
+}
+
+
 .menu-list button {
     width: 40px;
     height: 40px;
