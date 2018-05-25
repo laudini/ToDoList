@@ -1127,6 +1127,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
         if (n === 0) {
             document.querySelector('.main-body-header').innerText = "NO MATCHES FOUND :(";
+        } else {
+                if (tasksToDo.children.length === 0) {
+                    document.getElementById("t-f").onclick();
+                }
         }
     });
     /////////////////////////////// SEARCH FINISH //////////////////////////
