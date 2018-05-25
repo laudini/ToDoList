@@ -33,16 +33,17 @@ li {
     max-width: 35px;
 }
 
-.hamb span{
+.hamb span {
     position: relative;
-    width:24px;
+    width: 24px;
     height: 3px;
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 2px;
-    display:block;
+    display: block;
 }
-.hamb span::after, .hamb span::before{
-    display:block;
+
+.hamb span::after, .hamb span::before {
+    display: block;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -50,40 +51,54 @@ li {
     background: rgba(0, 0, 0, 0.7);
     content: '';
 }
-.hamb span::after{
-    margin-top:9px;
-}
-.hamb span::before{
-    margin-top:-9px;
+
+.hamb span::after {
+    margin-top: 9px;
 }
 
-.hamb:hover span, .hamb:hover span::before, .hamb:hover span::after{
+.hamb span::before {
+    margin-top: -9px;
+}
+
+.hamb:hover span, .hamb:hover span::before, .hamb:hover span::after {
     background-color: white;
-    width:28px;
+    width: 28px;
+
+}
+
+.hamb:hover {
+    overflow: hidden;
+    border: none;
+    background-color: black;
+    display: block;
+    margin: 0;
+    outline: none;
 
 }
 
 .wide-menu .hamb span {
     background: none;
-    margin-left:-2px;
+    margin-left: -2px;
 
 }
-.wide-menu .hamb span::after{
-    width:30px;
+
+.wide-menu .hamb span::after {
+    width: 30px;
     transform: rotate(-45deg);
-    margin-top:0;
+    margin-top: 0;
 
 }
-.wide-menu .hamb span::before{
-    width:30px;
+
+.wide-menu .hamb span::before {
+    width: 30px;
     transform: rotate(45deg);
-    margin-top:0;
-}
-.wide-menu .hamb:hover span::before, .wide-menu .hamb:hover span::after{
-    margin-left:2px;
-
+    margin-top: 0;
 }
 
+.wide-menu .hamb:hover span::before, .wide-menu .hamb:hover span::after {
+    margin-left: 2px;
+
+}
 
 .menu-list button {
     width: 40px;
@@ -96,7 +111,7 @@ li {
     font-size: 12px;
 }
 
-.menu-list button:hover {
+.menu-list button:hover:not(.hamb) {
     background-color: black;
     color: white;
     overflow: hidden;
