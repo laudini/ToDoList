@@ -291,7 +291,6 @@ document.addEventListener("DOMContentLoaded", function () {
                         checkBox.id = String(i);
                         checkBox.addEventListener("change", function (e) {
                             e.currentTarget.parentElement.parentElement.classList.add('hiding');
-
                             today[e.currentTarget.id].finished = true;
                             e.currentTarget.disabled = "true";
                             tasksDeleted += 1;
@@ -1098,15 +1097,22 @@ document.addEventListener("DOMContentLoaded", function () {
                                     if (j !== 0) {
                                         newDiv.innerText = (allElements[j - 1]);
                                     } else {
-                                        var fcheckBox = document.createElement('input');
-                                        newDiv.append(fcheckBox);
-                                        fcheckBox.classList.add("completeCheckbox");
-                                        fcheckBox.type = "checkbox";
-                                        fcheckBox.checked = false;
-                                        fcheckBox.disabled = false;
-                                        fcheckBox.id = String(i);
-                                        fcheckBox.addEventListener("change", function (e) {
-                                            console.log("nothing")
+                                        var checkBox = document.createElement('input');
+                                        newDiv.append(checkBox);
+                                        checkBox.classList.add("completeCheckbox");
+                                        checkBox.type = "checkbox";
+                                        checkBox.checked = false;
+                                        checkBox.disabled = false;
+                                        checkBox.id = String(i);
+                                        checkBox.addEventListener("change", function (e) {
+                                            e.currentTarget.parentElement.parentElement.classList.add('hiding');
+                                            all[e.currentTarget.id].finished = true;
+                                            e.currentTarget.disabled = "true";
+                                            tasksDeleted += 1;
+                                            setTimeout(function(){
+                                                catButtons[currentCategoryChosen].click()
+                                            }, 1200);
+                                            populateStorage();
                                         })
                                     }
                                 }
