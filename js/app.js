@@ -1008,44 +1008,117 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 //////////////// SEARCH ////////////////////////
     document.querySelector('.search').addEventListener("click", function () {
+        // setting up title
+        document.querySelector('.main-body-header').innerText = "MATCHES FOUND!";
+
+        // clearing <ul>
         while (tasksToDo.firstChild) {
             tasksToDo.removeChild(tasksToDo.firstChild);
+        }
+        while (tasksFinished.firstChild) {
+            tasksFinished.removeChild(tasksFinished.firstChild);
         }
 
         var value = this.nextElementSibling.value.toUpperCase();
         var n = 0;
 
-        if (all.length == 0) {
-            var newLi = document.createElement("li");
-            newLi.innerText = "No matches found";
-            tasksToDo.appendChild(newLi);
-
-        } else {
-
-            for (var i = 0; i < all.length; i++) {
-                if (all[i].name.toUpperCase().search(value) > -1) {
-                    n = n + 1;
-                    var newLi = document.createElement("li");
-                    var weekElements = Object.values(all[i]);
-                    tasksToDo.appendChild(newLi);
-                    for (var j = 0; j < 4; j++) {
-                        var newDiv = document.createElement("div");
-                        tasksToDo.children[n - 1].append(newDiv);
-                        if (j !== 0) {
-                            newDiv.innerText = (weekElements[j - 1]);
-                        }
-
-                    }
-
-                }
-
-            }
-            if (n == 0) {
+            if (all.length == 0) {
                 var newLi = document.createElement("li");
                 newLi.innerText = "No matches found";
                 tasksToDo.appendChild(newLi);
-            }
-        }
+
+            } else {
+                first = true;
+                for (var i = 0; i < all.length; i++) {
+                    if (all[i].finished) {
+                        if (first) {
+                            var newHr = document.createElement("hr");
+                            newHr.classList.add('hr');
+                            tasksFinished.appendChild(newHr);
+                            first = false;
+                        }
+
+                        if (all[i].name.toUpperCase().search(value) > -1) {
+                            n = n + 1;
+                            // creating new element <li>
+                            var fnewLi = document.createElement("li");
+                            fnewLi.classList.add('taskLis');
+                            // taking elements from object sent by user (name, date, priority)
+                            var fallElements = Object.values(all[i]);
+                            // assigning new <li> to <ul>
+                            tasksFinished.appendChild(fnewLi);
+
+                            for (var j = 0; j < 4; j++) {
+                                var fnewDiv = document.createElement("div");
+                                fnewDiv.classList.add("taskDivs");
+                                var currentFLenght = tasksFinished.children.length;
+                                tasksFinished.children[currentFLenght - 1].append(fnewDiv);
+                                if (j !== 0) {
+                                    fnewDiv.innerText = (fallElements[j - 1]);
+                                } else {
+                                    var fcheckBox = document.createElement('input');
+                                    fnewDiv.append(fcheckBox);
+                                    fcheckBox.classList.add("completeCheckbox");
+                                    fcheckBox.type = "checkbox";
+                                    fcheckBox.checked = true;
+                                    fcheckBox.disabled = true;
+                                    fcheckBox.id = String(i);
+                                    fcheckBox.addEventListener("change", function (e) {
+                                        console.log("nothing")
+                                    })
+                                }
+                            }
+
+                            var newHr = document.createElement("hr");
+                            newHr.classList.add('hr');
+                            tasksFinished.appendChild(newHr);
+                        }
+                    } else if (all[i].finished === false) {
+                            if (first) {
+                                var newHr = document.createElement("hr");
+                                newHr.classList.add('hr');
+                                tasksToDo.appendChild(newHr);
+                                first = false;
+                            }
+                            if (all[i].name.toUpperCase().search(value) > -1) {
+                                n = n + 1;
+                                // creating new element <li>
+                                var newLi = document.createElement("li");
+                                newLi.classList.add('taskLis');
+                                // taking elements from object sent by user (name, date, priority)
+                                var allElements = Object.values(all[i]);
+                                // assigning new <li> to <ul>
+                                tasksToDo.appendChild(newLi);
+
+                                for (var j = 0; j < 4; j++) {
+                                    var newDiv = document.createElement("div");
+                                    newDiv.classList.add("taskDivs");
+                                    var currentLenght = tasksToDo.children.length;
+                                    tasksToDo.children[currentLenght - 1].append(newDiv);
+                                    if (j !== 0) {
+                                        newDiv.innerText = (allElements[j - 1]);
+                                    } else {
+                                        var fcheckBox = document.createElement('input');
+                                        newDiv.append(fcheckBox);
+                                        fcheckBox.classList.add("completeCheckbox");
+                                        fcheckBox.type = "checkbox";
+                                        fcheckBox.checked = false;
+                                        fcheckBox.disabled = false;
+                                        fcheckBox.id = String(i);
+                                        fcheckBox.addEventListener("change", function (e) {
+                                            console.log("nothing")
+                                        })
+                                    }
+                                }
+
+                                var newHr = document.createElement("hr");
+                                newHr.classList.add('hr');
+                                tasksToDo.appendChild(newHr);
+
+                            }
+                        }
+                    }
+                }
     });
     /////////////////////////////// SEARCH FINISH //////////////////////////
 
