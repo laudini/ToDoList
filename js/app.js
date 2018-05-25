@@ -1023,7 +1023,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (all.length == 0) {
                 var newLi = document.createElement("li");
-                newLi.innerText = "No matches found";
+                document.querySelector('.main-body-header').innerText = "NO MATCHES FOUND!";
                 tasksToDo.appendChild(newLi);
 
             } else {
@@ -1125,6 +1125,9 @@ document.addEventListener("DOMContentLoaded", function () {
                         }
                     }
                 }
+        if (n === 0) {
+            document.querySelector('.main-body-header').innerText = "NO MATCHES FOUND :(";
+        }
     });
     /////////////////////////////// SEARCH FINISH //////////////////////////
 
