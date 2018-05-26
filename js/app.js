@@ -73,7 +73,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (openHamburger === false) {
 
-            addCategory.innerText = "Add new category";
+            addCategory.classList.remove('biggerPlus');
+            addCategory.innerText = "ADD NEW CATEGORY";
             todayBtn.innerText = "TODAY";
             tomorrowBtn.innerText = "TOMORROW";
             weekBtn.innerText = "UPCOMING 7 DAYS";
@@ -83,7 +84,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 catButtons[i].innerText = userCats[i].name;
             }
         } else {
-            addCategory.innerText = "C";
+            addCategory.classList.add('biggerPlus');
+            addCategory.innerText = "";
             todayBtn.innerText = "T";
             tomorrowBtn.innerText = "T";
             weekBtn.innerText = "7";

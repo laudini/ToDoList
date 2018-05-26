@@ -100,6 +100,15 @@ li {
 
 }
 
+.biggerPlus {
+    background: whitesmoke url("../images/plus.png") no-repeat center;
+    background-size: contain;
+}
+.biggerPlus:hover {
+    background: black url("../images/plusWhite.png") no-repeat center;
+    background-size: contain;
+}
+
 .menu-list button {
     width: 40px;
     height: 40px;
