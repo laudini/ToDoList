@@ -1095,7 +1095,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 var removeCat = document.createElement('span');
                 removeCat.classList.add('remove');
                 document.querySelector('.main-body-header').appendChild(removeCat);
-                console.log(all);
                 removeCat.addEventListener('click', () => {
                     var toRemoveName = userCats[this.id].name;
                 userCats.splice(this.id, 1);
