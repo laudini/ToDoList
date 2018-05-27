@@ -183,6 +183,45 @@ document.addEventListener("DOMContentLoaded", function () {
                     tasksToDo.children[currentLength - 1].append(newDiv);
                     if (j !== 0) {
                         newDiv.innerText = (allElements[j - 1]);
+                        if (j === 2) {
+
+                            var currentDate = new Date();
+
+                            var dd = "";
+                            if (currentDate.getDate() < 10) {
+                                dd = "0" + currentDate.getDate();
+                            } else {
+                                dd = currentDate.getDate();
+                            }
+
+                            var mm = "";
+                            if (currentDate.getMonth() + 1 < 10) {
+                                mm = "0" + (currentDate.getMonth() + 1);
+                            } else {
+                                mm = currentDate.getMonth();
+                            }
+
+                            var yyyy = currentDate.getFullYear();
+
+                            var todayDate = (yyyy + "-" + mm + "-" + dd);
+                            console.log(todayDate);
+                            console.log(newDiv.innerText);
+                            console.log(newDiv.innerText.slice(5,7));
+
+                            if (todayDate != newDiv.innerText) {
+                                if (dd > newDiv.innerText.slice(8,10) && mm >= newDiv.innerText.slice(5,7) && yyyy >= newDiv.innerText.slice(0,4)) {
+                                    newDiv.classList.add('coloredDate');
+                                }
+
+                                if (mm > newDiv.innerText.slice(5,7) && yyyy >= newDiv.innerText.slice(0,4)) {
+                                    newDiv.classList.add('coloredDate');
+                                }
+
+                                if (yyyy > newDiv.innerText.slice(0,4)) {
+                                    newDiv.classList.add('coloredDate');
+                                }
+                            }
+                        }
                     } else {
                         var checkBox = document.createElement('input');
                         newDiv.append(checkBox);
@@ -285,6 +324,46 @@ document.addEventListener("DOMContentLoaded", function () {
                     tasksToDo.children[currentLength - 1].append(newDiv);
                     if (j !== 0) {
                         newDiv.innerText = (todayElements[j - 1]);
+                        if (j === 2) {
+
+                            var currentDate = new Date();
+
+                            var dd = "";
+                            if (currentDate.getDate() < 10) {
+                                dd = "0" + currentDate.getDate();
+                            } else {
+                                dd = currentDate.getDate();
+                            }
+
+                            var mm = "";
+                            if (currentDate.getMonth() + 1 < 10) {
+                                mm = "0" + (currentDate.getMonth() + 1);
+                            } else {
+                                mm = currentDate.getMonth();
+                            }
+
+                            var yyyy = currentDate.getFullYear();
+
+                            var todayDate = (yyyy + "-" + mm + "-" + dd);
+                            console.log(todayDate);
+                            console.log(newDiv.innerText);
+                            console.log(newDiv.innerText.slice(5,7));
+
+                            if (todayDate != newDiv.innerText) {
+                                if (dd > newDiv.innerText.slice(8,10) && mm >= newDiv.innerText.slice(5,7) && yyyy >= newDiv.innerText.slice(0,4)) {
+                                    newDiv.classList.add('coloredDate');
+                                }
+
+                                if (mm > newDiv.innerText.slice(5,7) && yyyy >= newDiv.innerText.slice(0,4)) {
+                                    newDiv.classList.add('coloredDate');
+                                }
+
+                                if (yyyy > newDiv.innerText.slice(0,4)) {
+                                    newDiv.classList.add('coloredDate');
+                                }
+                            }
+                        }
+
                     } else {
                         var checkBox = document.createElement('input');
                         newDiv.append(checkBox);
@@ -388,6 +467,45 @@ document.addEventListener("DOMContentLoaded", function () {
                     tasksToDo.children[currentLength - 1].append(newDiv);
                     if (j !== 0) {
                         newDiv.innerText = (tomorrowElements[j - 1]);
+                        if (j === 2) {
+
+                            var currentDate = new Date();
+
+                            var dd = "";
+                            if (currentDate.getDate() < 10) {
+                                dd = "0" + currentDate.getDate();
+                            } else {
+                                dd = currentDate.getDate();
+                            }
+
+                            var mm = "";
+                            if (currentDate.getMonth() + 1 < 10) {
+                                mm = "0" + (currentDate.getMonth() + 1);
+                            } else {
+                                mm = currentDate.getMonth();
+                            }
+
+                            var yyyy = currentDate.getFullYear();
+
+                            var todayDate = (yyyy + "-" + mm + "-" + dd);
+                            console.log(todayDate);
+                            console.log(newDiv.innerText);
+                            console.log(newDiv.innerText.slice(5,7));
+
+                            if (todayDate != newDiv.innerText) {
+                                if (dd > newDiv.innerText.slice(8,10) && mm >= newDiv.innerText.slice(5,7) && yyyy >= newDiv.innerText.slice(0,4)) {
+                                    newDiv.classList.add('coloredDate');
+                                }
+
+                                if (mm > newDiv.innerText.slice(5,7) && yyyy >= newDiv.innerText.slice(0,4)) {
+                                    newDiv.classList.add('coloredDate');
+                                }
+
+                                if (yyyy > newDiv.innerText.slice(0,4)) {
+                                    newDiv.classList.add('coloredDate');
+                                }
+                            }
+                        }
                     } else {
                         var checkBox = document.createElement('input');
                         newDiv.append(checkBox);
@@ -491,6 +609,45 @@ document.addEventListener("DOMContentLoaded", function () {
                     tasksToDo.children[currentLength - 1].append(newDiv);
                     if (j !== 0) {
                         newDiv.innerText = (weekElements[j - 1]);
+                        if (j === 2) {
+
+                            var currentDate = new Date();
+
+                            var dd = "";
+                            if (currentDate.getDate() < 10) {
+                                dd = "0" + currentDate.getDate();
+                            } else {
+                                dd = currentDate.getDate();
+                            }
+
+                            var mm = "";
+                            if (currentDate.getMonth() + 1 < 10) {
+                                mm = "0" + (currentDate.getMonth() + 1);
+                            } else {
+                                mm = currentDate.getMonth();
+                            }
+
+                            var yyyy = currentDate.getFullYear();
+
+                            var todayDate = (yyyy + "-" + mm + "-" + dd);
+                            console.log(todayDate);
+                            console.log(newDiv.innerText);
+                            console.log(newDiv.innerText.slice(5,7));
+
+                            if (todayDate != newDiv.innerText) {
+                                if (dd > newDiv.innerText.slice(8,10) && mm >= newDiv.innerText.slice(5,7) && yyyy >= newDiv.innerText.slice(0,4)) {
+                                    newDiv.classList.add('coloredDate');
+                                }
+
+                                if (mm > newDiv.innerText.slice(5,7) && yyyy >= newDiv.innerText.slice(0,4)) {
+                                    newDiv.classList.add('coloredDate');
+                                }
+
+                                if (yyyy > newDiv.innerText.slice(0,4)) {
+                                    newDiv.classList.add('coloredDate');
+                                }
+                            }
+                        }
                     } else {
                         var checkBox = document.createElement('input');
                         newDiv.append(checkBox);
@@ -870,6 +1027,45 @@ document.addEventListener("DOMContentLoaded", function () {
                             tasksToDo.children[tasksLength - 1].append(newDiv);
                             if (j !== 0) {
                                 newDiv.innerText = (categoriesElements[j - 1]);
+                                if (j === 2) {
+
+                                    var currentDate = new Date();
+
+                                    var dd = "";
+                                    if (currentDate.getDate() < 10) {
+                                        dd = "0" + currentDate.getDate();
+                                    } else {
+                                        dd = currentDate.getDate();
+                                    }
+
+                                    var mm = "";
+                                    if (currentDate.getMonth() + 1 < 10) {
+                                        mm = "0" + (currentDate.getMonth() + 1);
+                                    } else {
+                                        mm = currentDate.getMonth();
+                                    }
+
+                                    var yyyy = currentDate.getFullYear();
+
+                                    var todayDate = (yyyy + "-" + mm + "-" + dd);
+                                    console.log(todayDate);
+                                    console.log(newDiv.innerText);
+                                    console.log(newDiv.innerText.slice(5,7));
+
+                                    if (todayDate != newDiv.innerText) {
+                                        if (dd > newDiv.innerText.slice(8,10) && mm >= newDiv.innerText.slice(5,7) && yyyy >= newDiv.innerText.slice(0,4)) {
+                                            newDiv.classList.add('coloredDate');
+                                        }
+
+                                        if (mm > newDiv.innerText.slice(5,7) && yyyy >= newDiv.innerText.slice(0,4)) {
+                                            newDiv.classList.add('coloredDate');
+                                        }
+
+                                        if (yyyy > newDiv.innerText.slice(0,4)) {
+                                            newDiv.classList.add('coloredDate');
+                                        }
+                                    }
+                                }
                             } else {
                                 var checkBox = document.createElement('input');
                                 newDiv.append(checkBox);
@@ -925,7 +1121,7 @@ document.addEventListener("DOMContentLoaded", function () {
             })
         }
     }
-
+console.log(all);
 
 //---------ADD CATEGORY--------FINISH----------------
 

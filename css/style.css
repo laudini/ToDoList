@@ -283,6 +283,9 @@ li {
     display: flex;
     justify-content: space-between;
 }
+.coloredDate {
+    color: red;
+}
 
 .header-logo {
     width: 100%;
