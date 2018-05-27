@@ -1095,22 +1095,25 @@ document.addEventListener("DOMContentLoaded", function () {
                 var removeCat = document.createElement('span');
                 removeCat.classList.add('remove');
                 document.querySelector('.main-body-header').appendChild(removeCat);
+                console.log(all);
                 removeCat.addEventListener('click', () => {
                     var toRemoveName = userCats[this.id].name;
                 userCats.splice(this.id, 1);
                 fillingCategoryBar();
                 // removing task when removing cat
+                var toRemoveElems = [];
                 for (var j = 0; j < all.length; j++) {
-                    if (all[j].catName == toRemoveName) {
-                        all.splice(j, 1);
-                        populateStorage();
+                    if (all[j].catName === toRemoveName) {
+                        toRemoveElems.push(j);
                     }
+                }
+                for (var k = toRemoveElems.length - 1; k >= 0; k--) {
+                    all.splice(toRemoveElems[k], 1);
                 }
 
                 populateStorage();
                 allFill();
-            })
-                ;
+            });
                 if (openHamburger === true) {
                     hamburgerChange();
                 }
