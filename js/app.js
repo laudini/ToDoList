@@ -1346,6 +1346,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
         document.querySelector('.show-progress').classList.toggle('invisible');
     });
+    // SETTINGS
+
+    document.querySelector('.settings-button').addEventListener("click", function () {
+        document.querySelector('.show-settings').classList.toggle('invisible');
+    });
+    document.querySelector('.close-settings').addEventListener("click", function () {
+        document.querySelector('.show-settings').classList.toggle('invisible');
+    });
+
 
     //////////// select category///////////
 
