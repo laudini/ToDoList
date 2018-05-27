@@ -137,6 +137,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // creating new element <li>
                 var fnewLi = document.createElement("li");
                 fnewLi.classList.add('taskLis');
+                fnewLi.classList.add('showing');
                 // taking elements from object sent by user (name, date, priority)
                 var fallElements = Object.values(all[i]);
                 // assigning new <li> to <ul>
@@ -171,6 +172,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // creating new element <li>
                 var newLi = document.createElement("li");
                 newLi.classList.add('taskLis');
+                newLi.classList.add('showing');
                 // taking elements from object sent by user (name, date, priority)
                 var allElements = Object.values(all[i]);
                 // assigning new <li> to <ul>
@@ -204,9 +206,6 @@ document.addEventListener("DOMContentLoaded", function () {
                             var yyyy = currentDate.getFullYear();
 
                             var todayDate = (yyyy + "-" + mm + "-" + dd);
-                            console.log(todayDate);
-                            console.log(newDiv.innerText);
-                            console.log(newDiv.innerText.slice(5,7));
 
                             if (todayDate != newDiv.innerText) {
                                 if (dd > newDiv.innerText.slice(8,10) && mm >= newDiv.innerText.slice(5,7) && yyyy >= newDiv.innerText.slice(0,4)) {
@@ -279,6 +278,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 // creating new element <li>
                 var fnewLi = document.createElement("li");
                 fnewLi.classList.add('taskLis');
+                fnewLi.classList.add('showing');
+
                 // taking elements from object sent by user (name, date, priority)
                 var ftodayElements = Object.values(today[i]);
                 // assigning new <li> to <ul>
@@ -312,6 +313,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // creating new element <li>
                 var newLi = document.createElement("li");
                 newLi.classList.add('taskLis');
+                newLi.classList.add('showing');
                 // taking elements from object sent by user (name, date, priority)
                 var todayElements = Object.values(today[i]);
                 // assigning new <li> to <ul>
@@ -345,9 +347,6 @@ document.addEventListener("DOMContentLoaded", function () {
                             var yyyy = currentDate.getFullYear();
 
                             var todayDate = (yyyy + "-" + mm + "-" + dd);
-                            console.log(todayDate);
-                            console.log(newDiv.innerText);
-                            console.log(newDiv.innerText.slice(5,7));
 
                             if (todayDate != newDiv.innerText) {
                                 if (dd > newDiv.innerText.slice(8,10) && mm >= newDiv.innerText.slice(5,7) && yyyy >= newDiv.innerText.slice(0,4)) {
@@ -421,6 +420,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // creating new element <li>
                 var fnewLi = document.createElement("li");
                 fnewLi.classList.add('taskLis');
+                fnewLi.classList.add('showing');
                 // taking elements from object sent by user (name, date, priority)
                 var ftomorrowElements = Object.values(tomorrow[i]);
                 // assigning new <li> to <ul>
@@ -455,6 +455,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // creating new element <li>
                 var newLi = document.createElement("li");
                 newLi.classList.add('taskLis');
+                newLi.classList.add('showing');
                 // taking elements from object sent by user (name, date, priority)
                 var tomorrowElements = Object.values(tomorrow[i]);
                 // assigning new <li> to <ul>
@@ -488,9 +489,6 @@ document.addEventListener("DOMContentLoaded", function () {
                             var yyyy = currentDate.getFullYear();
 
                             var todayDate = (yyyy + "-" + mm + "-" + dd);
-                            console.log(todayDate);
-                            console.log(newDiv.innerText);
-                            console.log(newDiv.innerText.slice(5,7));
 
                             if (todayDate != newDiv.innerText) {
                                 if (dd > newDiv.innerText.slice(8,10) && mm >= newDiv.innerText.slice(5,7) && yyyy >= newDiv.innerText.slice(0,4)) {
@@ -563,6 +561,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // creating new element <li>
                 var fnewLi = document.createElement("li");
                 fnewLi.classList.add('taskLis');
+                fnewLi.classList.add('showing');
                 // taking elements from object sent by user (name, date, priority)
                 var fweekElements = Object.values(week[i]);
                 // assigning new <li> to <ul>
@@ -597,6 +596,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // creating new element <li>
                 var newLi = document.createElement("li");
                 newLi.classList.add('taskLis');
+                newLi.classList.add('showing');
                 // taking elements from object sent by user (name, date, priority)
                 var weekElements = Object.values(week[i]);
                 // assigning new <li> to <ul>
@@ -630,9 +630,6 @@ document.addEventListener("DOMContentLoaded", function () {
                             var yyyy = currentDate.getFullYear();
 
                             var todayDate = (yyyy + "-" + mm + "-" + dd);
-                            console.log(todayDate);
-                            console.log(newDiv.innerText);
-                            console.log(newDiv.innerText.slice(5,7));
 
                             if (todayDate != newDiv.innerText) {
                                 if (dd > newDiv.innerText.slice(8,10) && mm >= newDiv.innerText.slice(5,7) && yyyy >= newDiv.innerText.slice(0,4)) {
@@ -977,6 +974,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         // creating new element <li>
                         var newLi = document.createElement("li");
                         newLi.classList.add('taskLis');
+                        newLi.classList.add('showing');
                         // taking elements from object sent by user (name, date, priority)
                         var categoriesElements = Object.values(categoriesTasks[i]);
                         // assigning new <li> to <ul>
@@ -1014,6 +1012,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         // creating new element <li>
                         var newLi = document.createElement("li");
                         newLi.classList.add('taskLis');
+                        newLi.classList.add('showing');
                         // taking elements from object sent by user (name, date, priority)
                         var categoriesElements = Object.values(categoriesTasks[i]);
                         // assigning new <li> to <ul>
@@ -1048,9 +1047,6 @@ document.addEventListener("DOMContentLoaded", function () {
                                     var yyyy = currentDate.getFullYear();
 
                                     var todayDate = (yyyy + "-" + mm + "-" + dd);
-                                    console.log(todayDate);
-                                    console.log(newDiv.innerText);
-                                    console.log(newDiv.innerText.slice(5,7));
 
                                     if (todayDate != newDiv.innerText) {
                                         if (dd > newDiv.innerText.slice(8,10) && mm >= newDiv.innerText.slice(5,7) && yyyy >= newDiv.innerText.slice(0,4)) {
@@ -1121,7 +1117,6 @@ document.addEventListener("DOMContentLoaded", function () {
             })
         }
     }
-console.log(all);
 
 //---------ADD CATEGORY--------FINISH----------------
 
@@ -1200,6 +1195,7 @@ console.log(all);
     const el = document.querySelector('.tasks-finished');
     el.style.visibility =  "hidden";
     document.getElementById("t-f").onclick = function () {
+        el.classList.toggle('showing');
         el.style.visibility = el.style.visibility === "hidden" ? "visible" : "hidden";
         btnTasksFinished.innerText = btnTasksFinished.innerText === "HIDE FINISHED" ? "SHOW FINISHED" : "HIDE FINISHED";
     }
@@ -1240,6 +1236,7 @@ console.log(all);
                             // creating new element <li>
                             var fnewLi = document.createElement("li");
                             fnewLi.classList.add('taskLis');
+                            fnewLi.classList.add('showing');
                             // taking elements from object sent by user (name, date, priority)
                             var fallElements = Object.values(all[i]);
                             // assigning new <li> to <ul>
@@ -1282,6 +1279,7 @@ console.log(all);
                                 // creating new element <li>
                                 var newLi = document.createElement("li");
                                 newLi.classList.add('taskLis');
+                                newLi.classList.add('showing');
                                 // taking elements from object sent by user (name, date, priority)
                                 var allElements = Object.values(all[i]);
                                 // assigning new <li> to <ul>

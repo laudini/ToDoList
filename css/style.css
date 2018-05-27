@@ -399,6 +399,15 @@ li {
     opacity: 0;
     transition: visibility 0s 1s, opacity 1s;
 }
+@keyframes showing {
+    0% {opacity: 0}
+    50% {opacity: 0.6}
+    100% {opacity: 1}
+}
+.showing {
+    animation-name: showing;
+    animation-duration: 1s;
+}
 .coloredPlaceholder::placeholder {
     text-align: center;
     color: red;
