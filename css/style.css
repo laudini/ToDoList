@@ -104,6 +104,7 @@ li {
     background: whitesmoke url("../images/plus.png") no-repeat center;
     background-size: contain;
 }
+
 .biggerPlus:hover {
     background: black url("../images/plusWhite.png") no-repeat center;
     background-size: contain;
@@ -124,6 +125,7 @@ li {
     background-color: black;
     color: white;
     overflow: hidden;
+    white-space: normal;
     border: none;
     font-size: 17px;
 }
@@ -132,7 +134,9 @@ li {
     width: 120px;
     height: 40px;
     cursor: pointer;
-
+    transition: width 490ms;
+    white-space: nowrap;
+    overflow: hidden;
 
 }
 
@@ -140,28 +144,44 @@ li {
     width: 120px;
     height: 40px;
     cursor: pointer;
-
+    transition: width 650ms 50ms;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .menu-list .wide-tomorrow-btn {
     width: 120px;
     height: 40px;
     cursor: pointer;
-
+    transition: width 750ms 50ms;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .menu-list .wide-week-btn {
     width: 120px;
     height: 40px;
     cursor: pointer;
-
+    transition: width 850ms 50ms;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .menu-list .wide-all-btn {
     width: 120px;
     height: 40px;
     cursor: pointer;
-
+    transition: width 950ms 50ms;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.menu-list .wide-cat-btn {
+    width: 120px;
+    height: 40px;
+    cursor: pointer;
+    transition: width 600ms;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .hide-right-col {
@@ -176,6 +196,7 @@ li {
     cursor: pointer;
 
 }
+
 .categ-list-chosen {
     border: 3px dashed black;
 }
@@ -194,6 +215,7 @@ li {
     z-index: 100;
 
 }
+
 .category-window-wide {
     position: absolute;
     left: 130px;
@@ -234,6 +256,7 @@ li {
 }
 
 .main-col-1 {
+    width: 50px;
     background: #EEC801;
     min-height: 100vh;
 }
@@ -251,10 +274,6 @@ li {
     min-height: 80vh;
 }
 
-/*.main-col-1 > div {*/
-/*border: 2px solid green;*/
-/*height: 100%;*/
-/*}*/
 .main-container {
     background: white;
     max-width: 100%;
@@ -270,8 +289,9 @@ li {
 .wide-menu {
     position: absolute;
     z-index: 100;
-    min-height: 100vh;
+    /*min-height: 100vh;*/
     width: 130px;
+    transition: width 500ms;
     background: #EEC801;
 }
 
@@ -283,6 +303,7 @@ li {
     display: flex;
     justify-content: space-between;
 }
+
 .coloredDate {
     color: red;
 }
@@ -348,6 +369,7 @@ li {
     border-radius: 5px;
     cursor: pointer;
 }
+
 /*settings*/
 
 .settings-button {
@@ -362,6 +384,7 @@ li {
     border-radius: 5px;
     cursor: pointer;
 }
+
 .show-settings {
     border-radius: 7%;
     width: 100px;
@@ -378,12 +401,15 @@ li {
     color: white;
     z-index: 200;
 }
+
 .close-settings {
     cursor: pointer;
 }
+
 #level {
     font-size: 1.3rem;
 }
+
 #level-text {
     font-size: 1.5rem;
 }
@@ -405,6 +431,7 @@ li {
     display: flex;
     flex-direction: column;
 }
+
 .main-body-header {
     display: inline-block;
     position: relative;
@@ -417,6 +444,7 @@ li {
     padding-bottom: 5px;
     border-bottom: 3px solid darkslategrey;
 }
+
 .remove {
     position: absolute;
     top: 0.5em;
@@ -427,25 +455,36 @@ li {
     height: 15px;
     cursor: pointer;
 }
+
 .hiding {
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s 1s, opacity 1s;
 }
+
 @keyframes showing {
-    0% {opacity: 0}
-    50% {opacity: 0.6}
-    100% {opacity: 1}
+    0% {
+        opacity: 0
+    }
+    50% {
+        opacity: 0.6
+    }
+    100% {
+        opacity: 1
+    }
 }
+
 .showing {
     animation-name: showing;
     animation-duration: 1s;
 }
+
 .coloredPlaceholder::placeholder {
     text-align: center;
     color: red;
     opacity: 1;
 }
+
 /* --------------tasks to do -------------*/
 
 .completeCheckbox {
@@ -492,12 +531,14 @@ li {
     font-weight: 900;
     font-size: 0.9em;
 }
+
 .hr {
     margin: 0;
     padding: 0;
     height: 3px;
     background-color: darkslategrey;
 }
+
 .hrSlim {
     margin: 0;
     padding: 0;
@@ -511,13 +552,14 @@ li {
 }
 
 .tasks-to-do li {
-    background: rgba(255,255,255, 0.85);
+    background: rgba(255, 255, 255, 0.85);
     list-style-type: none;
 
 }
+
 .tasks-finished li {
 
-    background: rgba(255,255,255, 0.85);
+    background: rgba(255, 255, 255, 0.85);
     list-style-type: none;
 }
 
@@ -538,6 +580,7 @@ li {
     margin: 10px;
     font-family: 'Archivo Black', sans-serif;
 }
+
 .btn-tasks-finished:hover {
     color: white;
 }
@@ -563,10 +606,9 @@ li {
     cursor: pointer;
     font-family: 'Archivo Black', sans-serif;
 
-
 }
 
-.addTaskButton:hover{
+.addTaskButton:hover {
     background-color: var(--color);
 }
 
@@ -588,6 +630,7 @@ li {
 .sectionAddTask > div {
     margin-bottom: 10px;
 }
+
 #removeCat {
     background: url("../images/Delete.png") no-repeat;
     background-size: contain;
@@ -642,7 +685,7 @@ li {
 }
 
 /* Style the "Add" button */
-.addBtn ,
+.addBtn,
 .cancelBtn {
     margin-top: 10px;
     padding: 10px;
@@ -700,10 +743,12 @@ li {
     text-transform: uppercase;
 
 }
+
 #inputTitle {
     margin-top: 5px;
     align-items: center;
 }
+
 #addThisTask {
     height: 50px;
     align-self: center;
@@ -714,7 +759,7 @@ li {
     /*color: black;*/
     color: #F04609;
     writing-mode: vertical-rl;
-    -webkit-transform:rotate(180deg);
+    -webkit-transform: rotate(180deg);
     font-family: 'Archivo Black', sans-serif;
     /*font-family: 'Kaushan Script', cursive;*/
     border: 0;
@@ -729,6 +774,7 @@ li {
 .tooltip {
     position: relative;
 }
+
 .tooltip .tooltiptext {
     /*visibility: hidden;*/
     width: 200px;
@@ -746,6 +792,7 @@ li {
     /*opacity: 0;*/
     /*transition: opacity 0.3s;*/
 }
+
 .tooltip .tooltiptext::after {
     content: "";
     position: absolute;
@@ -754,7 +801,7 @@ li {
     margin-left: -5px;
     border-width: 20px;
     border-style: solid;
-    border-color:  transparent black transparent transparent;
+    border-color: transparent black transparent transparent;
 }
 
 .temporaryClean {

@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
         allBtn.classList.toggle("wide-all-btn");
 
         for (var i = 0; i < catButtons.length; i++) {
-            catButtons[i].classList.toggle("wide-all-btn");
+            catButtons[i].classList.toggle("wide-cat-btn");
         }
     }
 
@@ -896,7 +896,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // ADD FIRST LETTER OF CAT NAME TO BUTTON
                 newButton.innerText = userCats[i].name;
                 newButton.classList.add("categ-list");
-                newButton.classList.add("wide-all-btn");
+                newButton.classList.add("wide-cat-btn");
                 newCategory.appendChild(newButton);
                 categList.append(newCategory);
 
