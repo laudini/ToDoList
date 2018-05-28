@@ -114,6 +114,7 @@ li {
     width: 40px;
     height: 40px;
     border-radius: 0;
+    border-style: groove;
     cursor: pointer;
     /*font-family: 'Archivo Black', sans-serif;*/
     font-family: 'Inconsolata', monospace;
@@ -404,6 +405,9 @@ li {
 
 .close-settings {
     cursor: pointer;
+    border: white 1px solid;
+    border-radius: 10%;
+    padding: 3px;
 }
 
 #level {
